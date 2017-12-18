@@ -1,0 +1,130 @@
+@import "../../../Assets/sass/vars"
+
+.home-container
+  position: relative
+  top: 50%
+  left: 50%
+  width: 100vw
+  margin-left: -50vw
+  margin-right: -50vw
+
+.home-header
+  background: $main-color
+  height: 10vh
+  opacity: .9
+  border-bottom: 1px solid white
+  &-logo
+    color: $accent-color
+    font-size: 2.3em
+    padding-top: 1.6vh
+    padding-left: 2vw
+    font-family: 'Indie Flower', 'sans-serif'
+    font-weight: 300
+  &-link
+    text-decoration: none
+    padding-top: 2.7vh
+    margin-left: 25%
+    font-size: 1.8em
+    font-family: 'Indie Flower', 'sans-serif'
+    font-weight: 300
+    a
+      float: left
+      margin-left: 4vw
+      color: $accent-color
+      transition: .5s ease
+      text-decoration: none
+      &:first-child
+        margin-left: 5vw
+      &:hover
+        color: $hover-color
+        transition: .5s ease
+      &:active
+        color: $active-color
+  &-title
+    text-align: center
+    font-size: 3.125em
+    background: url('../../../Assets/img/headerImg.jpg') no-repeat
+    background-size: cover
+    margin-top: -10vh
+    margin-left: -3vw
+    height: 95vh
+    width: 108vw
+    border-bottom: 1px solid $main-color
+    div
+      color: $main-color
+      margin-top: 13vh
+      margin-bottom: 5vh
+      font-family: 'MontserratL', 'sans-serif'
+      font-weight: 300
+  &-button
+    will-change: transform, opacity
+    padding: 12px 0 12px 0
+    width: 250px
+    margin: 0 auto
+    color: $button-color
+    border: 1px solid $main-lighten-color
+    background: $background-button-color
+    font-size: 0.60em
+    font-family: 'MontserratM', 'sans-serif'
+    font-weight: 500
+    transition: .5s ease
+    border-radius: 5px
+    &:hover
+      cursor: pointer
+      border: 1px solid rgba(255, 236, 78, 0.05)
+      background: $button-background-hover
+      color: #1F1F1F
+      transition: .5s ease
+    &:active
+      transform: scale(0.98, 0.98)
+      background: $button-background-active
+      color: black
+
+.outer-container
+  margin-left: -1vw
+
+.bm-burger-button
+  position: fixed
+  width: 36px
+  height: 30px
+  left: 4vw
+  top: 2.6vh
+
+.bm-burger-bars
+  background: $accent-color
+
+.bm-cross-button
+  height: 24px
+  width: 24px
+
+.bm-cross
+  background: $accent-color
+
+.bm-menu
+  background: $main-lighten-color
+  padding: 7vh 2vw 0
+
+.bm-morph-shape
+  fill: #373a47
+
+.bm-item-list a
+  text-decoration: none
+  color: $accent-color
+  font-size: 1.663em
+  font-family: 'Indie Flower', 'sans-serif'
+
+.bm-overlay
+  background: rgba(0, 0, 0, 0.3)
+  margin-left: 1vw
+
+
+
+.test
+  padding-left: 1vw
+  background: #ccc
+  width: 100%
+  height: 500px
+
+.test2
+  width: 100%
+  height: 500px
