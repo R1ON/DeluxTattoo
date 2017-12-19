@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 import { Parallax, Background } from 'react-parallax';
-import { slide as Menu } from 'react-burger-menu';
 
 import { MENU_LINKS } from '../../../Constants';
 
@@ -9,41 +8,9 @@ import logo from "../../../Assets/img/8.jpg";
 import '../Styles/HeaderStyle.sass';
 
 class HeaderComponent extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      backgroundPositionX: '10%',
-      backgroundPositionY: '10%'
-    };
-
-    this.onMouseMoveParallaxEffect = this.onMouseMoveParallaxEffect.bind(this);
-  }
-
-  onMouseMoveParallaxEffect(e) {
-    let x = (e.pageX * -1 / 20), y = (e.pageY * -1 / 10);
-
-    this.setState({
-      backgroundPositionX: x + 20,
-      backgroundPositionY: y + 5
-    })
-  }
-
-
   render() {
     return (
       <div>
-        <Col className="hidden-lg hidden-md">
-          <div className="outer-container">
-            <Menu>
-              <a href="#">{MENU_LINKS.LINK_1}</a><br />
-              <a href="#">{MENU_LINKS.LINK_2}</a><br />
-              <a href="#">{MENU_LINKS.LINK_3}</a><br />
-              <a href="#">{MENU_LINKS.LINK_4}</a>
-            </Menu>
-          </div>
-        </Col>
-
         <Row className="home-header">
           <Col md={4}>
             <div className="home-header-logo">
@@ -62,8 +29,8 @@ class HeaderComponent extends Component {
 
         <Row
           className="home-header-title"
-          style={this.state}
-          onMouseMove={this.onMouseMoveParallaxEffect}
+          style={this.props.styles}
+          onMouseMove={this.props.onMouseMove}
         >
           <Col md={12}>
             <div>Welcome to our studio!</div>
