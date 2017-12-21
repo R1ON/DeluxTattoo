@@ -16,7 +16,7 @@ class HeaderComponent extends Component {
           onMouseMove={this.props.onMouseMove}
         >
           <Col md={12}>
-            <div>Welcome to our studio!</div>
+            <div>WELCOME TO OUR STUDIO!</div>
             <p className="home-header-button">
               SIGN IN
             </p>

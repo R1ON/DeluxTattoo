@@ -12,7 +12,8 @@ class BurgerMenu extends Component {
         {/*<Col className="hidden-lg hidden-md">*/}
         <Col>
           <div className="outer-container">
-            <Menu>
+            <Menu width={ '22vw' }>
+              <div className="img-blur"></div>
               <span className="burger-icon">
                 <Icon size="lg" name="home" />
               </span>
