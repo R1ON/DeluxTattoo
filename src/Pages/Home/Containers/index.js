@@ -5,7 +5,8 @@ import React, { Component } from 'react';
 // import { Link } from 'react-router';
 // import HocHome from './hocHome';
 
-import BurgerMenu from './BurgerMenu';
+import BurgerMenu from '../../../Components/BurgerMenu';
+import HeaderMenu from '../../../Components/HeaderMenu';
 
 import HeaderComponent from '../Components/HeaderComponent';
 
@@ -36,8 +37,10 @@ class Home extends Component {
     return (
       <div>
         <div className="home-container">
-            <BurgerMenu />
-            <HeaderComponent styles={this.state} onMouseMove={this.onMouseMoveParallaxEffect} />
+          <BurgerMenu />
+          <HeaderMenu />
+
+          <HeaderComponent styles={this.state} onMouseMove={this.onMouseMoveParallaxEffect} />
             {/* <HocHome currency={this.props.photos} /> */}
         </div>
       </div>

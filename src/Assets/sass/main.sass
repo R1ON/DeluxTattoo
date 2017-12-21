@@ -1,7 +1,54 @@
 @import "fonts"
 @import "libs"
+@import "vars"
 
 body
   overflow-x: hidden
+
+
+///////////////////////// BURGER MENU //////////////
+.outer-container
+  margin-left: -1vw
+
+.bm-burger-button
+  position: fixed
+  width: 36px
+  height: 30px
+  left: 4vw
+  top: 2.6vh
+
+.bm-burger-bars
+  background: $accent-color
+
+.bm-cross-button
+  height: 24px
+  width: 24px
+
+.bm-cross
+  background: $accent-color
+
+.bm-menu
+  background: $main-lighten-color
+  padding: 10vh 2vw 0
+
+
+.bm-item-list a
+  text-decoration: none
+  color: $accent-color
+  font-size: 1.663em
+  font-family: 'MontserratL', 'sans-serif'
+
+.bm-overlay
+  background: rgba(0, 0, 0, 0.3)
+  margin-left: 1vw
+
+.burger-icon
+  width: 50px
+  float: left
+  color: $accent-color
+  font-size: 1.663em
+  text-align: center
+
+
 
 @import "media"
