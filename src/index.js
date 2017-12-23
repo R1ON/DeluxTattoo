@@ -1,12 +1,12 @@
 import React from 'react';
 import thunk from 'redux-thunk';
 import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { Router, Route, hashHistory } from 'react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import Favicon from 'react-favicon';
 
 import './Assets/sass/main.sass';
 
@@ -22,11 +22,14 @@ const history = syncHistoryWithStore(hashHistory, store);
 
 const renderApp = () => {
 	render(
-		<Provider store={store}>
-			<Router history={history}>
-				<Route path='/' component={Home} />
-			</Router>
-		</Provider>,
+		<div>
+			<Favicon url="./Assets/img/favicon/tattooMachine.ico" />
+			<Provider store={store}>
+				<Router history={history}>
+					<Route path='/' component={Home} />
+				</Router>
+			</Provider>
+		</div>,
 		document.querySelector('#mount_place')
 	)
 }

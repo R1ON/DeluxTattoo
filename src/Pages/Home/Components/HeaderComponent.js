@@ -16,7 +16,7 @@ class HeaderComponent extends Component {
           onMouseMove={this.props.onMouseMove}
         >
           <Col md={12}>
-            <div>WELCOME TO OUR STUDIO!</div>
+            <div>WELCOME TO OUR STUDIO</div>
             <p className="home-header-button">
               SIGN IN
             </p>
@@ -31,7 +31,7 @@ class HeaderComponent extends Component {
           </Col>
         </Row>
 
-
+        // при strength=400 на перевернутых таблетках получается баг
         <Parallax bgImage={logo} strength={400}>
           <div className="test2"></div>
         </Parallax>

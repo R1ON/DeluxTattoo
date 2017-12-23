@@ -21,7 +21,9 @@ class Home extends Component {
       backgroundPositionY: '10%'
     };
 
-    this.onMouseMoveParallaxEffect = this.onMouseMoveParallaxEffect.bind(this);
+    if (document.body.clientWidth < 991) {
+      this.onMouseMoveParallaxEffect = () => {};
+    } else this.onMouseMoveParallaxEffect = this.onMouseMoveParallaxEffect.bind(this);
   }
 
   onMouseMoveParallaxEffect(e) {
@@ -29,7 +31,7 @@ class Home extends Component {
 
     this.setState({
       backgroundPositionX: x + 20,
-      backgroundPositionY: y + 5
+      backgroundPositionY: y - 5
     })
   }
 

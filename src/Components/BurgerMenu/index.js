@@ -9,10 +9,10 @@ class BurgerMenu extends Component {
   render() {
     return (
       <div>
-        {/*<Col className="hidden-lg hidden-md">*/}
-        <Col>
+        <Col className="hidden-lg hidden-md">
+        {/*<Col>*/}
           <div className="outer-container">
-            <Menu width={ '22vw' }>
+            <Menu width={ '40vw' }>
               <div className="img-blur"></div>
               <span className="burger-icon">
                 <Icon size="lg" name="home" />

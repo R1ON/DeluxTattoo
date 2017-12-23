@@ -7,14 +7,14 @@ class HeaderMenu extends Component {
   render() {
     return (
       <div>
-        <Row className="home-header">
+        <Row className="header-menu">
           <Col md={4}>
-            <div className="home-header-logo">
+            <div className="header-menu-logo">
               DELUX TATTOO
             </div>
           </Col>
           <Col md={8} className="hidden-xs hidden-sm">
-            <div className="home-header-link">
+            <div className="header-menu-link">
               <a href="#">{MENU_LINKS.LINK_1}</a>
               <a href="#">{MENU_LINKS.LINK_2}</a>
               <a href="#">{MENU_LINKS.LINK_3}</a>

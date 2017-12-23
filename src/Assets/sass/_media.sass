@@ -4,20 +4,49 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-	/**/
+  .header-menu-link
+    padding-top: 3vh
 
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
-	/**/
+@media only screen and (max-width : 991px)
+  .header-menu-logo
+    text-align: center
+    font-size: 5vh
+    padding-top: 1vh
+
+  .home-header
+    &-title
+      margin-top: 0
+      background-size: cover
+      height: 85vh
+      font-size: 4.5vw
+    &-button
+      padding: 1.2vw 0 1.2vw 0
+      width: 25vw
+      font-size: 2.65vw
+      &:hover
+        color: $button-color
+        border: 1px solid $main-lighten-color
+        background: $background-button-color
+      &:active
+        transform: scale(1, 1)
+        color: $button-color
+        background: $background-button-color
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-  .home-header-logo
-    text-align: center
-
-@media only screen and (max-width : 680px)
-		/**/
+  .home-header
+    &-title
+      height: 75vw
+      font-size: 6vw
+      div
+        margin-top: 14vw
+    &-button
+      padding: 1.2vw 0 1.2vw 0
+      width: 50vw
+      font-size: 5vw
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
