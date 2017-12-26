@@ -10,7 +10,6 @@ class BurgerMenu extends Component {
     return (
       <div>
         <Col className="hidden-lg hidden-md">
-        {/*<Col>*/}
           <div className="outer-container">
             <Menu width={ '40vw' }>
               <div className="img-blur"></div>
