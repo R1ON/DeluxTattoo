@@ -48,21 +48,58 @@
         color: black
 
   &-main
-    background: lighten($accent-color, 5%)
-    height: 500px
+    background: lighten($accent-color, 9%)
     text-align: center
     &-title
       font-size: 4.5em
-      margin-top: 10vh
+      margin-top: 7vh
       margin-bottom: -2vh
       font-family: 'ComfortaaB', 'sans-serif'
     &-tagline
-      font-size: 1.9em
+      color: $tagline-text
+      font-size: 2em
       font-family: 'ComfortaaL', 'sans-serif'
-      margin-bottom: 5vh
+      margin-bottom: 3vh
+    &-icon
+      margin-top: 4vh
+      margin-bottom: 2vh
+      &-title
+        margin-bottom: 2vh
+        background: $main-color
+        color: $accent-color
+        opacity: .9
+        font-family: 'ComfortaaB', 'sans-serif'
+        font-size: 1.5em
+        padding-top: 1.3vh
+        padding-bottom: 1.3vh
+      &-about
+        color: $tagline-text
+        margin: 0 auto !important
+        width: 25vw
+        font-family: 'ComfortaaL', 'sans-serif'
+        font-size: 1.4em
+    &-parallax
+      margin-top: 15vh
+      margin-bottom: 7vh
+      &-container
+        width: 100vw
+        height: 80vh
+    &-masonry
+      margin-top: 5vh
+      margin-left: 4vw
+    &-examples img
+        width: 23vw
+        padding: 5px
 
-.test2
-  width: 100%
-  height: 500px
+.fix
+  &-masonry-1 img
+    height: 44.1vh
+  &-masonry-2 img
+    height: 32.7vh
+  &-masonry-3 img
+    height: 32.7vh
+
+.test
+  height: 20vh
 
 @import "../../../Assets/sass/media"

@@ -3490,22 +3490,60 @@ body {
     color: black; }
 
 .home-main {
-  background: #ededed;
-  height: 500px;
+  background: #f7f7f7;
   text-align: center; }
   .home-main-title {
     font-size: 4.5em;
-    margin-top: 10vh;
+    margin-top: 7vh;
     margin-bottom: -2vh;
     font-family: 'ComfortaaB', 'sans-serif'; }
   .home-main-tagline {
-    font-size: 1.9em;
+    color: #8f8f8f;
+    font-size: 2em;
     font-family: 'ComfortaaL', 'sans-serif';
-    margin-bottom: 5vh; }
+    margin-bottom: 3vh; }
+  .home-main-icon {
+    margin-top: 4vh;
+    margin-bottom: 2vh; }
+    .home-main-icon-title {
+      margin-bottom: 2vh;
+      background: #0c0c0c;
+      color: #E0E0E0;
+      opacity: .9;
+      font-family: 'ComfortaaB', 'sans-serif';
+      font-size: 1.5em;
+      padding-top: 1.3vh;
+      padding-bottom: 1.3vh; }
+    .home-main-icon-about {
+      color: #8f8f8f;
+      margin: 0 auto !important;
+      width: 25vw;
+      font-family: 'ComfortaaL', 'sans-serif';
+      font-size: 1.4em; }
+  .home-main-parallax {
+    margin-top: 15vh;
+    margin-bottom: 7vh; }
+    .home-main-parallax-container {
+      width: 100vw;
+      height: 80vh; }
+  .home-main-masonry {
+    margin-top: 5vh;
+    margin-left: 4vw; }
+  .home-main-examples img {
+    width: 23vw;
+    padding: 5px; }
 
-.test2 {
-  width: 100%;
-  height: 500px; }
+.fix-masonry-1 img {
+  height: 44.1vh; }
+
+.fix-masonry-2 img {
+  height: 32.7vh; }
+
+.fix-masonry-3 img {
+  height: 32.7vh; }
+
+.test {
+  height: 20vh; }
 
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */
