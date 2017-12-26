@@ -9,6 +9,7 @@ import BurgerMenu from '../../../Components/BurgerMenu';
 import HeaderMenu from '../../../Components/HeaderMenu';
 
 import HeaderComponent from '../Components/HeaderComponent';
+import MainComponent from '../Components/MainComponent';
 
 import '../Styles/HeaderStyle.sass';
 
@@ -43,6 +44,7 @@ class Home extends Component {
           <HeaderMenu />
 
           <HeaderComponent styles={this.state} onMouseMove={this.onMouseMoveParallaxEffect} />
+          <MainComponent />
             {/* <HocHome currency={this.props.photos} /> */}
         </div>
       </div>

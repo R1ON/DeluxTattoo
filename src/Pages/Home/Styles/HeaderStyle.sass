@@ -1,54 +1,65 @@
 @import "../../../Assets/sass/vars"
 
-.home-container
-  position: relative
-  top: 50%
-  left: 50%
-  width: 100vw
-  margin-left: -50vw
-  margin-right: -50vw
-
-.home-header
-  &-title
-    text-align: center
-    font-size: 3.125em
-    background: url($image-header) no-repeat
-    background-size: 120%
-    margin-top: -10vh
-    margin-left: -3vw
-    height: 95vh
-    width: 108vw
-    border-bottom: 1px solid $main-color
-    div
-      color: $main-color
-      margin-top: 16vh
-      margin-bottom: 2vh
-      font-family: 'MontserratL', 'sans-serif'
-  &-button
-    will-change: transform, opacity
-    padding: 12px 0 12px 0
-    width: 250px
-    margin: 0 auto
-    color: $button-color
-    border: 1px solid $main-lighten-color
-    background: $background-button-color
-    font-size: 0.60em
-    font-family: 'MontserratM', 'sans-serif'
-    transition: .5s ease
-    border-radius: 5px
-    &:hover
-      cursor: pointer
-      border: 1px solid rgba(255, 236, 78, 0.05)
-      background: $button-background-hover
-      color: #1F1F1F
+.home
+  &-container
+    position: relative
+    top: 50%
+    left: 50%
+    width: 100vw
+    margin-left: -50vw
+    margin-right: -50vw
+  &-header
+    &-title
+      text-align: center
+      font-size: 3.125em
+      background: url($image-header) no-repeat
+      background-size: 120%
+      margin-top: -10vh
+      margin-left: -3vw
+      height: 95vh
+      width: 108vw
+      border-bottom: 1px solid $main-color
+      div
+        color: $main-color
+        margin-top: 16vh
+        margin-bottom: 2vh
+        font-family: 'ComfortaaL', 'sans-serif'
+    &-button
+      will-change: transform, opacity
+      padding: 12px 0 12px 0
+      width: 250px
+      margin: 0 auto
+      color: $button-color
+      border: 1px solid $main-lighten-color
+      background: $background-button-color
+      font-size: 0.6em
+      font-family: 'ComfortaaR', 'sans-serif'
       transition: .5s ease
-    &:active
-      transform: scale(0.98, 0.98)
-      background: $button-background-active
-      color: black
+      border-radius: 5px
+      &:hover
+        cursor: pointer
+        border: 1px solid rgba(255, 236, 78, 0.05)
+        background: $button-background-hover
+        color: #1F1F1F
+        transition: .5s ease
+      &:active
+        transform: scale(0.98, 0.98)
+        background: $button-background-active
+        color: black
 
-
-
+  &-main
+    background: lighten($accent-color, 5%)
+    height: 500px
+    &-title
+      text-align: center
+      font-size: 4.5em
+      margin-top: 10vh
+      margin-bottom: -2vh
+      font-family: 'ComfortaaB', 'sans-serif'
+    &-tagline
+      text-align: center
+      font-size: 1.9em
+      font-family: 'ComfortaaL', 'sans-serif'
 .test
   padding-left: 1vw
   background: #ccc

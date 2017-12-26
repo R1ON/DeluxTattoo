@@ -7,6 +7,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { Router, Route, hashHistory } from 'react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import Favicon from 'react-favicon';
+import icoFavicon from './Assets/img/fav.ico';
 
 import './Assets/sass/main.sass';
 
@@ -23,7 +24,7 @@ const history = syncHistoryWithStore(hashHistory, store);
 const renderApp = () => {
 	render(
 		<div>
-			<Favicon url="./Assets/img/favicon/tattooMachine.ico" />
+			<Favicon url={icoFavicon} />
 			<Provider store={store}>
 				<Router history={history}>
 					<Route path='/' component={Home} />

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
-import { Parallax, Background } from 'react-parallax';
 
-
-import logo from "../../../Assets/img/8.jpg";
 import '../Styles/HeaderStyle.sass'
 
 class HeaderComponent extends Component {
@@ -20,35 +17,6 @@ class HeaderComponent extends Component {
             <p className="home-header-button">
               SIGN IN
             </p>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col md={12}>
-            <div className="test">
-              ТЕКСТИКE
-            </div>
-          </Col>
-        </Row>
-
-        // при strength=400 на перевернутых таблетках получается баг
-        <Parallax bgImage={logo} strength={400}>
-          <div className="test2"></div>
-        </Parallax>
-
-        <Row>
-          <Col md={12}>
-            <div className="test">
-              ТЕКСТИК
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col md={12}>
-            <div className="test">
-              ТЕКСТИК
-            </div>
           </Col>
         </Row>
       </div>
