@@ -87,19 +87,17 @@
     &-masonry
       margin-top: 5vh
       margin-left: 4vw
+      &-border
+        position: relative
+        z-index: 999
+        margin-top: -8vh
+        background: lighten($accent-color, 9%)
+        height: 15vh
     &-examples img
-        width: 23vw
-        padding: 5px
-
-.fix
-  &-masonry-1 img
-    height: 44.1vh
-  &-masonry-2 img
-    height: 32.7vh
-  &-masonry-3 img
-    height: 32.7vh
+      width: 23vw
+      padding: 5px
 
 .test
-  height: 20vh
+  background: white
 
 @import "../../../Assets/sass/media"

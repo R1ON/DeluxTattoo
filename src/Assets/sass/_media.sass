@@ -10,6 +10,9 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
+  .home-main-masonry-border
+    margin-top: -6vh
+
   .header-menu-logo
     text-align: center
     font-size: 5vh
@@ -37,20 +40,55 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+  //.home-main-masonry-border
+  //  margin-top: -13vh
+
+  .sm-disable
+    display: none
+  .home-main
+    &-title
+      font-size: 3.5em
+    &-tagline
+      font-size: 1.8em
+    &-examples img
+      width: 40vw
+    &-masonry
+      margin-left: 10vw
+    &-icon-about
+      width: 50vw
+
   .home-header
     &-title
       height: 75vw
-      font-size: 6vw
+      font-size: 5vw
       div
         margin-top: 14vw
     &-button
-      padding: 1.2vw 0 1.2vw 0
-      width: 50vw
-      font-size: 5vw
+      padding: 1vw 0 1vw 0
+      width: 40vw
+      font-size: 4vw
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-		/**/
+  .xs-disable
+    display: none
+  .home-main
+    &-title
+      font-size: 2em
+      margin-bottom: .1vh
+    &-tagline
+      font-size: 1.1em
+      margin-bottom: .1vh
+    &-examples img
+      width: 80vw
+    &-masonry
+      margin-left: 10vw
+    &-icon-about
+      width: 80vw
+    &-parallax
+      margin-bottom: .1vh
+      &-container
+        height: 50vh
 
 
 /* Custom, iPhone Retina */
