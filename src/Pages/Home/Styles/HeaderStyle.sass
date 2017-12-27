@@ -39,13 +39,14 @@
       &:hover
         cursor: pointer
         border: 1px solid rgba(255, 236, 78, 0.05)
-        background: $button-background-hover
-        color: #1F1F1F
+        background: $second-color
+        opacity: .7
+        color: $accent-color
         transition: .5s ease
       &:active
         transform: scale(0.98, 0.98)
-        background: $button-background-active
-        color: black
+        background: darken($second-color, 5%)
+        color: $accent-color
 
   &-main
     background: lighten($accent-color, 9%)
@@ -81,6 +82,8 @@
     &-parallax
       margin-top: 15vh
       margin-bottom: 7vh
+      border-bottom: 1px solid black
+      border-top: 1px solid black
       &-container
         width: 100vw
         height: 80vh
@@ -97,7 +100,22 @@
       width: 23vw
       padding: 5px
 
-.test
+.importantly
   background: white
+  &-title
+    margin-top: -2vh
+    margin-bottom: 2vh
+    padding-top: 10vh
+  &-tagline div
+    margin: 0 auto !important
+    width: 70vw
+  &-button
+    width: 30vw
+    padding: 2vh 0
+    font-size: 2em
+    margin-bottom: 15vh
+    background: rgba(255, 253, 65, 0.81)
+    &:active
+      background: darken($button-background-hover, 10%)
 
 @import "../../../Assets/sass/media"

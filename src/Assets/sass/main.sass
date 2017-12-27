@@ -9,11 +9,10 @@ body
 ///////////////////////// MAIN MENU //////////////
 .header-menu
   background: $main-color
+  opacity: 1
   height: 10vh
-  opacity: .9
-  border-bottom: 1px solid white
   &-logo
-    color: $accent-color
+    color: $main-color
     font-size: 2.5vw
     padding-top: 1.6vh
     padding-left: 3vw
@@ -27,16 +26,16 @@ body
     a
       float: left
       margin-left: 2vw
-      color: $accent-color
-      transition: .5s ease
+      color: $second-color
+      transition: .2s ease
       text-decoration: none
       &:first-child
         margin-left: 8vw
       &:hover
-        color: $hover-color
-        transition: .5s ease
+        border-bottom: 4px solid $second-color
+        transition: .2s ease
       &:active
-        color: $active-color
+        color: $second-color
 
 ///////////////////////// LEFT MENU //////////////
 .outer-container

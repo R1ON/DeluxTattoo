@@ -6,6 +6,14 @@ import Masonry from 'react-masonry-component';
 
 import '../Styles/HeaderStyle.sass'
 
+const IMPORTANTLY_ABOUT = [
+  `If you want to get to the session, 
+  find out the cost of a tattoo, 
+  consult a master, draw a unique sketch or 
+  just learn how to make tattoos, t
+  hen you need to register on our site`
+];
+
 class MainComponent extends Component {
   render() {
     return (
@@ -96,36 +104,36 @@ class MainComponent extends Component {
         </Masonry>
         <div className="home-main-masonry-border"></div>
 
-        <Row className="test">
+        <Row className="importantly">
           <Col md={12}>
-            <div className="home-main-title">
-              WORK EXAMPLES
+            <div className="home-main-title importantly-title">
+              IMPORTANTLY
             </div>
           </Col>
           <Col md={12}>
-            <div className="home-main-tagline">
-              View all works by <a href="">reference</a>
+            <div className="home-main-tagline importantly-tagline">
+              <div>{IMPORTANTLY_ABOUT}</div>
             </div>
+          </Col>
+          <Col md={12}>
+            <p className="home-header-button importantly-button">REGISTRATION</p>
           </Col>
         </Row>
 
-        <Row className="test">
-          <Col md={4} sm={6} xs={12}>
-            <Icon className="home-main-icon" size="5x" name="wifi" />
-            <div className="home-main-icon-title">FREE WI-FI</div>
-            <div className="home-main-icon-about">To get distracted during the session, you can use our internet</div>
+        <Row>
+          <Col md={12}>
+            <div className="home-main-title">
+              test<br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
           </Col>
-          <Col md={4} sm={6} xs={12}>
-            <Icon className="home-main-icon" size="5x" name="vcard-o" />
-            <div className="home-main-icon-title">GRADUATED MASTERS</div>
-            <div className="home-main-icon-about">Each master has a certificate of completion of tattooing courses</div>
-          </Col>
-          <Col md={4} sm={12} xs={12}>
-            <Icon className="home-main-icon" size="5x" name="coffee" />
-            <div className="home-main-icon-title">FREE COFFEE</div>
-            <div className="home-main-icon-about">If you are very hurt, you can ask the master to pour you coffee</div>
-          </Col>
+
         </Row>
+
 
       </div>
     );

@@ -18,8 +18,8 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      backgroundPositionX: '10%',
-      backgroundPositionY: '10%'
+      backgroundPositionX: '20%',
+      backgroundPositionY: '20%'
     };
 
     if (document.body.clientWidth < 991) {
@@ -31,8 +31,8 @@ class Home extends Component {
     let x = (e.pageX * -1 / 20), y = (e.pageY * -1 / 10);
 
     this.setState({
-      backgroundPositionX: x + 20,
-      backgroundPositionY: y - 5
+      backgroundPositionX: x,
+      backgroundPositionY: y - 90
     })
   }
 
