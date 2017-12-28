@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 // import HocHome from './hocHome';
 
 import BurgerMenu from '../../../Components/BurgerMenu';
-import HeaderMenu from '../../../Components/HeaderMenu';
 
 import HeaderComponent from '../Components/HeaderComponent';
 import MainComponent from '../Components/MainComponent';
@@ -18,8 +17,8 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      backgroundPositionX: '20%',
-      backgroundPositionY: '20%'
+      backgroundPositionX: '10%',
+      backgroundPositionY: '10%'
     };
 
     if (document.body.clientWidth < 991) {
@@ -32,7 +31,7 @@ class Home extends Component {
 
     this.setState({
       backgroundPositionX: x,
-      backgroundPositionY: y - 90
+      backgroundPositionY: y - 50
     })
   }
 
@@ -41,7 +40,6 @@ class Home extends Component {
       <div>
         <div className="home-container">
           <BurgerMenu />
-          <HeaderMenu />
 
           <HeaderComponent styles={this.state} onMouseMove={this.onMouseMoveParallaxEffect} />
           <MainComponent />

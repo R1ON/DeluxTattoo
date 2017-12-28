@@ -4,8 +4,7 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-  .header-menu-link
-    padding-top: 3vh
+  /**/
 
 
 /* Medium Devices, Desktops */
@@ -13,22 +12,24 @@
   .home-main-masonry-border
     margin-top: -6vh
 
-  .header-menu-logo
+  .home-header-logo
     text-align: center
-    font-size: 5vh
-    padding-top: 1vh
+    font-size: 6vh
 
   .home-header
+    background-size: cover
+    height: 85vh
+    font-size: 2.5em
     &-title
+      padding-top: 25vh
+    div
       margin-top: 0
-      background-size: cover
-      height: 85vh
-      font-size: 4.5vw
     &-button
       padding: 1.2vw 0 1.2vw 0
       width: 25vw
       font-size: 2.65vw
       &:hover
+        opacity: 1
         color: $button-color
         border: 1px solid $main-lighten-color
         background: $background-button-color
@@ -37,11 +38,40 @@
         color: $button-color
         background: $background-button-color
 
+  .importantly
+    &-button
+      width: 40vw
+      padding: 2vh 0
+      font-size: 2.5em
+      &:hover
+        color: $accent-color
+        border: 0px solid $main-lighten-color !important
+        background: $second-color
+        opacity: 1
+      &:active
+        color: $accent-color
+        border: 0px solid $main-lighten-color !important
+        background: $second-color
+
+  .home-main-tagline a
+    &:hover
+      border-bottom: none
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-  //.home-main-masonry-border
-  //  margin-top: -13vh
+  .img-blur
+    width: 58vw
+    height: 35vw
+
+  .bm-item-list a
+    font-size: 3vw
+
+  .burger-icon
+    margin-left: 3vw
+    margin-right: 1vw
+    font-size: 3vw
+
 
   .sm-disable
     display: none
@@ -58,15 +88,17 @@
       width: 50vw
 
   .home-header
+    height: 85vh
+    font-size: 2.5em
     &-title
-      height: 75vw
-      font-size: 5vw
-      div
-        margin-top: 14vw
+      padding-top: 25vh
+    div
+      margin-top: 0
     &-button
       padding: 1vw 0 1vw 0
       width: 40vw
       font-size: 4vw
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -90,6 +122,22 @@
       &-container
         height: 50vh
 
+  .home-header
+    height: 85vh
+    font-size: 2em
+    &-logo
+      margin-left: 3vw
+    &-title
+      padding-top: 25vh
+    div
+      margin-top: 0
+    &-button
+      padding: 2vw 0 2vw 0
+      width: 50vw
+      font-size: 5vw
+
+  .importantly-tagline
+      margin-bottom: 3vh
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)

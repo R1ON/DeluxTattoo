@@ -9,21 +9,43 @@
     margin-left: -50vw
     margin-right: -50vw
   &-header
-    &-title
-      text-align: center
-      font-size: 3.125em
-      background: url($image-header) no-repeat
-      background-size: 120%
-      margin-top: -10vh
-      margin-left: -3vw
-      height: 95vh
-      width: 108vw
-      border-bottom: 1px solid $main-color
-      div
+    text-align: center
+    font-size: 3.125em
+    background: url($image-header) no-repeat
+    border-bottom: 1px solid black
+    background-size: 120%
+    margin-left: -3vw
+    height: 100vh
+    width: 108vw
+    div
+      color: $main-color
+      margin-top: 2vh
+      font-family: 'ComfortaaL', 'sans-serif'
+    &-logo
+      color: $main-color
+      font-size: 2.5vw
+      margin-left: -5vw
+      margin-top: .8vh !important
+      font-family: 'Indie Flower', 'sans-serif' !important
+    &-link
+      text-decoration: none
+      margin-left: 23%
+      font-size: 1.6vw
+      font-family: 'ComfortaaL', 'sans-serif'
+      a
+        float: left
+        margin-left: 2vw
         color: $main-color
-        margin-top: 16vh
-        margin-bottom: 2vh
-        font-family: 'ComfortaaL', 'sans-serif'
+        text-decoration: none
+        border-bottom: 0px solid $main-color
+        transition: .1s ease
+        &:first-child
+          margin-left: 8vw
+        &:hover
+          border-bottom: 3px solid $main-color
+          transition: .2s ease
+    &-title
+      padding-top: 30vh
     &-button
       will-change: transform, opacity
       padding: 12px 0 12px 0
@@ -38,7 +60,7 @@
       border-radius: 5px
       &:hover
         cursor: pointer
-        border: 1px solid rgba(255, 236, 78, 0.05)
+        border: 1px solid rgba(255, 0, 21, 0.05)
         background: $second-color
         opacity: .7
         color: $accent-color
@@ -47,7 +69,6 @@
         transform: scale(0.98, 0.98)
         background: darken($second-color, 5%)
         color: $accent-color
-
   &-main
     background: lighten($accent-color, 9%)
     text-align: center
@@ -55,18 +76,29 @@
       font-size: 4.5em
       margin-top: 7vh
       margin-bottom: -2vh
+      color: $main-color
       font-family: 'ComfortaaB', 'sans-serif'
     &-tagline
       color: $tagline-text
       font-size: 2em
       font-family: 'ComfortaaL', 'sans-serif'
       margin-bottom: 3vh
+      a
+        color: $second-color
+        font-family: 'ComfortaaB', 'sans-serif'
+        border-bottom: 0px solid $second-color
+        transition: .1s ease
+        &:hover
+          text-decoration: none
+          color: $second-color
+          border-bottom: 3px solid $second-color
+          transition: .2s ease
     &-icon
       margin-top: 4vh
       margin-bottom: 2vh
       &-title
         margin-bottom: 2vh
-        background: $main-color
+        background: $second-color
         color: $accent-color
         opacity: .9
         font-family: 'ComfortaaB', 'sans-serif'
@@ -113,9 +145,14 @@
     width: 30vw
     padding: 2vh 0
     font-size: 2em
-    margin-bottom: 15vh
-    background: rgba(255, 253, 65, 0.81)
+    margin-bottom: 7vh
+    color: $accent-color
+    border: 0px solid $main-lighten-color !important
+    background: $second-color
+    &:hover
+      background: lighten($second-color, 10%)
+      opacity: 1
     &:active
-      background: darken($button-background-hover, 10%)
+      background: darken($second-color, 5%)
 
 @import "../../../Assets/sass/media"
