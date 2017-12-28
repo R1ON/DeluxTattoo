@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 // import { Container } from 'reactstrap';
 // import { fetchImage } from '../../actions';
 // import { Link } from 'react-router';
-// import HocHome from './hocHome';
 
+import { Icon } from 'react-fa';
 import BurgerMenu from '../../../Components/BurgerMenu';
 
 import HeaderComponent from '../Components/HeaderComponent';
@@ -17,33 +17,44 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      backgroundPositionX: '10%',
-      backgroundPositionY: '10%'
+      style: {
+        backgroundPositionX: '10%',
+        backgroundPositionY: '10%'
+      },
+      display: ''
     };
 
     if (document.body.clientWidth < 991) {
       this.onMouseMoveParallaxEffect = () => {};
     } else this.onMouseMoveParallaxEffect = this.onMouseMoveParallaxEffect.bind(this);
+
+    window.onload = () => {
+      this.setState({ display: 'none' })
+    }
   }
 
   onMouseMoveParallaxEffect(e) {
     let x = (e.pageX * -1 / 20), y = (e.pageY * -1 / 10);
 
     this.setState({
-      backgroundPositionX: x,
-      backgroundPositionY: y - 50
+      style: {
+        backgroundPositionX: x,
+        backgroundPositionY: y - 50
+      }
     })
   }
 
   render() {
     return (
       <div>
+        {/*<div style={{ display: this.state.display}} className="preloader">*/}
+          {/*<Icon size="5x" spin name="gear" />*/}
+        {/*</div>*/}
         <div className="home-container">
           <BurgerMenu />
 
-          <HeaderComponent styles={this.state} onMouseMove={this.onMouseMoveParallaxEffect} />
+          <HeaderComponent styles={this.state.style} onMouseMove={this.onMouseMoveParallaxEffect} />
           <MainComponent />
-            {/* <HocHome currency={this.props.photos} /> */}
         </div>
       </div>
     );
@@ -59,6 +70,5 @@ class Home extends Component {
 //     fetchImage: () => dispatch(fetchImage())
 //   };
 // };
-
 export default Home;
 // export default connect(mapStateToProps, mapDispatchToProps)(Home);
