@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-// import Photos from './Photos';
+import RegistrationReducer from './RegistrationReducer';
 
 export default combineReducers({
-  // Photos
+  RegistrationReducer
 });

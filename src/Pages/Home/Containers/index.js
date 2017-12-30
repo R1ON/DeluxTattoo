@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import { Container } from 'reactstrap';
-// import { fetchImage } from '../../actions';
+import { connect } from 'react-redux';
 // import { Link } from 'react-router';
 
-import { Icon } from 'react-fa';
+import { RegistrationAction } from '../Actions/HomeAction';
+
 import BurgerMenu from '../../../Components/BurgerMenu';
 
 import HeaderComponent from '../Components/HeaderComponent';
@@ -30,7 +29,9 @@ class Home extends Component {
 
     window.onload = () => {
       this.setState({ display: 'none' })
-    }
+    };
+
+    this.onModalOpen = this.onModalOpen.bind(this);
   }
 
   onMouseMoveParallaxEffect(e) {
@@ -44,31 +45,39 @@ class Home extends Component {
     })
   }
 
+  onModalOpen() {
+    this.props.RegistrationAction(!this.props.isOpen)
+  }
+
   render() {
     return (
       <div>
         {/*<div style={{ display: this.state.display}} className="preloader">*/}
-          {/*<Icon size="5x" spin name="gear" />*/}
+          {/*<Icon size="5x" spin name="spinner" />*/}
         {/*</div>*/}
+
         <div className="home-container">
           <BurgerMenu />
-
           <HeaderComponent styles={this.state.style} onMouseMove={this.onMouseMoveParallaxEffect} />
-          <MainComponent />
+
+          <MainComponent onModalOpen={this.onModalOpen} />
         </div>
       </div>
     );
   }
 };
 
-// const mapStateToProps = (state) => {
-//   return state;
-// };
-//
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     fetchImage: () => dispatch(fetchImage())
-//   };
-// };
-export default Home;
-// export default connect(mapStateToProps, mapDispatchToProps)(Home);
+const mapStateToProps = (state) => {
+  return {
+    isOpen: state.homeReducers.RegistrationReducer.isOpen
+  };
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    RegistrationAction: (isOpen) => dispatch(RegistrationAction(isOpen))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -10,12 +10,14 @@ const IMPORTANTLY_ABOUT = [
   `If you want to get to the session, 
   find out the cost of a tattoo, 
   consult a master, draw a unique sketch or 
-  just learn how to make tattoos, t
-  hen you need to register on our site`
+  just learn how to make tattoos, 
+  then you need to register on our site`
 ];
 
 class MainComponent extends Component {
   render() {
+    const { onModalOpen } = this.props;
+
     return (
       <div className="home-main">
         <Row>
@@ -116,7 +118,7 @@ class MainComponent extends Component {
             </div>
           </Col>
           <Col md={12}>
-            <p className="home-header-button importantly-button">REGISTRATION</p>
+            <p onClick={onModalOpen} className="home-header-button importantly-button">REGISTRATION</p>
           </Col>
         </Row>
 
