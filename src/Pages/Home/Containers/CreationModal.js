@@ -5,18 +5,11 @@ import Modal from 'react-modal';
 
 import { RegistrationAction } from '../Actions/HomeAction';
 
-// const customStyles = {
-//   content : {
-//     top                   : '50%',
-//     left                  : '50%',
-//     right                 : 'auto',
-//     bottom                : 'auto',
-//     marginRight           : '-50%',
-//     transform             : 'translate(-50%, -50%)'
-//   }
-// };
-
 import '../Styles/HeaderStyle.sass';
+
+const overlayBackground = {
+  overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }
+};
 
 class CreationModal extends Component {
   constructor(props) {
@@ -36,11 +29,50 @@ class CreationModal extends Component {
       <Modal
         isOpen={isOpen}
         onRequestClose={this.onCloseModal}
-        className="modal modal-registration"
+        className="modal"
+        style={overlayBackground}
         ariaHideApp={false}
       >
-        <Icon onClick={this.onCloseModal} size="2x" name="close" />
-        <p>ХУЯМБО</p>
+        <div className="modal-button-container">
+          <Icon
+            className="modal-button-close"
+            onClick={this.onCloseModal}
+            size="2x"
+            name="close"
+          />
+        </div>
+
+        <div className="modal-content">
+          <div>
+            <span className="modal-label">LOGIN</span>
+            <br />
+            <input/>
+          </div>
+
+          <div>
+            <span className="modal-label">MAIL</span>
+            <br />
+            <input/>
+          </div>
+
+          <div>
+            <span className="modal-label">PASSWORD</span>
+            <br />
+            <input/>
+          </div>
+
+          <div>
+            <span className="modal-label">CONFIRM PASSWORD</span>
+            <br />
+            <input/>
+          </div>
+
+          <Icon
+            className="modal-button-ok"
+            size="2x"
+            name="check"
+          />
+        </div>
       </Modal>
     );
   }

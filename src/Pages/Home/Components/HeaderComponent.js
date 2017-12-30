@@ -35,7 +35,7 @@ class HeaderComponent extends Component {
           <Col md={12}>
             <div className="home-header-title">WELCOME TO OUR STUDIO</div>
             <p className="home-header-button">
-              SIGN IN
+              SING IN
             </p>
           </Col>
         </Row>

@@ -958,6 +958,41 @@ hr {
 body {
   overflow-x: hidden; }
 
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: #f4f4f4;
+  outline: none;
+  border-radius: 5px;
+  width: 30vw;
+  height: 50vh; }
+  .modal-button-container {
+    text-align: right;
+    padding-bottom: 2vh;
+    margin-right: 1vw;
+    margin-top: 1vh; }
+  .modal-button-close {
+    color: #cecece;
+    cursor: pointer;
+    transition: .5s ease; }
+    .modal-button-close:hover {
+      color: #5d2532;
+      transition: .5s ease; }
+  .modal-button-ok {
+    color: #cecece;
+    cursor: pointer;
+    transition: .5s ease; }
+    .modal-button-ok:hover {
+      color: green;
+      transition: .5s ease; }
+  .modal-content {
+    text-align: center; }
+
 .outer-container {
   margin-left: -2vw; }
 
@@ -3630,7 +3665,7 @@ body {
     margin-left: 4vw; }
     .home-main-masonry-border {
       position: relative;
-      z-index: 999;
+      z-index: 99;
       margin-top: -8vh;
       background: #f7f7f7;
       height: 15vh; }

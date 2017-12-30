@@ -5,6 +5,44 @@
 body
   overflow-x: hidden
 
+.modal
+  position: fixed
+  top: 50%
+  left: 50%
+  right: auto
+  bottom: auto
+  margin-right: -50%
+  transform: translate(-50%, -50%)
+  background: lighten($accent-color, 8%)
+  outline: none
+  border-radius: 5px
+  width: 30vw
+  height: 50vh
+  &-button
+    &-container
+      text-align: right
+      padding-bottom: 2vh
+      margin-right: 1vw
+      margin-top: 1vh
+    &-close
+      color: darken($accent-color, 7%)
+      cursor: pointer
+      transition: .5s ease
+      &:hover
+        color: $second-color
+        transition: .5s ease
+    &-ok
+      color: darken($accent-color, 7%)
+      cursor: pointer
+      transition: .5s ease
+      &:hover
+        color: green
+        transition: .5s ease
+
+  &-content
+    text-align: center
+
+
 ///////////////////////// LEFT MENU //////////////
 .outer-container
   margin-left: -2vw
