@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Icon } from 'react-fa';
+import { Row, Col } from 'reactstrap';
 import Modal from 'react-modal';
 
 import { RegistrationAction } from '../Actions/HomeAction';
@@ -33,46 +34,41 @@ class CreationModal extends Component {
         style={overlayBackground}
         ariaHideApp={false}
       >
-        <div className="modal-button-container">
-          <Icon
-            className="modal-button-close"
-            onClick={this.onCloseModal}
-            size="2x"
-            name="close"
-          />
-        </div>
+        <Row className="modal-button">
+          <Col md={6} className="modal-header modal-header-registration">
+            Registration
+          </Col>
+          <Col md={6} className="modal-header modal-header-sign">
+            Sign in
+          </Col>
+        </Row>
 
         <div className="modal-content">
           <div className="modal-pack">
-            <span className="modal-label">LOGIN</span>
-            <br />
-            <input className="modal-input"/>
+            <input placeholder="login" className="modal-input"/>
           </div>
 
           <div className="modal-pack">
-            <span className="modal-label">MAIL</span>
-            <br />
-            <input className="modal-input"/>
+            <input placeholder="mail" className="modal-input"/>
           </div>
 
           <div className="modal-pack">
-            <span className="modal-label">PASSWORD</span>
-            <br />
-            <input type="password" className="modal-input"/>
+            <input placeholder="password" type="password" className="modal-input"/>
           </div>
 
           <div className="modal-pack">
-            <span className="modal-label">CONFIRM PASSWORD</span>
-            <br />
-            <input type="password" className="modal-input"/>
+            <input placeholder="confirm password" type="password" className="modal-input"/>
           </div>
-
-          <Icon
-            className="modal-button-ok"
-            size="2x"
-            name="check"
-          />
         </div>
+
+        <Row className="modal-button">
+          <Col md={6} className="modal-footer modal-footer-cancel">
+            Cancel
+          </Col>
+          <Col md={6} className="modal-footer modal-footer-okay">
+            Registration
+          </Col>
+        </Row>
       </Modal>
     );
   }

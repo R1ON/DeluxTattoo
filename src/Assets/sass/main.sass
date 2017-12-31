@@ -15,61 +15,68 @@ body
   transform: translate(-50%, -50%)
   background: lighten($accent-color, 8%)
   outline: none
-  border-radius: 5px
-  width: 30vw
-  height: 60vh
+  width: 40vw
+  height: 50vh
   &-pack
     margin-top: 3vh
-  &-label
-    font-family: 'ComfortaaL', 'sans-serif'
-    font-size: .9em
   &-input
     text-align: center
     border: 0
     border-bottom: 1px darken($accent-color, 10%) solid
     background: lighten($accent-color, 8%)
     outline: none
-    width: 20vw
+    width: 30vw
     height: 5vh
     padding-left: 1vw
     padding-right: 1vw
     font-size: 1.2em
     font-family: 'ComfortaaR', 'sans-serif'
   &-button
-    &-container
-      text-align: right
-      margin-right: 1vw
-      margin-top: 1vh
-    &-close
-      color: darken($accent-color, 7%)
+    margin: 0 auto
+    text-align: center
+  &-header
+    color: $main-color
+    padding-top: 3vh
+    height: 8vh
+    font-family: 'ComfortaaL', 'sans-serif'
+    font-size: 1em
+    &-registration
+      background: lighten($accent-color, 8%)
+    &-sign
+      background: darken($accent-color, 10%)
+  &-footer
+    width: 15vw
+    color: white
+    height: 5.5vh
+    margin-top: 3vh
+    font-family: 'ComfortaaL', 'sans-serif'
+    font-size: 1em
+    padding-top: 1.5vh
+    &-cancel
+      margin-left: 5vw
       cursor: pointer
-      transition: .5s ease
+      background: darken($accent-color, 40%)
+      transition: .3s ease
       &:hover
-        color: $modal-close
-        transition: .5s ease
+        transition: .3s ease
+        background: lighten(darken($accent-color, 40%), 5%)
       &:active
-        color: darken($modal-close, 10%)
-    &-ok
-      border-radius: 3px
-      margin-top: 3vh
-      width: 10vw
-      height: 5vh
-      color: darken($accent-color, 7%)
+        transition: .3s ease
+        background: darken($accent-color, 45%)
+    &-okay
+      background: $modal-okay
       cursor: pointer
-      transition: .5s ease
-      border: 1px solid darken($accent-color, 10%)
-      &:hover // <- ПОТОМ УБРАТЬ ЭТО
-        color: $accent-color
-        transition: .5s ease
-        background: $modal-ok
-        border: 1px solid $modal-ok
+      transition: .3s ease
+      &:hover
+        transition: .3s ease
+        background: lighten($modal-okay, 5%)
       &:active
-        color: $accent-color
-        transition: .5s ease
-        background: darken($modal-ok, 7%)
-        border: 1px solid darken($modal-ok, 7%)
+        transition: .3s ease
+        background: darken($modal-okay, 5%)
   &-content
     text-align: center
+
+
 
 
 ///////////////////////// LEFT MENU //////////////

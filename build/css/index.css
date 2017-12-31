@@ -968,28 +968,64 @@ body {
   transform: translate(-50%, -50%);
   background: #f4f4f4;
   outline: none;
-  border-radius: 5px;
-  width: 30vw;
+  width: 40vw;
   height: 50vh; }
-  .modal-button-container {
-    text-align: right;
-    padding-bottom: 2vh;
-    margin-right: 1vw;
-    margin-top: 1vh; }
-  .modal-button-close {
-    color: #cecece;
-    cursor: pointer;
-    transition: .5s ease; }
-    .modal-button-close:hover {
-      color: #5d2532;
-      transition: .5s ease; }
-  .modal-button-ok {
-    color: #cecece;
-    cursor: pointer;
-    transition: .5s ease; }
-    .modal-button-ok:hover {
-      color: green;
-      transition: .5s ease; }
+  .modal-pack {
+    margin-top: 3vh; }
+  .modal-input {
+    text-align: center;
+    border: 0;
+    border-bottom: 1px #c7c7c7 solid;
+    background: #f4f4f4;
+    outline: none;
+    width: 30vw;
+    height: 5vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 1.2em;
+    font-family: 'ComfortaaR', 'sans-serif'; }
+  .modal-button {
+    margin: 0 auto;
+    text-align: center; }
+  .modal-header {
+    color: #0c0c0c;
+    padding-top: 3vh;
+    height: 8vh;
+    font-family: 'ComfortaaL', 'sans-serif';
+    font-size: 1em; }
+    .modal-header-registration {
+      background: #f4f4f4; }
+    .modal-header-sign {
+      background: #c7c7c7; }
+  .modal-footer {
+    width: 15vw;
+    color: white;
+    height: 5.5vh;
+    margin-top: 3vh;
+    font-family: 'ComfortaaL', 'sans-serif';
+    font-size: 1em;
+    padding-top: 1.5vh; }
+    .modal-footer-cancel {
+      margin-left: 5vw;
+      cursor: pointer;
+      background: #7a7a7a;
+      transition: .3s ease; }
+      .modal-footer-cancel:hover {
+        transition: .3s ease;
+        background: #878787; }
+      .modal-footer-cancel:active {
+        transition: .3s ease;
+        background: #6d6d6d; }
+    .modal-footer-okay {
+      background: #38803e;
+      cursor: pointer;
+      transition: .3s ease; }
+      .modal-footer-okay:hover {
+        transition: .3s ease;
+        background: #409247; }
+      .modal-footer-okay:active {
+        transition: .3s ease;
+        background: #306e35; }
   .modal-content {
     text-align: center; }
 
@@ -3666,7 +3702,7 @@ body {
     .home-main-masonry-border {
       position: relative;
       z-index: 99;
-      margin-top: -8vh;
+      margin-top: -9vh;
       background: #f7f7f7;
       height: 15vh; }
   .home-main-examples img {
