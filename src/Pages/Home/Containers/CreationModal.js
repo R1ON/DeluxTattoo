@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Icon } from 'react-fa';
 import { Row, Col } from 'reactstrap';
 import Modal from 'react-modal';
 

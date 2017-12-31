@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
+import { Icon } from 'react-fa';
 
 import { MENU_LINKS } from '../../../Constants';
 
@@ -37,6 +38,10 @@ class HeaderComponent extends Component {
             <p className="home-header-button">
               SING IN
             </p>
+          </Col>
+
+          <Col md={12}>
+            <Icon className="home-header-down" name="angle-double-down" />
           </Col>
         </Row>
       </div>

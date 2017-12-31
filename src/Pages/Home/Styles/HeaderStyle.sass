@@ -37,6 +37,19 @@
     margin-left: -3vw
     height: 100vh
     width: 108vw
+    &-down
+      color: $accent-color
+      cursor: pointer
+      margin-top: 25vh
+      animation: moveDown infinite 5s
+      transition: .5s ease
+      &:hover
+        color: darken($accent-color, 20%)
+        animation: none
+        transition: 1s ease
+      &:active
+        margin-top: 27vh
+        transition: .3s linear
     div
       color: $main-color
       margin-top: 2vh
@@ -57,7 +70,7 @@
         margin-left: 2vw
         color: $main-color
         text-decoration: none
-        border-bottom: 0px solid $main-color
+        border-bottom: 0 solid $main-color
         transition: .1s ease
         &:first-child
           margin-left: 8vw
@@ -106,7 +119,7 @@
       a
         color: $second-color
         font-family: 'ComfortaaB', 'sans-serif'
-        border-bottom: 0px solid $second-color
+        border-bottom: 0 solid $second-color
         transition: .1s ease
         &:hover
           text-decoration: none
@@ -167,13 +180,28 @@
     font-size: 2em
     margin-bottom: 7vh
     color: $accent-color
-    border: 0px solid $main-lighten-color !important
+    border: 0 solid $main-lighten-color !important
     background: $second-color
     &:hover
       background: lighten($second-color, 10%)
       opacity: 1
     &:active
       background: darken($second-color, 5%)
+
+
+@keyframes moveDown
+  70%
+    margin-top: 25vh
+  76%
+    margin-top: 23vh
+  82%
+    margin-top: 26.5vh
+  88%
+    margin-top: 24vh
+  94%
+    margin-top: 25.5vh
+  100%
+    margin-top: 25vh
 
 
 @import "../../../Assets/sass/media"
