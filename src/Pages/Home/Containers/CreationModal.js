@@ -43,28 +43,28 @@ class CreationModal extends Component {
         </div>
 
         <div className="modal-content">
-          <div>
+          <div className="modal-pack">
             <span className="modal-label">LOGIN</span>
             <br />
-            <input/>
+            <input className="modal-input"/>
           </div>
 
-          <div>
+          <div className="modal-pack">
             <span className="modal-label">MAIL</span>
             <br />
-            <input/>
+            <input className="modal-input"/>
           </div>
 
-          <div>
+          <div className="modal-pack">
             <span className="modal-label">PASSWORD</span>
             <br />
-            <input/>
+            <input type="password" className="modal-input"/>
           </div>
 
-          <div>
+          <div className="modal-pack">
             <span className="modal-label">CONFIRM PASSWORD</span>
             <br />
-            <input/>
+            <input type="password" className="modal-input"/>
           </div>
 
           <Icon
