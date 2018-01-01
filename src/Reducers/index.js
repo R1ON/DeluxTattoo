@@ -2,10 +2,10 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
 import {
-  homeReducers
+  HomeReducers
 } from '../Pages/Home';
 
 export default combineReducers({
   routing: routerReducer,
-  homeReducers
+  HomeReducers
 });

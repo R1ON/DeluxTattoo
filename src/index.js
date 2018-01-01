@@ -11,11 +11,11 @@ import icoFavicon from './Assets/img/fav.ico';
 
 import './Assets/sass/main.sass';
 
-import rootReducers from './Reducers';
+import RootReducers from './Reducers';
 
 import Home from './Pages/Home';
 
-const store = createStore(rootReducers, composeWithDevTools(
+const store = createStore(RootReducers, composeWithDevTools(
 	applyMiddleware(thunk)
 ));
 

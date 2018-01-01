@@ -11,7 +11,7 @@ const overlayBackground = {
   overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }
 };
 
-class CreationModal extends Component {
+class RegistrationModal extends Component {
   constructor(props) {
     super(props);
 
@@ -61,7 +61,7 @@ class CreationModal extends Component {
         </div>
 
         <Row className="modal-button">
-          <Col md={6} className="modal-footer modal-footer-cancel">
+          <Col md={6} onClick={this.onCloseModal} className="modal-footer modal-footer-cancel">
             Cancel
           </Col>
           <Col md={6} className="modal-footer modal-footer-okay">
@@ -76,7 +76,7 @@ class CreationModal extends Component {
 
 function mapStateToProps(state) {
   return {
-    isOpen: state.homeReducers.RegistrationReducer.isOpen
+    isOpen: state.HomeReducers.RegistrationReducer.isOpen
   }
 };
 
@@ -86,4 +86,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreationModal);
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationModal);

@@ -8,16 +8,14 @@ import '../Styles/HeaderStyle.sass'
 
 class HeaderComponent extends Component {
   render() {
+    const { styles, onMouseMove, onBottomScroll } = this.props;
+
     return (
       <div>
-        <Row className="header-menu">
-
-        </Row>
-
         <Row
           className="home-header"
-          style={this.props.styles}
-          onMouseMove={this.props.onMouseMove}
+          style={styles}
+          onMouseMove={onMouseMove}
         >
           <Col md={4}>
             <div className="home-header-logo">
@@ -41,9 +39,28 @@ class HeaderComponent extends Component {
           </Col>
 
           <Col md={12}>
-            <Icon className="home-header-down" name="angle-double-down" />
+            <Icon
+              className="home-header-down"
+              name="angle-double-down"
+              onClick={() => onBottomScroll(this.mainTitle)}
+            />
           </Col>
         </Row>
+
+        <div className="home-main">
+          <Row>
+            <Col md={12}>
+              <div className="home-main-title" ref={(title) => { this.mainTitle = title }}>
+                ABOUT US
+              </div>
+            </Col>
+            <Col md={12}>
+              <div className="home-main-tagline">
+                Briefly about our studio
+              </div>
+            </Col>
+          </Row>
+        </div>
       </div>
     );
   }

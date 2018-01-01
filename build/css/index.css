@@ -969,9 +969,9 @@ body {
   background: #f4f4f4;
   outline: none;
   width: 40vw;
-  height: 50vh; }
+  height: 45vh; }
   .modal-pack {
-    margin-top: 3vh; }
+    margin-top: 2vh; }
   .modal-input {
     text-align: center;
     border: 0;
@@ -1000,11 +1000,11 @@ body {
   .modal-footer {
     width: 15vw;
     color: white;
-    height: 5.5vh;
-    margin-top: 3vh;
+    height: 5vh;
+    margin-top: 2vh;
     font-family: 'ComfortaaL', 'sans-serif';
     font-size: 1em;
-    padding-top: 1.5vh; }
+    padding-top: 1.3vh; }
     .modal-footer-cancel {
       margin-left: 5vw;
       cursor: pointer;
@@ -1074,6 +1074,18 @@ body {
   color: #E0E0E0;
   font-size: 2.1vw;
   text-align: center; }
+
+::-webkit-input-placeholder {
+  text-align: left; }
+
+::-moz-placeholder {
+  text-align: left; }
+
+::-moz-placeholder {
+  text-align: left; }
+
+::-ms-input-placeholder {
+  text-align: left; }
 
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */
@@ -3593,6 +3605,19 @@ body {
   margin-left: -3vw;
   height: 100vh;
   width: 108vw; }
+  .home-header-down {
+    color: #E0E0E0;
+    cursor: pointer;
+    margin-top: 25vh;
+    animation: moveDown infinite 5s;
+    transition: .5s ease; }
+    .home-header-down:hover {
+      color: #adadad;
+      animation: none;
+      transition: 1s ease; }
+    .home-header-down:active {
+      margin-top: 27vh;
+      transition: .3s linear; }
   .home-header div {
     color: #0c0c0c;
     margin-top: 2vh;
@@ -3613,7 +3638,7 @@ body {
       margin-left: 2vw;
       color: #0c0c0c;
       text-decoration: none;
-      border-bottom: 0px solid #0c0c0c;
+      border-bottom: 0 solid #0c0c0c;
       transition: .1s ease; }
       .home-header-link a:first-child {
         margin-left: 8vw; }
@@ -3663,7 +3688,7 @@ body {
     .home-main-tagline a {
       color: #5d2532;
       font-family: 'ComfortaaB', 'sans-serif';
-      border-bottom: 0px solid #5d2532;
+      border-bottom: 0 solid #5d2532;
       transition: .1s ease; }
       .home-main-tagline a:hover {
         text-decoration: none;
@@ -3681,7 +3706,12 @@ body {
       font-family: 'ComfortaaB', 'sans-serif';
       font-size: 1.5em;
       padding-top: 1.3vh;
-      padding-bottom: 1.3vh; }
+      padding-bottom: 1.3vh;
+      transition: .3s; }
+      .home-main-icon-title:hover {
+        animation: moveLeftRight .3s ease;
+        color: lightgray;
+        transition: .3s; }
     .home-main-icon-about {
       color: #8f8f8f;
       margin: 0 auto !important;
@@ -3724,13 +3754,33 @@ body {
     font-size: 2em;
     margin-bottom: 7vh;
     color: #E0E0E0;
-    border: 0px solid #1F1F1F !important;
+    border: 0 solid #1F1F1F !important;
     background: #5d2532; }
     .importantly-button:hover {
       background: #813446;
       opacity: 1; }
     .importantly-button:active {
       background: #4b1e28; }
+
+@keyframes moveDown {
+  70% {
+    margin-top: 25vh; }
+  76% {
+    margin-top: 23vh; }
+  82% {
+    margin-top: 26.5vh; }
+  88% {
+    margin-top: 24vh; }
+  94% {
+    margin-top: 25.5vh; }
+  100% {
+    margin-top: 25vh; } }
+
+@keyframes moveLeftRight {
+  0% {
+    padding-right: .3vw; }
+  50% {
+    padding-left: .3vw; } }
 
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */

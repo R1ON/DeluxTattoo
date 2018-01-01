@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
 import HomeContainer from './Containers';
-import CreationModal from './Containers/CreationModal';
+import RegistrationModal from './Containers/RegistrationModal';
 
-import homeReducers from './Reducers';
+import HomeReducers from './Reducers';
 
 const Home = () => {
   return (
       <div>
         <div className="home-container">
           <HomeContainer />
-          <CreationModal />
+          <RegistrationModal />
         </div>
       </div>
     );
@@ -18,5 +18,5 @@ const Home = () => {
 
 export {
   Home as default,
-  homeReducers
+  HomeReducers
 };

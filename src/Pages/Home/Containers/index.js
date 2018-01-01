@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router';
+import scrollToComponent from 'react-scroll-to-component';
 
 import { RegistrationAction } from '../Actions/HomeAction';
 
@@ -10,6 +10,8 @@ import HeaderComponent from '../Components/HeaderComponent';
 import MainComponent from '../Components/MainComponent';
 
 import '../Styles/HeaderStyle.sass';
+
+// import { Link } from 'react-router';
 
 class Home extends Component {
   constructor(props) {
@@ -32,6 +34,7 @@ class Home extends Component {
     };
 
     this.onModalOpen = this.onModalOpen.bind(this);
+    this.onBottomScroll = this.onBottomScroll.bind(this);
   }
 
   onMouseMoveParallaxEffect(e) {
@@ -49,6 +52,10 @@ class Home extends Component {
     this.props.RegistrationAction(!this.props.isOpen)
   }
 
+  onBottomScroll(mainTitle) {
+    scrollToComponent(mainTitle, { offset: -35 ,align: 'top', duration: 1000 });
+  }
+
   render() {
     return (
       <div>
@@ -58,8 +65,11 @@ class Home extends Component {
 
         <div className="home-container">
           <BurgerMenu />
-          <HeaderComponent styles={this.state.style} onMouseMove={this.onMouseMoveParallaxEffect} />
-
+          <HeaderComponent
+            styles={this.state.style}
+            onMouseMove={this.onMouseMoveParallaxEffect}
+            onBottomScroll={this.onBottomScroll}
+          />
           <MainComponent onModalOpen={this.onModalOpen} />
         </div>
       </div>
@@ -69,7 +79,7 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isOpen: state.homeReducers.RegistrationReducer.isOpen
+    isOpen: state.HomeReducers.RegistrationReducer.isOpen
   };
 };
 

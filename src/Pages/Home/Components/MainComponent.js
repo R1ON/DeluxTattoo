@@ -21,19 +21,6 @@ class MainComponent extends Component {
     return (
       <div className="home-main">
         <Row>
-          <Col md={12}>
-            <div className="home-main-title">
-              ABOUT US
-            </div>
-          </Col>
-          <Col md={12}>
-            <div className="home-main-tagline">
-              Briefly about our studio
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
           <Col md={4} sm={6} xs={12}>
             <Icon className="home-main-icon" size="5x" name="thumbs-up" />
             <div className="home-main-icon-title">GREAT QUALITY</div>
