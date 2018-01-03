@@ -37,7 +37,7 @@ class RegistrationModal extends Component {
           <Col md={6} className="modal-header modal-header-registration">
             Registration
           </Col>
-          <Col md={6} className="modal-header modal-header-sign modal-active">
+          <Col md={6} className="modal-header modal-header-sign modal-not-active">
             Sign in
           </Col>
         </Row>
@@ -76,7 +76,7 @@ class RegistrationModal extends Component {
 
 function mapStateToProps(state) {
   return {
-    isOpenRegistration: state.HomeReducers.isOpenRegistrationModalReducer.isOpenRegistration
+    isOpenRegistration: state.HomeReducers.isOpenModalReducer.isOpenRegistration
   }
 };
 

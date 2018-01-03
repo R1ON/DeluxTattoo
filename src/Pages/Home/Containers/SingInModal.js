@@ -34,7 +34,7 @@ class SingInModal extends Component {
         ariaHideApp={false}
       >
         <Row className="modal-button">
-          <Col md={6} className="modal-header modal-header-registration modal-active">
+          <Col md={6} className="modal-header modal-header-registration modal-not-active">
             Registration
           </Col>
           <Col md={6} className="modal-header modal-header-sign">
@@ -68,7 +68,7 @@ class SingInModal extends Component {
 
 function mapStateToProps(state) {
   return {
-    isOpenSingIn: state.HomeReducers.isOpenSingInModalReducer.isOpenSingIn
+    isOpenSingIn: state.HomeReducers.isOpenModalReducer.isOpenSingIn
   }
 };
 

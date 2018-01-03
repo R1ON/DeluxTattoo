@@ -88,8 +88,8 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isOpenRegistration: state.HomeReducers.isOpenRegistrationModalReducer.isOpenRegistration,
-    isOpenSingIn: state.HomeReducers.isOpenSingInModalReducer.isOpenSingIn
+    isOpenRegistration: state.HomeReducers.isOpenModalReducer.isOpenRegistration,
+    isOpenSingIn: state.HomeReducers.isOpenModalReducer.isOpenSingIn
   };
 };
 

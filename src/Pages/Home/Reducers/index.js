@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
 import {
-  isOpenRegistrationModalReducer,
-  isOpenSingInModalReducer
+  isOpenModalReducer
 } from './ModalReducers';
 
 export default combineReducers({
-  isOpenRegistrationModalReducer,
-  isOpenSingInModalReducer
+  isOpenModalReducer
 });
