@@ -13,17 +13,17 @@ body
   bottom: auto
   margin-right: -50%
   transform: translate(-50%, -50%)
-  background: lighten($accent-color, 8%)
+  background: white
   outline: none
   width: 40vw
-  height: 45vh
+  height: 47vh
   &-pack
     margin-top: 2vh
   &-input
     text-align: center
     border: 0
-    border-bottom: 1px darken($accent-color, 10%) solid
-    background: lighten($accent-color, 8%)
+    border-bottom: 1px $accent-color solid
+    background: white
     outline: none
     width: 30vw
     height: 5vh
@@ -31,6 +31,9 @@ body
     padding-right: 1vw
     font-size: 1.2em
     font-family: 'ComfortaaR', 'sans-serif'
+    &:focus
+      transition: .5s
+      border-bottom: 2px $second-color solid
   &-button
     margin: 0 auto
     text-align: center
@@ -40,15 +43,14 @@ body
     height: 8vh
     font-family: 'ComfortaaL', 'sans-serif'
     font-size: 1em
-    &-registration
-      background: lighten($accent-color, 8%)
-    &-sign
-      background: darken($accent-color, 10%)
+    background: white
+  &-active
+    background: $accent-color
   &-footer
     width: 15vw
     color: white
     height: 5vh
-    margin-top: 2vh
+    margin-top: 3vh
     font-family: 'ComfortaaL', 'sans-serif'
     font-size: 1em
     padding-top: 1.3vh
@@ -57,6 +59,8 @@ body
       cursor: pointer
       background: darken($accent-color, 40%)
       transition: .3s ease
+      border-bottom-left-radius: 3px
+      border-top-left-radius: 3px
       &:hover
         transition: .3s ease
         background: lighten(darken($accent-color, 40%), 5%)
@@ -64,17 +68,22 @@ body
         transition: .3s ease
         background: darken($accent-color, 45%)
     &-okay
-      background: $modal-okay
+      border-bottom-right-radius: 3px
+      border-top-right-radius: 3px
+      background: darken($modal-okay, 5%)
       cursor: pointer
       transition: .3s ease
       &:hover
         transition: .3s ease
-        background: lighten($modal-okay, 5%)
+        background: lighten($modal-okay, 2%)
       &:active
         transition: .3s ease
-        background: darken($modal-okay, 5%)
+        background: darken($modal-okay, 7%)
   &-content
     text-align: center
+
+.sing-modal
+  height: 35vh
 
 
 

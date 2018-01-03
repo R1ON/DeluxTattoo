@@ -966,17 +966,17 @@ body {
   bottom: auto;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  background: #f4f4f4;
+  background: white;
   outline: none;
   width: 40vw;
-  height: 45vh; }
+  height: 47vh; }
   .modal-pack {
     margin-top: 2vh; }
   .modal-input {
     text-align: center;
     border: 0;
-    border-bottom: 1px #c7c7c7 solid;
-    background: #f4f4f4;
+    border-bottom: 1px #E0E0E0 solid;
+    background: white;
     outline: none;
     width: 30vw;
     height: 5vh;
@@ -984,6 +984,9 @@ body {
     padding-right: 1vw;
     font-size: 1.2em;
     font-family: 'ComfortaaR', 'sans-serif'; }
+    .modal-input:focus {
+      transition: .5s;
+      border-bottom: 2px #5d2532 solid; }
   .modal-button {
     margin: 0 auto;
     text-align: center; }
@@ -992,16 +995,15 @@ body {
     padding-top: 3vh;
     height: 8vh;
     font-family: 'ComfortaaL', 'sans-serif';
-    font-size: 1em; }
-    .modal-header-registration {
-      background: #f4f4f4; }
-    .modal-header-sign {
-      background: #c7c7c7; }
+    font-size: 1em;
+    background: white; }
+  .modal-active {
+    background: #E0E0E0; }
   .modal-footer {
     width: 15vw;
     color: white;
     height: 5vh;
-    margin-top: 2vh;
+    margin-top: 3vh;
     font-family: 'ComfortaaL', 'sans-serif';
     font-size: 1em;
     padding-top: 1.3vh; }
@@ -1009,7 +1011,9 @@ body {
       margin-left: 5vw;
       cursor: pointer;
       background: #7a7a7a;
-      transition: .3s ease; }
+      transition: .3s ease;
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px; }
       .modal-footer-cancel:hover {
         transition: .3s ease;
         background: #878787; }
@@ -1017,17 +1021,22 @@ body {
         transition: .3s ease;
         background: #6d6d6d; }
     .modal-footer-okay {
-      background: #38803e;
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+      background: #24b587;
       cursor: pointer;
       transition: .3s ease; }
       .modal-footer-okay:hover {
         transition: .3s ease;
-        background: #409247; }
+        background: #2ad39d; }
       .modal-footer-okay:active {
         transition: .3s ease;
-        background: #306e35; }
+        background: #22ac81; }
   .modal-content {
     text-align: center; }
+
+.sing-modal {
+  height: 35vh; }
 
 .outer-container {
   margin-left: -2vw; }
@@ -3738,6 +3747,38 @@ body {
   .home-main-examples img {
     width: 23vw;
     padding: 5px; }
+  .home-main-examples:hover {
+    cursor: pointer; }
+    .home-main-examples:hover::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: black;
+      opacity: .5;
+      width: 100%;
+      animation: heightUpToDown .5s;
+      border: 5px solid #f7f7f7;
+      height: 100%; }
+    .home-main-examples:hover::after {
+      content: "";
+      position: absolute;
+      top: 37%;
+      left: 40%;
+      background: url(../images/glass.png) no-repeat;
+      background-size: 20%;
+      width: 100%;
+      height: 100%;
+      animation: opacityGlass 1s; }
+  .home-main-examples:not(:hover)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: heightDownToUp 1s;
+    border: 5px solid #f7f7f7;
+    height: 100%; }
 
 .importantly {
   background: white; }
@@ -3761,6 +3802,41 @@ body {
       opacity: 1; }
     .importantly-button:active {
       background: #4b1e28; }
+
+@keyframes opacityGlass {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes heightUpToDown {
+  0% {
+    opacity: 0;
+    height: 0;
+    border-bottom: 5px solid black; }
+  50% {
+    opacity: .5; }
+  90% {
+    border-bottom: 0 solid black; }
+  100% {
+    height: 100%;
+    border-bottom: 5px solid #f7f7f7; } }
+
+@keyframes heightDownToUp {
+  0% {
+    background: black;
+    height: 100%;
+    opacity: .5;
+    border-bottom: 5px solid #f7f7f7; }
+  10% {
+    border-bottom: 0 solid black; }
+  50% {
+    opacity: .5; }
+  100% {
+    background: black;
+    opacity: 0;
+    height: 0;
+    border-bottom: 5px solid black; } }
 
 @keyframes moveDown {
   70% {

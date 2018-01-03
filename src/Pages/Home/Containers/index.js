@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import scrollToComponent from 'react-scroll-to-component';
 
-import { RegistrationAction } from '../Actions/HomeAction';
+import {
+  isOpenRegistrationModalAction,
+  isOpenSingInModalAction
+} from '../Actions/ModalActions';
 
 import BurgerMenu from '../../../Components/BurgerMenu';
 
@@ -33,7 +36,8 @@ class Home extends Component {
       this.setState({ display: 'none' })
     };
 
-    this.onModalOpen = this.onModalOpen.bind(this);
+    this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
+    this.onSingInModalOpen = this.onSingInModalOpen.bind(this);
     this.onBottomScroll = this.onBottomScroll.bind(this);
   }
 
@@ -48,8 +52,12 @@ class Home extends Component {
     })
   }
 
-  onModalOpen() {
-    this.props.RegistrationAction(!this.props.isOpen)
+  onRegistrationModalOpen() {
+    this.props.isOpenRegistrationModalAction(!this.props.isOpenRegistration)
+  }
+
+  onSingInModalOpen() {
+    this.props.isOpenSingInModalAction(!this.props.isOpenSingIn)
   }
 
   onBottomScroll(mainTitle) {
@@ -69,8 +77,9 @@ class Home extends Component {
             styles={this.state.style}
             onMouseMove={this.onMouseMoveParallaxEffect}
             onBottomScroll={this.onBottomScroll}
+            onModalOpen={this.onSingInModalOpen}
           />
-          <MainComponent onModalOpen={this.onModalOpen} />
+          <MainComponent onModalOpen={this.onRegistrationModalOpen} />
         </div>
       </div>
     );
@@ -79,14 +88,16 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isOpen: state.HomeReducers.RegistrationReducer.isOpen
+    isOpenRegistration: state.HomeReducers.isOpenRegistrationModalReducer.isOpenRegistration,
+    isOpenSingIn: state.HomeReducers.isOpenSingInModalReducer.isOpenSingIn
   };
 };
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    RegistrationAction: (isOpen) => dispatch(RegistrationAction(isOpen))
+    isOpenRegistrationModalAction: (isOpenRegistration) => dispatch(isOpenRegistrationModalAction(isOpenRegistration)),
+    isOpenSingInModalAction: (isOpenSingIn) => dispatch(isOpenSingInModalAction(isOpenSingIn))
   };
 };
 

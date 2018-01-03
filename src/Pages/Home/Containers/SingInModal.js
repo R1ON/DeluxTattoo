@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import Modal from 'react-modal';
 
-import { isOpenRegistrationModalAction } from '../Actions/ModalActions';
+import { isOpenSingInModalAction } from '../Actions/ModalActions';
 
 import '../Styles/HeaderStyle.sass';
 
@@ -11,7 +11,7 @@ const overlayBackground = {
   overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }
 };
 
-class RegistrationModal extends Component {
+class SingInModal extends Component {
   constructor(props) {
     super(props);
 
@@ -19,44 +19,36 @@ class RegistrationModal extends Component {
   }
 
   onCloseModal() {
-    this.props.isOpenRegistrationModalAction(!this.props.isOpenRegistration)
+    this.props.isOpenSingInModalAction(!this.props.isOpenSingIn)
   }
 
   render() {
-    const { isOpenRegistration } = this.props;
+    const { isOpenSingIn } = this.props;
 
     return (
       <Modal
-        isOpen={isOpenRegistration}
+        isOpen={isOpenSingIn}
         onRequestClose={this.onCloseModal}
-        className="modal"
+        className="modal sing-modal"
         style={overlayBackground}
         ariaHideApp={false}
       >
         <Row className="modal-button">
-          <Col md={6} className="modal-header modal-header-registration">
+          <Col md={6} className="modal-header modal-header-registration modal-active">
             Registration
           </Col>
-          <Col md={6} className="modal-header modal-header-sign modal-active">
+          <Col md={6} className="modal-header modal-header-sign">
             Sign in
           </Col>
         </Row>
 
         <div className="modal-content">
           <div className="modal-pack">
-            <input placeholder="login" className="modal-input"/>
-          </div>
-
-          <div className="modal-pack">
             <input placeholder="mail" className="modal-input"/>
           </div>
 
           <div className="modal-pack">
             <input placeholder="password" type="password" className="modal-input"/>
-          </div>
-
-          <div className="modal-pack">
-            <input placeholder="confirm password" type="password" className="modal-input"/>
           </div>
         </div>
 
@@ -65,7 +57,7 @@ class RegistrationModal extends Component {
             Cancel
           </Col>
           <Col md={6} className="modal-footer modal-footer-okay">
-            Registration
+            Sing in
           </Col>
         </Row>
       </Modal>
@@ -76,14 +68,14 @@ class RegistrationModal extends Component {
 
 function mapStateToProps(state) {
   return {
-    isOpenRegistration: state.HomeReducers.isOpenRegistrationModalReducer.isOpenRegistration
+    isOpenSingIn: state.HomeReducers.isOpenSingInModalReducer.isOpenSingIn
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isOpenRegistrationModalAction: (isOpenRegistration) => dispatch(isOpenRegistrationModalAction(isOpenRegistration))
+    isOpenSingInModalAction: (isOpenSingIn) => dispatch(isOpenSingInModalAction(isOpenSingIn))
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegistrationModal);
+export default connect(mapStateToProps, mapDispatchToProps)(SingInModal);

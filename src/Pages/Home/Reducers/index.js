@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import RegistrationReducer from './RegistrationReducer';
+import {
+  isOpenRegistrationModalReducer,
+  isOpenSingInModalReducer
+} from './ModalReducers';
 
 export default combineReducers({
-  RegistrationReducer
+  isOpenRegistrationModalReducer,
+  isOpenSingInModalReducer
 });
