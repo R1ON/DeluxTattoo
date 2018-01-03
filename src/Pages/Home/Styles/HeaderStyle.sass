@@ -166,9 +166,43 @@
         margin-top: -9vh
         background: lighten($accent-color, 9%)
         height: 15vh
-    &-examples img
-      width: 23vw
-      padding: 5px
+    &-examples
+      img
+        width: 23vw
+        padding: 5px
+      &:hover
+        cursor: pointer
+        &::before
+          content: ""
+          position: absolute
+          top: 0
+          left: 0
+          background: black
+          opacity: .5
+          width: 100%
+          animation: heightUpToDown .5s
+          border: 5px solid lighten($accent-color, 9%)
+          height: 100%
+        &::after
+          content: ""
+          position: absolute
+          top: 37%
+          left: 40%
+          background: url('../../../Assets/img/glass.png') no-repeat
+          background-size: 20%
+          width: 100%
+          height: 100%
+          animation: opacityGlass 1s
+      &:not(:hover)
+        &::before
+          content: ""
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          animation: heightDownToUp 1s
+          border: 5px solid lighten($accent-color, 9%)
+          height: 100%
 
 .importantly
   background: white
@@ -193,6 +227,41 @@
     &:active
       background: darken($second-color, 5%)
 
+
+@keyframes opacityGlass
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes heightUpToDown
+  0%
+    opacity: 0
+    height: 0
+    border-bottom: 5px solid black
+  50%
+    opacity: .5
+  90%
+    border-bottom: 0 solid black
+  100%
+    height: 100%
+    border-bottom: 5px solid lighten($accent-color, 9%)
+
+@keyframes heightDownToUp
+  0%
+    background: black
+    height: 100%
+    opacity: .5
+    border-bottom: 5px solid lighten($accent-color, 9%)
+  10%
+    border-bottom: 0 solid black
+  50%
+    opacity: .5
+  100%
+    background: black
+    opacity: 0
+    height: 0
+    border-bottom: 5px solid black
 
 @keyframes moveDown
   70%
