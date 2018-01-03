@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import scrollToComponent from 'react-scroll-to-component';
 
-import {
-  isOpenRegistrationModalAction,
-  isOpenSingInModalAction
-} from '../Actions/ModalActions';
+import { isOpenModalAction } from '../Actions/ModalActions';
 
 import BurgerMenu from '../../../Components/BurgerMenu';
 
@@ -53,11 +50,11 @@ class Home extends Component {
   }
 
   onRegistrationModalOpen() {
-    this.props.isOpenRegistrationModalAction(!this.props.isOpenRegistration)
+    this.props.isOpenModalAction(!this.props.isOpenRegistration, false)
   }
 
   onSingInModalOpen() {
-    this.props.isOpenSingInModalAction(!this.props.isOpenSingIn)
+    this.props.isOpenModalAction(false, !this.props.isOpenSingIn)
   }
 
   onBottomScroll(mainTitle) {
@@ -79,7 +76,9 @@ class Home extends Component {
             onBottomScroll={this.onBottomScroll}
             onModalOpen={this.onSingInModalOpen}
           />
-          <MainComponent onModalOpen={this.onRegistrationModalOpen} />
+          <MainComponent
+            onModalOpen={this.onRegistrationModalOpen}
+          />
         </div>
       </div>
     );
@@ -96,8 +95,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isOpenRegistrationModalAction: (isOpenRegistration) => dispatch(isOpenRegistrationModalAction(isOpenRegistration)),
-    isOpenSingInModalAction: (isOpenSingIn) => dispatch(isOpenSingInModalAction(isOpenSingIn))
+    isOpenModalAction: (isOpenRegistration, isOpenSingIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSingIn))
   };
 };
 

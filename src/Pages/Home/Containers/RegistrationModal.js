@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import Modal from 'react-modal';
 
-import { isOpenRegistrationModalAction } from '../Actions/ModalActions';
+import { isOpenModalAction } from '../Actions/ModalActions';
 
 import '../Styles/HeaderStyle.sass';
 
@@ -15,11 +15,16 @@ class RegistrationModal extends Component {
   constructor(props) {
     super(props);
 
+    this.onSingInModalOpen = this.onSingInModalOpen.bind(this);
     this.onCloseModal = this.onCloseModal.bind(this);
   }
 
+  onSingInModalOpen() {
+    this.props.isOpenModalAction(false, !this.props.isOpenSingIn)
+  }
+
   onCloseModal() {
-    this.props.isOpenRegistrationModalAction(!this.props.isOpenRegistration)
+    this.props.isOpenModalAction(!this.props.isOpenRegistration, false)
   }
 
   render() {
@@ -37,7 +42,11 @@ class RegistrationModal extends Component {
           <Col md={6} className="modal-header modal-header-registration">
             Registration
           </Col>
-          <Col md={6} className="modal-header modal-header-sign modal-not-active">
+          <Col
+            md={6}
+            className="modal-header modal-header-sign modal-not-active"
+            onClick={this.onSingInModalOpen}
+          >
             Sign in
           </Col>
         </Row>
@@ -76,13 +85,14 @@ class RegistrationModal extends Component {
 
 function mapStateToProps(state) {
   return {
-    isOpenRegistration: state.HomeReducers.isOpenModalReducer.isOpenRegistration
+    isOpenRegistration: state.HomeReducers.isOpenModalReducer.isOpenRegistration,
+    isOpenSingIn: state.HomeReducers.isOpenModalReducer.isOpenSingIn
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isOpenRegistrationModalAction: (isOpenRegistration) => dispatch(isOpenRegistrationModalAction(isOpenRegistration))
+    isOpenModalAction: (isOpenRegistration, isOpenSingIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSingIn))
   }
 };
 

@@ -997,8 +997,15 @@ body {
     font-family: 'ComfortaaL', 'sans-serif';
     font-size: 1em;
     background: white; }
-  .modal-active {
-    background: #E0E0E0; }
+  .modal-not-active {
+    background: #E0E0E0;
+    cursor: pointer;
+    transition: .5s; }
+    .modal-not-active:hover {
+      transition: .5s;
+      background: #f2f2f2; }
+    .modal-not-active:active {
+      background: lightgray; }
   .modal-footer {
     width: 15vw;
     color: white;

@@ -1,6 +1,5 @@
 import {
-  IS_OPEN_REGISTRATION_MODAL,
-  IS_OPEN_SING_IN_MODAL
+  IS_OPEN_MODAL
 } from '../Constants';
 
 const initialState = {
@@ -10,11 +9,12 @@ const initialState = {
 
 export function isOpenModalReducer(state = initialState, action) {
   switch (action.type) {
-    case IS_OPEN_REGISTRATION_MODAL:
-      return { ...state, isOpenRegistration: action.isOpenRegistration };
-
-    case IS_OPEN_SING_IN_MODAL:
-      return { ...state, isOpenSingIn: action.isOpenSingIn };
+    case IS_OPEN_MODAL:
+      return {
+        ...state,
+        isOpenRegistration: action.isOpenRegistration,
+        isOpenSingIn: action.isOpenSingIn
+      };
 
     default:
       return state;

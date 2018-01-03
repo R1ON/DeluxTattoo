@@ -46,6 +46,13 @@ body
     background: white
   &-not-active
     background: $accent-color
+    cursor: pointer
+    transition: .5s
+    &:hover
+      transition: .5s
+      background: lighten($accent-color, 7%)
+    &:active
+      background: darken($accent-color, 5%)
   &-footer
     width: 15vw
     color: white

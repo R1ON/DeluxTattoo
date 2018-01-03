@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import Modal from 'react-modal';
 
-import { isOpenSingInModalAction } from '../Actions/ModalActions';
+import { isOpenModalAction } from '../Actions/ModalActions';
 
 import '../Styles/HeaderStyle.sass';
 
@@ -15,11 +15,16 @@ class SingInModal extends Component {
   constructor(props) {
     super(props);
 
+    this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
     this.onCloseModal = this.onCloseModal.bind(this);
   }
 
+  onRegistrationModalOpen() {
+    this.props.isOpenModalAction(!this.props.isOpenRegistration, false)
+  }
+
   onCloseModal() {
-    this.props.isOpenSingInModalAction(!this.props.isOpenSingIn)
+    this.props.isOpenModalAction(false, !this.props.isOpenSingIn)
   }
 
   render() {
@@ -34,7 +39,11 @@ class SingInModal extends Component {
         ariaHideApp={false}
       >
         <Row className="modal-button">
-          <Col md={6} className="modal-header modal-header-registration modal-not-active">
+          <Col
+            md={6}
+            className="modal-header modal-header-registration modal-not-active"
+            onClick={this.onRegistrationModalOpen}
+          >
             Registration
           </Col>
           <Col md={6} className="modal-header modal-header-sign">
@@ -68,13 +77,14 @@ class SingInModal extends Component {
 
 function mapStateToProps(state) {
   return {
+    isOpenRegistration: state.HomeReducers.isOpenModalReducer.isOpenRegistration,
     isOpenSingIn: state.HomeReducers.isOpenModalReducer.isOpenSingIn
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isOpenSingInModalAction: (isOpenSingIn) => dispatch(isOpenSingInModalAction(isOpenSingIn))
+    isOpenModalAction: (isOpenRegistration, isOpenSingIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSingIn))
   }
 };
 

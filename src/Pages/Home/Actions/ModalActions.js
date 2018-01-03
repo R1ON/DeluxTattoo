@@ -1,18 +1,10 @@
 import {
-  IS_OPEN_REGISTRATION_MODAL,
-  IS_OPEN_SING_IN_MODAL
+  IS_OPEN_MODAL
 } from '../Constants';
 
-export function isOpenRegistrationModalAction(isOpenRegistration) {
+export function isOpenModalAction(isOpenRegistration, isOpenSingIn) {
   return {
-    type: IS_OPEN_REGISTRATION_MODAL,
-    isOpenRegistration
-  };
-}
-
-export function isOpenSingInModalAction(isOpenSingIn) {
-  return {
-    type: IS_OPEN_SING_IN_MODAL,
-    isOpenSingIn
+    type: IS_OPEN_MODAL,
+    isOpenRegistration, isOpenSingIn
   };
 }
