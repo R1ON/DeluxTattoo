@@ -29,11 +29,14 @@ class ImageModal extends Component {
       <Modal
         isOpen={isOpenImage}
         onRequestClose={this.onCloseModal}
-        className="modal sing-modal"
+        className="modal-image"
         style={overlayBackground}
         ariaHideApp={false}
       >
-        <img src={imageSrc} />
+        <div className="modal-image-container" >
+          <img src={imageSrc} />
+        </div>
+
       </Modal>
     );
   }
