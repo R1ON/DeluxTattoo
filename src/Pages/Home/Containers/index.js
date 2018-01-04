@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import scrollToComponent from 'react-scroll-to-component';
 
-import { isOpenModalAction } from '../Actions/ModalActions';
+import {
+  isOpenModalAction,
+  isOpenImageModalAction
+} from '../Actions/ModalActions';
 
 import BurgerMenu from '../../../Components/BurgerMenu';
 
@@ -35,6 +38,8 @@ class Home extends Component {
 
     this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
     this.onSingInModalOpen = this.onSingInModalOpen.bind(this);
+    this.onImageModalOpen = this.onImageModalOpen.bind(this);
+
     this.onBottomScroll = this.onBottomScroll.bind(this);
   }
 
@@ -57,6 +62,10 @@ class Home extends Component {
     this.props.isOpenModalAction(false, !this.props.isOpenSingIn)
   }
 
+  onImageModalOpen() {
+    this.props.isOpenImageModalAction(!this.props.isOpenImage)
+  }
+
   onBottomScroll(mainTitle) {
     scrollToComponent(mainTitle, { offset: -35 ,align: 'top', duration: 1000 });
   }
@@ -77,6 +86,7 @@ class Home extends Component {
             onModalOpen={this.onSingInModalOpen}
           />
           <MainComponent
+            onImageModalOpen={this.onImageModalOpen}
             onModalOpen={this.onRegistrationModalOpen}
           />
         </div>
@@ -86,16 +96,20 @@ class Home extends Component {
 };
 
 const mapStateToProps = (state) => {
-  return {
-    isOpenRegistration: state.HomeReducers.isOpenModalReducer.isOpenRegistration,
-    isOpenSingIn: state.HomeReducers.isOpenModalReducer.isOpenSingIn
-  };
+  const {
+    isOpenRegistration,
+    isOpenSingIn,
+    isOpenImage
+  } = state.HomeReducers.isOpenModalReducer;
+
+  return { isOpenRegistration, isOpenSingIn, isOpenImage };
 };
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isOpenModalAction: (isOpenRegistration, isOpenSingIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSingIn))
+    isOpenModalAction: (isOpenRegistration, isOpenSingIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSingIn)),
+    isOpenImageModalAction: (isOpenImage) => dispatch(isOpenImageModalAction(isOpenImage))
   };
 };
 

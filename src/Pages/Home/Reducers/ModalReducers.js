@@ -1,10 +1,12 @@
 import {
-  IS_OPEN_MODAL
+  IS_OPEN_MODAL,
+  IS_OPEN_IMAGE_MODAL
 } from '../Constants';
 
 const initialState = {
   isOpenRegistration: false,
-  isOpenSingIn: false
+  isOpenSingIn: false,
+  isOpenImage: false
 };
 
 export function isOpenModalReducer(state = initialState, action) {
@@ -14,6 +16,12 @@ export function isOpenModalReducer(state = initialState, action) {
         ...state,
         isOpenRegistration: action.isOpenRegistration,
         isOpenSingIn: action.isOpenSingIn
+      };
+
+    case IS_OPEN_IMAGE_MODAL:
+      return {
+        ...state,
+        isOpenImage: action.isOpenImage
       };
 
     default:

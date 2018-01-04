@@ -84,10 +84,12 @@ class RegistrationModal extends Component {
 
 
 function mapStateToProps(state) {
-  return {
-    isOpenRegistration: state.HomeReducers.isOpenModalReducer.isOpenRegistration,
-    isOpenSingIn: state.HomeReducers.isOpenModalReducer.isOpenSingIn
-  }
+  const {
+    isOpenRegistration,
+    isOpenSingIn
+  } = state.HomeReducers.isOpenModalReducer;
+
+  return { isOpenRegistration, isOpenSingIn };
 };
 
 const mapDispatchToProps = (dispatch) => {

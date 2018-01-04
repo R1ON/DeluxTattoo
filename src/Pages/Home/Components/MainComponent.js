@@ -14,9 +14,26 @@ const IMPORTANTLY_ABOUT = [
   then you need to register on our site`
 ];
 
+const MASONRY_IMAGES = [
+  require(`../../../Assets/img/WorkExamples/1.jpg`),
+  require(`../../../Assets/img/WorkExamples/2.jpg`),
+  require(`../../../Assets/img/WorkExamples/3.jpg`),
+  require(`../../../Assets/img/WorkExamples/4.jpg`),
+  require(`../../../Assets/img/WorkExamples/5.jpg`),
+  require(`../../../Assets/img/WorkExamples/6.jpg`),
+  require(`../../../Assets/img/WorkExamples/7.jpg`),
+  require(`../../../Assets/img/WorkExamples/8.jpg`),
+  require(`../../../Assets/img/WorkExamples/9.jpg`),
+  require(`../../../Assets/img/WorkExamples/10.jpg`),
+  require(`../../../Assets/img/WorkExamples/11.jpg`),
+  require(`../../../Assets/img/WorkExamples/12.jpg`),
+  require(`../../../Assets/img/WorkExamples/13.jpg`),
+  require(`../../../Assets/img/WorkExamples/14.jpg`)
+];
+
 class MainComponent extends Component {
   render() {
-    const { onModalOpen } = this.props;
+    const { onImageModalOpen, onModalOpen } = this.props;
 
     return (
       <div className="home-main">
@@ -76,20 +93,17 @@ class MainComponent extends Component {
         </Row>
 
         <Masonry className="home-main-masonry">
-          <div className="home-main-examples"><img src={require('../../../Assets/img/WorkExamples/1.jpg')} /></div>
-          <div className="home-main-examples"><img src={require('../../../Assets/img/WorkExamples/2.jpg')} /></div>
-          <div className="home-main-examples"><img src={require('../../../Assets/img/WorkExamples/3.jpg')} /></div>
-          <div className="home-main-examples sm-disable"><img src={require('../../../Assets/img/WorkExamples/4.jpg')} /></div>
-          <div className="home-main-examples sm-disable"><img src={require('../../../Assets/img/WorkExamples/5.jpg')} /></div>
-          <div className="home-main-examples"><img src={require('../../../Assets/img/WorkExamples/6.jpg')} /></div>
-          <div className="home-main-examples sm-disable"><img src={require('../../../Assets/img/WorkExamples/7.jpg')} /></div>
-          <div className="home-main-examples "><img src={require('../../../Assets/img/WorkExamples/8.jpg')} /></div>
-          <div className="home-main-examples xs-disable"><img src={require('../../../Assets/img/WorkExamples/9.jpg')} /></div>
-          <div className="home-main-examples"><img src={require('../../../Assets/img/WorkExamples/10.jpg')} /></div>
-          <div className="home-main-examples sm-disable"><img src={require('../../../Assets/img/WorkExamples/11.jpg')} /></div>
-          <div className="home-main-examples xs-disable"><img src={require('../../../Assets/img/WorkExamples/12.jpg')} /></div>
-          <div className="home-main-examples sm-disable"><img src={require('../../../Assets/img/WorkExamples/13.jpg')} /></div>
-          <div className="home-main-examples xs-disable"><img src={require('../../../Assets/img/WorkExamples/14.jpg')} /></div>
+          {MASONRY_IMAGES.map((image, index) => {
+            return (
+              <div
+                className="home-main-examples"
+                key={index}
+                onClick={onImageModalOpen}
+              >
+                <img src={image} />
+              </div>
+            );
+          })}
         </Masonry>
         <div className="home-main-masonry-border"></div>
 
@@ -130,3 +144,13 @@ class MainComponent extends Component {
 };
 
 export default MainComponent;
+
+  // 4 sm-disable
+  // 5 sm-disable
+  // 7 sm-disable
+  // 9 xs-disable
+  // 11 sm-disable
+  // 12 xs-disable
+  // 13 sm-disable
+  // 14 xs-disable
+
