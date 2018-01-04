@@ -62,8 +62,10 @@ class Home extends Component {
     this.props.isOpenModalAction(false, !this.props.isOpenSingIn)
   }
 
-  onImageModalOpen() {
-    this.props.isOpenImageModalAction(!this.props.isOpenImage)
+  onImageModalOpen(event) {
+    const imageSrc = event.target.querySelectorAll("img")[0].attributes[0].nodeValue;
+
+    this.props.isOpenImageModalAction(!this.props.isOpenImage, imageSrc)
   }
 
   onBottomScroll(mainTitle) {
@@ -109,7 +111,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     isOpenModalAction: (isOpenRegistration, isOpenSingIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSingIn)),
-    isOpenImageModalAction: (isOpenImage) => dispatch(isOpenImageModalAction(isOpenImage))
+    isOpenImageModalAction: (isOpenImage, imageSrc) => dispatch(isOpenImageModalAction(isOpenImage, imageSrc))
   };
 };
 

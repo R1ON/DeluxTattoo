@@ -10,9 +10,9 @@ export function isOpenModalAction(isOpenRegistration, isOpenSingIn) {
   };
 }
 
-export function isOpenImageModalAction(isOpenImage) {
+export function isOpenImageModalAction(isOpenImage, imageSrc) {
   return {
     type: IS_OPEN_IMAGE_MODAL,
-    isOpenImage
+    isOpenImage, imageSrc
   };
 }

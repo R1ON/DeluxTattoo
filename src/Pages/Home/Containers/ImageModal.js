@@ -23,7 +23,7 @@ class ImageModal extends Component {
   }
 
   render() {
-    const { isOpenImage } = this.props;
+    const { isOpenImage, imageSrc } = this.props;
 
     return (
       <Modal
@@ -33,7 +33,7 @@ class ImageModal extends Component {
         style={overlayBackground}
         ariaHideApp={false}
       >
-       IMAGI MODEL
+        <img src={imageSrc} />
       </Modal>
     );
   }
@@ -42,10 +42,11 @@ class ImageModal extends Component {
 
 function mapStateToProps(state) {
   const {
-    isOpenImage
+    isOpenImage,
+    imageSrc
   } = state.HomeReducers.isOpenModalReducer;
 
-  return { isOpenImage };
+  return { isOpenImage, imageSrc };
 };
 
 const mapDispatchToProps = (dispatch) => {
