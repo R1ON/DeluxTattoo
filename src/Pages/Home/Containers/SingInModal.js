@@ -24,7 +24,7 @@ class SingInModal extends Component {
   }
 
   onCloseModal() {
-    this.props.isOpenModalAction(false, !this.props.isOpenSingIn)
+    this.props.isOpenModalAction(false, !this.props.isOpenSingIn);
   }
 
   render() {

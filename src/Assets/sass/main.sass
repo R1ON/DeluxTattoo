@@ -91,22 +91,39 @@ body
 
 
 .modal-image
-  width: 80vw
-  height: 90vh
-  margin-left: 10vw
-  margin-top: 5vh
   outline: none
+  width: 100vw
+  height: 100vh
+  background: red
   &-container
     display: flex
     justify-content: center
     align-items: center
+    margin-top: -100vh
     width: 100%
     height: 100%
     img
       max-width: 80vw
       max-height: 90vh
-
-
+  &-left
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 10vw
+    font-size: 3em
+    height: 100vh
+    background: green
+  &-right
+    float: right
+    margin-top: -100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 11vw
+    height: 100vh
+    background: blue
+  &-close
+    height: 100vh
 
 
 ///////////////////////// LEFT MENU //////////////

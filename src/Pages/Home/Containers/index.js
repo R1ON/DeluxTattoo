@@ -65,7 +65,7 @@ class Home extends Component {
   onImageModalOpen(event) {
     const imageSrc = event.target.querySelectorAll("img")[0].attributes[0].nodeValue;
 
-    this.props.isOpenImageModalAction(!this.props.isOpenImage, imageSrc)
+    this.props.isOpenImageModalAction(!this.props.isOpenImage, imageSrc);
   }
 
   onBottomScroll(mainTitle) {

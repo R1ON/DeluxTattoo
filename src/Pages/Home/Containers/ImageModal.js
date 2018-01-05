@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Row, Col } from 'reactstrap';
 import Modal from 'react-modal';
+import { Icon } from 'react-fa';
 
 import { isOpenImageModalAction } from '../Actions/ModalActions';
 
@@ -18,8 +18,10 @@ class ImageModal extends Component {
     this.onCloseModal = this.onCloseModal.bind(this);
   }
 
-  onCloseModal() {
-    this.props.isOpenImageModalAction(!this.props.isOpenImage)
+  onCloseModal(event) {
+    event.target.tagName === 'DIV'
+      ? this.props.isOpenImageModalAction(!this.props.isOpenImage)
+      : () => {}
   }
 
   render() {
@@ -28,15 +30,24 @@ class ImageModal extends Component {
     return (
       <Modal
         isOpen={isOpenImage}
-        onRequestClose={this.onCloseModal}
         className="modal-image"
         style={overlayBackground}
         ariaHideApp={false}
       >
-        <div className="modal-image-container" >
-          <img src={imageSrc} />
+        <div className="modal-image-left">
+          <Icon name="angle-left" />
+        </div>
+        <div className="modal-image-right">
+          <Icon name="angle-right" />
         </div>
 
+
+        <div className="modal-image-container" onClick={this.onCloseModal}>
+          <img src={imageSrc} />
+          <div className="modal-image-close">
+            <Icon name="close" />
+          </div>
+        </div>
       </Modal>
     );
   }

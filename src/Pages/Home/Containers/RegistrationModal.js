@@ -20,11 +20,11 @@ class RegistrationModal extends Component {
   }
 
   onSingInModalOpen() {
-    this.props.isOpenModalAction(false, !this.props.isOpenSingIn)
+    this.props.isOpenModalAction(false, !this.props.isOpenSingIn);
   }
 
   onCloseModal() {
-    this.props.isOpenModalAction(!this.props.isOpenRegistration, false)
+    this.props.isOpenModalAction(!this.props.isOpenRegistration, false);
   }
 
   render() {
