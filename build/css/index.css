@@ -1043,11 +1043,9 @@ body {
   height: 35vh; }
 
 .modal-image {
-  width: 80vw;
-  height: 90vh;
-  margin-left: 10vw;
-  margin-top: 5vh;
-  outline: none; }
+  outline: none;
+  width: 100vw;
+  height: 100vh; }
   .modal-image-container {
     display: flex;
     justify-content: center;
@@ -1057,6 +1055,45 @@ body {
     .modal-image-container img {
       max-width: 80vw;
       max-height: 90vh; }
+  .modal-image-button {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 4em;
+    color: #E0E0E0;
+    transition: .5s ease;
+    cursor: pointer; }
+    .modal-image-button-left {
+      left: 0;
+      width: 10vw; }
+    .modal-image-button-right {
+      left: 89vw;
+      width: 11vw; }
+    .modal-image-button:hover {
+      transition: .5s ease;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fafafa; }
+    .modal-image-button:active {
+      transition: .5s ease;
+      background: rgba(0, 0, 0, 0.7);
+      color: #c7c7c7; }
+  .modal-image-close {
+    margin-top: -95vh;
+    cursor: pointer;
+    font-size: 3em;
+    font-family: 'ComfortaaB', 'sans-serif';
+    margin-left: .5vw;
+    color: #E0E0E0;
+    transition: .5s ease; }
+    .modal-image-close:hover {
+      transition: .5s ease;
+      color: #fafafa; }
+    .modal-image-close:active {
+      transition: .5s ease;
+      color: #c7c7c7; }
 
 .outer-container {
   margin-left: -2vw; }

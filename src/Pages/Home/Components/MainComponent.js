@@ -94,9 +94,16 @@ class MainComponent extends Component {
 
         <Masonry className="home-main-masonry">
           {MASONRY_IMAGES.map((image, index) => {
+            let name = "home-main-examples";
+
+            if (index === 3 || index === 4 || index === 6 || index === 10 || index === 12)
+              name += " sm-disable";
+            if (index === 8 || index === 11 || index === 13)
+              name += " xs-disable";
+
             return (
               <div
-                className="home-main-examples"
+                className={name}
                 key={index}
                 onClick={onImageModalOpen}
               >
@@ -144,13 +151,3 @@ class MainComponent extends Component {
 };
 
 export default MainComponent;
-
-  // 4 sm-disable
-  // 5 sm-disable
-  // 7 sm-disable
-  // 9 xs-disable
-  // 11 sm-disable
-  // 12 xs-disable
-  // 13 sm-disable
-  // 14 xs-disable
-

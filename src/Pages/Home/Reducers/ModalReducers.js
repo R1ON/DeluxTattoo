@@ -1,6 +1,8 @@
 import {
   IS_OPEN_MODAL,
-  IS_OPEN_IMAGE_MODAL
+  IS_OPEN_IMAGE_MODAL,
+  SWITCH_IMAGE_LEFT,
+  SWITCH_IMAGE_RIGHT
 } from '../Constants';
 
 const initialState = {
@@ -23,7 +25,25 @@ export function isOpenModalReducer(state = initialState, action) {
       return {
         ...state,
         isOpenImage: action.isOpenImage,
-        imageSrc: action.imageSrc
+        imageSrc: parseInt(action.imageSrc.replace(/[^0-9]/g, ''))
+      };
+
+    case SWITCH_IMAGE_LEFT:
+      if (state.imageSrc === 1)
+        return {...state, imageSrc: 14};
+
+      return {
+        ...state,
+        imageSrc: state.imageSrc - 1
+      };
+
+    case SWITCH_IMAGE_RIGHT:
+      if (state.imageSrc === 14)
+        return {...state, imageSrc: 1};
+
+      return {
+        ...state,
+        imageSrc: state.imageSrc + 1
       };
 
     default:

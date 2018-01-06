@@ -3,7 +3,11 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import { Icon } from 'react-fa';
 
-import { isOpenImageModalAction } from '../Actions/ModalActions';
+import {
+  isOpenImageModalAction,
+  switchImageLeft,
+  switchImageRight
+} from '../Actions/ModalActions';
 
 import '../Styles/HeaderStyle.sass';
 
@@ -15,13 +19,22 @@ class ImageModal extends Component {
   constructor(props) {
     super(props);
 
+    this.switchImageLeft = this.switchImageLeft.bind(this);
+    this.switchImageRight = this.switchImageRight.bind(this);
     this.onCloseModal = this.onCloseModal.bind(this);
   }
 
   onCloseModal(event) {
-    event.target.tagName === 'DIV'
-      ? this.props.isOpenImageModalAction(!this.props.isOpenImage)
-      : () => {}
+    if (event.target.tagName !== 'IMG')
+      this.props.isOpenImageModalAction(!this.props.isOpenImage, '')
+  }
+
+  switchImageLeft() {
+    this.props.switchImageLeft()
+  }
+
+  switchImageRight() {
+    this.props.switchImageRight()
   }
 
   render() {
@@ -34,19 +47,17 @@ class ImageModal extends Component {
         style={overlayBackground}
         ariaHideApp={false}
       >
-        <div className="modal-image-left">
+        <div onClick={this.switchImageLeft} className="modal-image-button modal-image-button-left">
           <Icon name="angle-left" />
         </div>
-        <div className="modal-image-right">
+        <div onClick={this.switchImageRight} className="modal-image-button modal-image-button-right">
           <Icon name="angle-right" />
         </div>
 
 
         <div className="modal-image-container" onClick={this.onCloseModal}>
-          <img src={imageSrc} />
-          <div className="modal-image-close">
-            <Icon name="close" />
-          </div>
+          <img src={`images/${imageSrc}.jpg`} />
+          <span className="modal-image-close">x</span>
         </div>
       </Modal>
     );
@@ -65,7 +76,9 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isOpenImageModalAction: (isOpenImage) => dispatch(isOpenImageModalAction(isOpenImage))
+    isOpenImageModalAction: (isOpenImage, imageSrc) => dispatch(isOpenImageModalAction(isOpenImage, imageSrc)),
+    switchImageLeft: () => dispatch(switchImageLeft()),
+    switchImageRight: () => dispatch(switchImageRight())
   };
 };
 
