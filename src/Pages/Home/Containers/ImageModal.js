@@ -54,10 +54,8 @@ class ImageModal extends Component {
           <Icon name="angle-right" />
         </div>
 
-
         <div className="modal-image-container" onClick={this.onCloseModal}>
           <img src={`images/${imageSrc}.jpg`} />
-          <span className="modal-image-close">x</span>
         </div>
       </Modal>
     );

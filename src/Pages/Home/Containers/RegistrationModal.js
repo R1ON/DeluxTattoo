@@ -39,11 +39,14 @@ class RegistrationModal extends Component {
         ariaHideApp={false}
       >
         <Row className="modal-button">
-          <Col md={6} className="modal-header modal-header-registration">
+          <Col
+            lg={6} md={6} sm={6} xs={6}
+            className="modal-header modal-header-registration"
+          >
             Registration
           </Col>
           <Col
-            md={6}
+            lg={6} md={6} sm={6} xs={6}
             className="modal-header modal-header-sign modal-not-active"
             onClick={this.onSingInModalOpen}
           >

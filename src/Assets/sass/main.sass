@@ -103,6 +103,8 @@ body
     img
       max-width: 80vw
       max-height: 90vh
+      margin-left: -1vw
+      animation: imageVisible .5s ease
   &-button
     position: absolute
     top: 0
@@ -117,9 +119,11 @@ body
     &-left
       left: 0
       width: 10vw
+      animation: leftAngleAnimation .5s ease
     &-right
       left: 89vw
-      width: 11vw
+      width: 10vw
+      animation: rightAngleAnimation .5s ease
     &:hover
       transition: .5s ease
       background: rgba(0, 0, 0, 0.5)
@@ -128,21 +132,6 @@ body
       transition: .5s ease
       background: rgba(0, 0, 0, 0.7)
       color: darken($accent-color, 10%)
-  &-close
-    margin-top: -95vh
-    cursor: pointer
-    font-size: 3em
-    font-family: 'ComfortaaB', 'sans-serif'
-    margin-left: .5vw
-    color: $accent-color
-    transition: .5s ease
-    &:hover
-      transition: .5s ease
-      color: lighten($accent-color, 10%)
-    &:active
-      transition: .5s ease
-      color: darken($accent-color, 10%)
-
 
 ///////////////////////// LEFT MENU //////////////
 .outer-container
@@ -199,6 +188,29 @@ body
   text-align: left
 ::-ms-input-placeholder
   text-align: left
+
+
+@keyframes imageVisible
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes leftAngleAnimation
+  0%
+    opacity: 0
+    margin-left: -10vw
+  100%
+    opacity: 1
+    margin-left: 0
+
+@keyframes rightAngleAnimation
+  0%
+    opacity: 0
+    margin-left: 10vw
+  100%
+    opacity: 1
+    margin-left: 0
 
 
 @import "media"

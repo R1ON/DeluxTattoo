@@ -9,8 +9,19 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
+  .modal
+    width: 50vw
+    &-input
+      width: 40vw
+    &-footer
+      width: 20vw
+
+  .modal-image-container img
+    max-width: 70vw
+    max-height: 90vh
+
   .home-main-masonry-border
-    margin-top: -6vh
+    margin-top: -8vh
 
   .home-header-logo
     text-align: center
@@ -60,6 +71,31 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+  .modal
+    width: 70vw
+    &-input
+      width: 60vw
+    &-footer
+      width: 30vw
+
+  .home-main-examples
+    &:hover
+      cursor: default
+      &::before
+        content: ""
+        background: none
+        animation: none
+        border: 0
+      &::after
+        content: ""
+        background: none
+        animation: none
+    &:not(:hover)
+      &::before
+        content: ""
+        animation: none
+        border: none
+
   .img-blur
     width: 58vw
     height: 35vw
@@ -102,6 +138,10 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+  .img-blur
+    width: 57vw
+    height: 35vw
+
   .xs-disable
     display: none
   .home-main
@@ -125,19 +165,26 @@
   .home-header
     height: 85vh
     font-size: 2em
+    &-down
+      display: none
     &-logo
       margin-left: 3vw
     &-title
       padding-top: 25vh
     div
       margin-top: 0
+      font-family: 'ComfortaaR', 'sans-serif'
     &-button
+      color: black
       padding: 2vw 0 2vw 0
       width: 50vw
       font-size: 5vw
 
-  .importantly-tagline
+  .importantly
+    &-tagline
       margin-bottom: 3vh
+    &-button
+      color: white
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)

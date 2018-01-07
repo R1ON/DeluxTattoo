@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import Modal from 'react-modal';
+import { Field, reduxForm } from 'redux-form'
 
 import { isOpenModalAction } from '../Actions/ModalActions';
 
@@ -40,13 +41,16 @@ class SingInModal extends Component {
       >
         <Row className="modal-button">
           <Col
-            md={6}
+            lg={6} md={6} sm={6} xs={6}
             className="modal-header modal-header-registration modal-not-active"
             onClick={this.onRegistrationModalOpen}
           >
             Registration
           </Col>
-          <Col md={6} className="modal-header modal-header-sign">
+          <Col
+            lg={6} md={6} sm={6} xs={6}
+            className="modal-header modal-header-sign"
+          >
             Sign in
           </Col>
         </Row>
@@ -89,5 +93,9 @@ const mapDispatchToProps = (dispatch) => {
     isOpenModalAction: (isOpenRegistration, isOpenSingIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSingIn))
   }
 };
+
+// SingInModal = reduxForm({
+//   form: 'singInModal'
+// })(SingInModal);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingInModal);

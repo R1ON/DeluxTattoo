@@ -32,13 +32,16 @@ class Home extends Component {
       this.onMouseMoveParallaxEffect = () => {};
     } else this.onMouseMoveParallaxEffect = this.onMouseMoveParallaxEffect.bind(this);
 
+    if (document.body.clientWidth < 480) {
+      this.onImageModalOpen = () => {};
+    } else this.onImageModalOpen = this.onImageModalOpen.bind(this);
+
     window.onload = () => {
       this.setState({ display: 'none' })
     };
 
     this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
     this.onSingInModalOpen = this.onSingInModalOpen.bind(this);
-    this.onImageModalOpen = this.onImageModalOpen.bind(this);
 
     this.onBottomScroll = this.onBottomScroll.bind(this);
   }
