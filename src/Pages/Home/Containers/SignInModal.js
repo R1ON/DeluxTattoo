@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Row, Col } from 'reactstrap';
 import Modal from 'react-modal';
-// import { Field, reduxForm } from 'redux-form';
+import { formValueSelector, reduxForm } from 'redux-form';
 
 import { isOpenModalAction } from '../Actions/ModalActions';
+
+import SignInForm from '../Components/Forms/SignInForm';
 
 import '../Styles/HeaderStyle.sass';
 
@@ -12,9 +13,15 @@ const overlayBackground = {
   overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }
 };
 
-class SingInModal extends Component {
+class SignInModal extends Component {
   constructor(props) {
     super(props);
+
+    this.handleSubmit = (event) => {
+      //тут прокидываем экш, в экшене вызываем аксиос
+      event.preventDefault();
+      console.log(this.props.inputMail + " - " + this.props.inputPassword)
+    };
 
     this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
     this.onCloseModal = this.onCloseModal.bind(this);
@@ -39,45 +46,21 @@ class SingInModal extends Component {
         style={overlayBackground}
         ariaHideApp={false}
       >
-        <Row className="modal-button">
-          <Col
-            lg={6} md={6} sm={6} xs={6}
-            className="modal-header modal-header-registration modal-not-active"
-            onClick={this.onRegistrationModalOpen}
-          >
-            Registration
-          </Col>
-          <Col
-            lg={6} md={6} sm={6} xs={6}
-            className="modal-header modal-header-sign"
-          >
-            Sign in
-          </Col>
-        </Row>
-
-        <div className="modal-content">
-          <div className="modal-pack">
-            <input placeholder="mail" className="modal-input"/>
-          </div>
-
-          <div className="modal-pack">
-            <input placeholder="password" type="password" className="modal-input"/>
-          </div>
-        </div>
-
-        <Row className="modal-button">
-          <Col md={6} onClick={this.onCloseModal} className="modal-footer modal-footer-cancel">
-            Cancel
-          </Col>
-          <Col md={6} className="modal-footer modal-footer-okay">
-            Sign in
-          </Col>
-        </Row>
+        <SignInForm
+          onSubmit={this.handleSubmit}
+          onCloseModal={this.onCloseModal}
+          onRegistrationModalOpen={this.onRegistrationModalOpen}
+        />
       </Modal>
     );
   }
 };
 
+SignInModal = reduxForm({
+  form: 'signInModal'
+})(SignInModal);
+
+const selector = formValueSelector('signInModal');
 
 function mapStateToProps(state) {
   const {
@@ -85,7 +68,10 @@ function mapStateToProps(state) {
     isOpenSignIn
   } = state.HomeReducers.isOpenModalReducer;
 
-  return { isOpenRegistration, isOpenSignIn };
+  const inputMail = selector(state, 'inputMailSign');
+  const inputPassword = selector(state, 'inputPasswordSign');
+
+  return { isOpenRegistration, isOpenSignIn, inputMail, inputPassword };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -94,8 +80,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-// SingInModal = reduxForm({
-//   form: 'singInModal'
-// })(SingInModal);
-
-export default connect(mapStateToProps, mapDispatchToProps)(SingInModal);
+export default connect(mapStateToProps, mapDispatchToProps)(SignInModal);

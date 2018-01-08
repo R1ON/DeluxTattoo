@@ -1039,7 +1039,7 @@ body {
   .modal-content {
     text-align: center; }
 
-.sing-modal {
+.sign-modal {
   height: 35vh; }
 
 .modal-image {
@@ -1072,10 +1072,14 @@ body {
       left: 0;
       width: 10vw;
       animation: leftAngleAnimation .5s ease; }
+      .modal-image-button-left:active {
+        margin-left: -1vw; }
     .modal-image-button-right {
       left: 89vw;
       width: 10vw;
       animation: rightAngleAnimation .5s ease; }
+      .modal-image-button-right:active {
+        margin-left: 1vw; }
     .modal-image-button:hover {
       transition: .5s ease;
       background: rgba(0, 0, 0, 0.5);
