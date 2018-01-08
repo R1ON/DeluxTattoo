@@ -15,12 +15,12 @@ class RegistrationModal extends Component {
   constructor(props) {
     super(props);
 
-    this.onSingInModalOpen = this.onSingInModalOpen.bind(this);
+    this.onSignInModalOpen = this.onSignInModalOpen.bind(this);
     this.onCloseModal = this.onCloseModal.bind(this);
   }
 
-  onSingInModalOpen() {
-    this.props.isOpenModalAction(false, !this.props.isOpenSingIn);
+  onSignInModalOpen() {
+    this.props.isOpenModalAction(false, !this.props.isOpenSignIn);
   }
 
   onCloseModal() {
@@ -48,7 +48,7 @@ class RegistrationModal extends Component {
           <Col
             lg={6} md={6} sm={6} xs={6}
             className="modal-header modal-header-sign modal-not-active"
-            onClick={this.onSingInModalOpen}
+            onClick={this.onSignInModalOpen}
           >
             Sign in
           </Col>
@@ -89,15 +89,15 @@ class RegistrationModal extends Component {
 function mapStateToProps(state) {
   const {
     isOpenRegistration,
-    isOpenSingIn
+    isOpenSignIn
   } = state.HomeReducers.isOpenModalReducer;
 
-  return { isOpenRegistration, isOpenSingIn };
+  return { isOpenRegistration, isOpenSignIn };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isOpenModalAction: (isOpenRegistration, isOpenSingIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSingIn))
+    isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn))
   }
 };
 

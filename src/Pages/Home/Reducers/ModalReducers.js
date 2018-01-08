@@ -7,7 +7,7 @@ import {
 
 const initialState = {
   isOpenRegistration: false,
-  isOpenSingIn: false,
+  isOpenSignIn: false,
   isOpenImage: false,
   imageSrc: ''
 };
@@ -18,7 +18,7 @@ export function isOpenModalReducer(state = initialState, action) {
       return {
         ...state,
         isOpenRegistration: action.isOpenRegistration,
-        isOpenSingIn: action.isOpenSingIn
+        isOpenSignIn: action.isOpenSignIn
       };
 
     case IS_OPEN_IMAGE_MODAL:

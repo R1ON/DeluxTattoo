@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import Modal from 'react-modal';
-import { Field, reduxForm } from 'redux-form'
+// import { Field, reduxForm } from 'redux-form';
 
 import { isOpenModalAction } from '../Actions/ModalActions';
 
@@ -25,17 +25,17 @@ class SingInModal extends Component {
   }
 
   onCloseModal() {
-    this.props.isOpenModalAction(false, !this.props.isOpenSingIn);
+    this.props.isOpenModalAction(false, !this.props.isOpenSignIn);
   }
 
   render() {
-    const { isOpenSingIn } = this.props;
+    const { isOpenSignIn } = this.props;
 
     return (
       <Modal
-        isOpen={isOpenSingIn}
+        isOpen={isOpenSignIn}
         onRequestClose={this.onCloseModal}
-        className="modal sing-modal"
+        className="modal sign-modal"
         style={overlayBackground}
         ariaHideApp={false}
       >
@@ -70,7 +70,7 @@ class SingInModal extends Component {
             Cancel
           </Col>
           <Col md={6} className="modal-footer modal-footer-okay">
-            Sing in
+            Sign in
           </Col>
         </Row>
       </Modal>
@@ -82,15 +82,15 @@ class SingInModal extends Component {
 function mapStateToProps(state) {
   const {
     isOpenRegistration,
-    isOpenSingIn
+    isOpenSignIn
   } = state.HomeReducers.isOpenModalReducer;
 
-  return { isOpenRegistration, isOpenSingIn };
+  return { isOpenRegistration, isOpenSignIn };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isOpenModalAction: (isOpenRegistration, isOpenSingIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSingIn))
+    isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn))
   }
 };
 

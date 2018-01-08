@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import HomeContainer from './Containers';
 import RegistrationModal from './Containers/RegistrationModal';
-import SingInModal from './Containers/SingInModal';
+import SignInModal from './Containers/SignInModal';
 import ImageModal from './Containers/ImageModal';
 
 import HomeReducers from './Reducers';
@@ -13,7 +13,7 @@ const Home = () => {
         <div className="home-container">
           <HomeContainer />
           <RegistrationModal />
-          <SingInModal />
+          <SignInModal />
           <ImageModal />
         </div>
       </div>

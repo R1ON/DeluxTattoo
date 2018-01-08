@@ -41,7 +41,7 @@ class Home extends Component {
     };
 
     this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
-    this.onSingInModalOpen = this.onSingInModalOpen.bind(this);
+    this.onSignInModalOpen = this.onSignInModalOpen.bind(this);
 
     this.onBottomScroll = this.onBottomScroll.bind(this);
   }
@@ -61,8 +61,8 @@ class Home extends Component {
     this.props.isOpenModalAction(!this.props.isOpenRegistration, false)
   }
 
-  onSingInModalOpen() {
-    this.props.isOpenModalAction(false, !this.props.isOpenSingIn)
+  onSignInModalOpen() {
+    this.props.isOpenModalAction(false, !this.props.isOpenSignIn)
   }
 
   onImageModalOpen(event) {
@@ -88,7 +88,7 @@ class Home extends Component {
             styles={this.state.style}
             onMouseMove={this.onMouseMoveParallaxEffect}
             onBottomScroll={this.onBottomScroll}
-            onModalOpen={this.onSingInModalOpen}
+            onModalOpen={this.onSignInModalOpen}
           />
           <MainComponent
             onImageModalOpen={this.onImageModalOpen}
@@ -103,17 +103,17 @@ class Home extends Component {
 const mapStateToProps = (state) => {
   const {
     isOpenRegistration,
-    isOpenSingIn,
+    isOpenSignIn,
     isOpenImage
   } = state.HomeReducers.isOpenModalReducer;
 
-  return { isOpenRegistration, isOpenSingIn, isOpenImage };
+  return { isOpenRegistration, isOpenSignIn, isOpenImage };
 };
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isOpenModalAction: (isOpenRegistration, isOpenSingIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSingIn)),
+    isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn)),
     isOpenImageModalAction: (isOpenImage, imageSrc) => dispatch(isOpenImageModalAction(isOpenImage, imageSrc))
   };
 };

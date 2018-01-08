@@ -86,7 +86,7 @@ body
   &-content
     text-align: center
 
-.sing-modal
+.sign-modal
   height: 35vh
 
 
@@ -120,6 +120,7 @@ body
       left: 0
       width: 10vw
       animation: leftAngleAnimation .5s ease
+      animation: test infinite 5s
     &-right
       left: 89vw
       width: 10vw
@@ -189,6 +190,20 @@ body
 ::-ms-input-placeholder
   text-align: left
 
+
+@keyframes test
+  70%
+    margin-left: 0
+  76%
+    margin-left: -2vw
+  82%
+    margin-left: 1vw
+  88%
+    margin-left: -1.5vw
+  94%
+    margin-left: .5vw
+  100%
+    margin-left: 0
 
 @keyframes imageVisible
   0%

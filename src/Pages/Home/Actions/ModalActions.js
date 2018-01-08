@@ -5,10 +5,10 @@ import {
   SWITCH_IMAGE_RIGHT
 } from '../Constants';
 
-export function isOpenModalAction(isOpenRegistration, isOpenSingIn) {
+export function isOpenModalAction(isOpenRegistration, isOpenSignIn) {
   return {
     type: IS_OPEN_MODAL,
-    isOpenRegistration, isOpenSingIn
+    isOpenRegistration, isOpenSignIn
   };
 }
 
