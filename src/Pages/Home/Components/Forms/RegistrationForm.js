@@ -45,7 +45,7 @@ const RegistrationForm = ({ onSubmit, onCloseModal, onSignInModalOpen }) => (
         Cancel
       </Col>
       <Col md={6} className="modal-footer modal-footer-okay">
-        <button type="submit">Registration</button>
+        <button className="modal-footer-submit" type="submit">Registration</button>
       </Col>
     </Row>
   </Form>
