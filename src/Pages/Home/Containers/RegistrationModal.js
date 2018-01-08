@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
-import { formValueSelector, reduxForm } from 'redux-form';
+import { formValueSelector } from 'redux-form';
 
 import { isOpenModalAction } from '../Actions/ModalActions';
 
@@ -18,13 +18,13 @@ class RegistrationModal extends Component {
     super(props);
 
     this.handleSubmit = (event) => {
-      //тут прокидываем экш, в экшене вызываем аксиос
-      event.preventDefault();
+      //тут прокидываем экшн, в экшене вызываем аксиос
+      // event.preventDefault();
       console.log(
-        this.props.inputLogin + " - " +
-        this.props.inputMail + " - " +
-        this.props.inputPassword + " - " +
-        this.props.inputConfirm
+        this.props.inputLoginReg + " - " +
+        this.props.inputMailReg + " - " +
+        this.props.inputPasswordReg + " - " +
+        this.props.inputConfirmReg
       )
     };
 
@@ -61,10 +61,6 @@ class RegistrationModal extends Component {
   }
 };
 
-RegistrationModal = reduxForm({
-  form: 'registrationModal'
-})(RegistrationModal);
-
 const selector = formValueSelector('registrationModal');
 
 function mapStateToProps(state) {
@@ -73,12 +69,12 @@ function mapStateToProps(state) {
     isOpenSignIn
   } = state.HomeReducers.isOpenModalReducer;
 
-  const inputLogin = selector(state, 'inputLoginReg');
-  const inputMail = selector(state, 'inputMailReg');
-  const inputPassword = selector(state, 'inputPasswordReg');
-  const inputConfirm = selector(state, 'inputConfirmReg');
+  const inputLoginReg = selector(state, 'inputLoginReg');
+  const inputMailReg = selector(state, 'inputMailReg');
+  const inputPasswordReg = selector(state, 'inputPasswordReg');
+  const inputConfirmReg = selector(state, 'inputConfirmReg');
 
-  return { isOpenRegistration, isOpenSignIn, inputLogin, inputMail, inputPassword, inputConfirm };
+  return { isOpenRegistration, isOpenSignIn, inputLoginReg, inputMailReg, inputPasswordReg, inputConfirmReg };
 };
 
 const mapDispatchToProps = (dispatch) => {

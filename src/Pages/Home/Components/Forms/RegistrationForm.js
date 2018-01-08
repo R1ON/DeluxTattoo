@@ -1,8 +1,45 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
-import { Form, Field } from 'redux-form';
+import { Form, Field, reduxForm } from 'redux-form';
 
 import '../../Styles/HeaderStyle.sass'
+
+const validate = (value) => {
+  const error = {};
+
+  if (!value.inputLoginReg) {
+    error.inputLoginReg = 'Required';
+  } else if (value.inputLoginReg.length > 40) {
+    error.inputLoginReg = 'Must be 40 characters or less';
+  }
+
+  if (!value.inputMailReg) {
+    error.inputMailReg = 'Required';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value.inputMailReg)) {
+    error.inputMailReg = 'Invalid email address';
+  } else if (value.inputMailReg.length > 40) {
+    error.inputMailReg = 'Must be 40 characters or less';
+  }
+
+  return error;
+};
+
+const renderField = ({input, placeholder, type, meta}) => {
+
+  let name = "modal-input";
+
+  if (meta.touched && meta.error)
+    name += " modal-input-error";
+
+  return (
+    <div>
+      <div>
+        <input {...input} placeholder={placeholder} type={type} className={name} />
+        {meta.touched && ((meta.error && <span className="modal-error">{meta.error}</span>))}
+      </div>
+    </div>
+  )
+};
 
 const RegistrationForm = ({ onSubmit, onCloseModal, onSignInModalOpen }) => (
   <Form onSubmit={onSubmit}>
@@ -24,11 +61,11 @@ const RegistrationForm = ({ onSubmit, onCloseModal, onSignInModalOpen }) => (
 
     <div className="modal-content">
       <div className="modal-pack">
-        <Field name="inputLoginReg" component="input" type="input" placeholder="login" className="modal-input" />
+        <Field name="inputLoginReg" component={renderField} type="input" placeholder="login" />
       </div>
 
       <div className="modal-pack">
-        <Field name="inputMailReg" component="input" type="input" placeholder="mail" className="modal-input" />
+        <Field name="inputMailReg" component={renderField} type="input" placeholder="mail" />
       </div>
 
       <div className="modal-pack">
@@ -51,4 +88,7 @@ const RegistrationForm = ({ onSubmit, onCloseModal, onSignInModalOpen }) => (
   </Form>
 );
 
-export default RegistrationForm;
+
+export default reduxForm({
+  form: 'registrationModal', validate
+})(RegistrationForm);

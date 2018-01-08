@@ -1,8 +1,39 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
-import { Form, Field } from 'redux-form';
+import { Form, Field, reduxForm } from 'redux-form';
 
 import '../../Styles/HeaderStyle.sass'
+
+const validate = (value) => {
+  const error = {};
+
+  if (!value.inputMailSign) {
+    error.inputMailSign = 'Required';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value.inputMailSign)) {
+    error.inputMailSign = 'Invalid email address';
+  } else if (value.inputMailSign.length > 40) {
+    error.inputMailSign = 'Must be 40 characters or less';
+  }
+
+  return error;
+};
+
+const renderField = ({input, placeholder, type, meta}) => {
+
+  let name = "modal-input";
+
+  if (meta.touched && meta.error)
+    name += " modal-input-error";
+
+  return (
+    <div>
+      <div>
+        <input {...input} placeholder={placeholder} type={type} className={name} />
+        {meta.touched && ((meta.error && <span className="modal-error">{meta.error}</span>))}
+      </div>
+    </div>
+  )
+};
 
 const SignInForm = ({ onSubmit, onCloseModal, onRegistrationModalOpen }) => (
   <Form onSubmit={onSubmit}>
@@ -24,7 +55,7 @@ const SignInForm = ({ onSubmit, onCloseModal, onRegistrationModalOpen }) => (
 
     <div className="modal-content">
       <div className="modal-pack">
-        <Field name="inputMailSign" component="input" type="input" placeholder="mail" className="modal-input" />
+        <Field name="inputMailSign" component={renderField} type="input" placeholder="mail" />
       </div>
 
       <div className="modal-pack">
@@ -43,4 +74,6 @@ const SignInForm = ({ onSubmit, onCloseModal, onRegistrationModalOpen }) => (
   </Form>
 );
 
-export default SignInForm;
+export default reduxForm({
+  form: 'signInModal', validate
+})(SignInForm);

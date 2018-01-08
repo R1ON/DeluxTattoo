@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
-import { formValueSelector, reduxForm } from 'redux-form';
+import { formValueSelector } from 'redux-form';
 
 import { isOpenModalAction } from '../Actions/ModalActions';
 
@@ -20,7 +20,7 @@ class SignInModal extends Component {
     this.handleSubmit = (event) => {
       //тут прокидываем экш, в экшене вызываем аксиос
       event.preventDefault();
-      console.log(this.props.inputMail + " - " + this.props.inputPassword)
+      console.log(this.props.inputMailSign + " - " + this.props.inputPasswordSign)
     };
 
     this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
@@ -56,9 +56,6 @@ class SignInModal extends Component {
   }
 };
 
-SignInModal = reduxForm({
-  form: 'signInModal'
-})(SignInModal);
 
 const selector = formValueSelector('signInModal');
 
@@ -68,10 +65,10 @@ function mapStateToProps(state) {
     isOpenSignIn
   } = state.HomeReducers.isOpenModalReducer;
 
-  const inputMail = selector(state, 'inputMailSign');
-  const inputPassword = selector(state, 'inputPasswordSign');
+  const inputMailSign = selector(state, 'inputMailSign');
+  const inputPasswordSign = selector(state, 'inputPasswordSign');
 
-  return { isOpenRegistration, isOpenSignIn, inputMail, inputPassword };
+  return { isOpenRegistration, isOpenSignIn, inputMailSign, inputPasswordSign };
 };
 
 const mapDispatchToProps = (dispatch) => {
