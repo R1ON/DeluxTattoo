@@ -15,6 +15,12 @@ const validate = (value) => {
     error.inputMailSign = 'Must be 40 characters or less';
   }
 
+  if (!value.inputPasswordSign) {
+    error.inputPasswordSign = 'Required';
+  } else if (value.inputPasswordSign.length > 40) {
+    error.inputPasswordSign = 'Must be 40 characters or less';
+  }
+
   return error;
 };
 
@@ -59,7 +65,7 @@ const SignInForm = ({ onSubmit, onCloseModal, onRegistrationModalOpen }) => (
       </div>
 
       <div className="modal-pack">
-        <Field name="inputPasswordSign" component="input" type="password" placeholder="password" className="modal-input" />
+        <Field name="inputPasswordSign" component={renderField} type="password" placeholder="password" />
       </div>
     </div>
 

@@ -21,6 +21,18 @@ const validate = (value) => {
     error.inputMailReg = 'Must be 40 characters or less';
   }
 
+  if (!value.inputPasswordReg) {
+    error.inputPasswordReg = 'Required';
+  } else if (value.inputPasswordReg.length > 40) {
+    error.inputPasswordReg = 'Must be 40 characters or less';
+  }
+
+  if (!value.inputConfirmReg) {
+    error.inputConfirmReg = 'Required';
+  } else if (value.inputConfirmReg.length > 40) {
+    error.inputConfirmReg = 'Must be 40 characters or less';
+  }
+
   return error;
 };
 
@@ -69,11 +81,11 @@ const RegistrationForm = ({ onSubmit, onCloseModal, onSignInModalOpen }) => (
       </div>
 
       <div className="modal-pack">
-        <Field name="inputPasswordReg" component="input" type="password" placeholder="password" className="modal-input" />
+        <Field name="inputPasswordReg" component={renderField} type="password" placeholder="password" />
       </div>
 
       <div className="modal-pack">
-        <Field name="inputConfirmReg" component="input" type="password" placeholder="confirm password" className="modal-input" />
+        <Field name="inputConfirmReg" component={renderField} type="password" placeholder="confirm password" />
       </div>
     </div>
 
