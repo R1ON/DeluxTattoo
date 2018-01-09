@@ -19,6 +19,8 @@ const validate = (value) => {
     error.inputPasswordSign = 'Required';
   } else if (value.inputPasswordSign.length > 40) {
     error.inputPasswordSign = 'Must be 40 characters or less';
+  } else if (value.inputPasswordSign.length < 5) {
+    error.inputPasswordSign = 'Must be at least 5 characters';
   }
 
   return error;

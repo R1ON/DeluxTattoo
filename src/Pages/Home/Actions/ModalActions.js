@@ -30,3 +30,15 @@ export function switchImageRight() {
     type: SWITCH_IMAGE_RIGHT
   };
 }
+
+// const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+// export function submitRegistration(validationModal) {
+//   // тут вызываем аксиос и шлем всю хуйню на сервер
+//
+//   sleep(1000).then(() => {
+//     return {
+//       type: VALIDATION_MODAL,
+//       validationModal
+//     }
+//   })
+// }
