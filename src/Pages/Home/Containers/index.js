@@ -9,8 +9,9 @@ import BurgerMenu from '../../../Components/BurgerMenu';
 
 import HeaderComponent from '../Components/HeaderComponent';
 import MainComponent from '../Components/MainComponent';
+import FooterComponent from '../Components/FooterComponent';
 
-import '../Styles/HeaderStyle.sass';
+import '../Styles/HomeStyle.sass';
 
 // import { Link } from 'react-router';
 
@@ -92,6 +93,7 @@ class Home extends Component {
             onImageModalOpen={this.onImageModalOpen}
             onModalOpen={this.onRegistrationModalOpen}
           />
+          <FooterComponent />
         </div>
       </div>
     );

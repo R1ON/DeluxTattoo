@@ -5,7 +5,7 @@ import { Form, Field, reduxForm } from 'redux-form';
 import validate from '../../Validation/ValidateSignInForm';
 import RenderField from './RenderField';
 
-import '../../Styles/HeaderStyle.sass'
+import '../../Styles/HomeStyle.sass'
 
 const SignInForm = ({ onSubmit, onCloseModal, onRegistrationModalOpen }) => (
   <Form onSubmit={onSubmit}>

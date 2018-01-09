@@ -9,7 +9,7 @@ import {
   switchImageRight
 } from '../Actions/ImageModalActions';
 
-import '../Styles/HeaderStyle.sass';
+import '../Styles/HomeStyle.sass';
 
 const overlayBackground = {
   overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }

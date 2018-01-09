@@ -1262,7 +1262,7 @@ class-utils@^0.3.5:
     lazy-cache "^2.0.2"
     static-extend "^0.1.1"
 
-classnames@^2.1.1, classnames@^2.2.3:
+classnames@^2.1.1, classnames@^2.2.3, classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -4567,6 +4567,12 @@ react-dom@^15.4.2:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
+react-easy-swipe@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/react-easy-swipe/-/react-easy-swipe-0.0.13.tgz#c00e90dabed8d0878e8c8313b867e01435f0f637"
+  dependencies:
+    prop-types "^15.5.8"
+
 react-fa@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/react-fa/-/react-fa-5.0.0.tgz#d571732856c6cb2c155c46daef018ba67a75b973"
@@ -4634,6 +4640,14 @@ react-redux@^5.0.3:
     lodash-es "^4.2.0"
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
+
+react-responsive-carousel@^3.1.30:
+  version "3.1.30"
+  resolved "https://registry.yarnpkg.com/react-responsive-carousel/-/react-responsive-carousel-3.1.30.tgz#bc6225a5588a18f1c7ca206a8578aac11cffca38"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    react-easy-swipe "^0.0.13"
 
 react-router-redux@^4.0.8:
   version "4.0.8"

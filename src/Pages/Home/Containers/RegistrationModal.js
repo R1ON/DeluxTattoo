@@ -10,7 +10,7 @@ import {
 
 import RegistrationForm from '../Components/Forms/RegistrationForm';
 
-import '../Styles/HeaderStyle.sass';
+import '../Styles/HomeStyle.sass';
 
 const overlayBackground = {
   overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }
@@ -20,9 +20,10 @@ class RegistrationModal extends Component {
   constructor(props) {
     super(props);
 
-    this.handleSubmit = () => {
+    this.handleSubmit = (event) => {
       // функция для экшена, где вызывается аксиос
       // this.props.submitRegistration()
+      event.preventDefault();
     };
 
     this.onSignInModalOpen = this.onSignInModalOpen.bind(this);

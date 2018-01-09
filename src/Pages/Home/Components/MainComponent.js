@@ -4,7 +4,7 @@ import { Icon } from 'react-fa';
 import { Parallax, Background } from 'react-parallax';
 import Masonry from 'react-masonry-component';
 
-import '../Styles/HeaderStyle.sass'
+import '../Styles/HomeStyle.sass'
 
 const IMPORTANTLY_ABOUT = [
   `If you want to get to the session, 
@@ -129,22 +129,6 @@ class MainComponent extends Component {
             <p onClick={onModalOpen} className="home-header-button importantly-button">REGISTRATION</p>
           </Col>
         </Row>
-
-        <Row>
-          <Col md={12}>
-            <div className="home-main-title">
-              test<br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-            </div>
-          </Col>
-
-        </Row>
-
-
       </div>
     );
   }

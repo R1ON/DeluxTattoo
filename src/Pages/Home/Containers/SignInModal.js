@@ -7,7 +7,7 @@ import { isOpenModalAction } from '../Actions/ModalActions';
 
 import SignInForm from '../Components/Forms/SignInForm';
 
-import '../Styles/HeaderStyle.sass';
+import '../Styles/HomeStyle.sass';
 
 const overlayBackground = {
   overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }
@@ -18,9 +18,8 @@ class SignInModal extends Component {
     super(props);
 
     this.handleSubmit = (event) => {
-      //тут прокидываем экш, в экшене вызываем аксиос
+      // функция для экшена, где вызывается аксиос
       event.preventDefault();
-      console.log(this.props.inputMailSign + " - " + this.props.inputPasswordSign)
     };
 
     this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);

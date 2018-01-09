@@ -4,7 +4,7 @@ import { Icon } from 'react-fa';
 
 import { MENU_LINKS } from '../../../Constants';
 
-import '../Styles/HeaderStyle.sass'
+import '../Styles/HomeStyle.sass'
 
 class HeaderComponent extends Component {
   render() {
