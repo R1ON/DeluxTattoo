@@ -7,7 +7,7 @@ import {
   isOpenImageModalAction,
   switchImageLeft,
   switchImageRight
-} from '../Actions/ModalActions';
+} from '../Actions/ImageModalActions';
 
 import '../Styles/HeaderStyle.sass';
 
@@ -67,7 +67,7 @@ function mapStateToProps(state) {
   const {
     isOpenImage,
     imageSrc
-  } = state.HomeReducers.isOpenModalReducer;
+  } = state.HomeReducers.isOpenImageModalReducer;
 
   return { isOpenImage, imageSrc };
 };

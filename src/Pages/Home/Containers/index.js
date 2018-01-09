@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import scrollToComponent from 'react-scroll-to-component';
 
-import {
-  isOpenModalAction,
-  isOpenImageModalAction
-} from '../Actions/ModalActions';
+import { isOpenModalAction } from '../Actions/ModalActions';
+import { isOpenImageModalAction } from '../Actions/ImageModalActions';
 
 import BurgerMenu from '../../../Components/BurgerMenu';
 
@@ -103,9 +101,9 @@ class Home extends Component {
 const mapStateToProps = (state) => {
   const {
     isOpenRegistration,
-    isOpenSignIn,
-    isOpenImage
+    isOpenSignIn
   } = state.HomeReducers.isOpenModalReducer;
+  const { isOpenImage } = state.HomeReducers.isOpenImageModalReducer;
 
   return { isOpenRegistration, isOpenSignIn, isOpenImage };
 };
