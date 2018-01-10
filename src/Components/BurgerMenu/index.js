@@ -5,6 +5,8 @@ import { slide as Menu } from 'react-burger-menu';
 
 import { MENU_LINKS } from '../../Constants';
 
+import '../../Assets/sass/StylingComponents/BurgerMenuStyle.sass';
+
 class BurgerMenu extends Component {
   constructor(props) {
     super(props);

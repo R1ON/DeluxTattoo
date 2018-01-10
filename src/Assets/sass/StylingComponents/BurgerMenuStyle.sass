@@ -1,0 +1,47 @@
+@import "../vars"
+
+.outer-container
+  margin-left: -2vw
+
+.bm-burger
+  &-button
+    position: absolute
+    margin-left: 4vw
+    margin-top: 2.2vh
+    width: 36px
+    height: 30px
+  &-bars
+    background: $second-color
+
+.bm-menu
+  padding: 0 2vw 0
+  background: $main-lighten-color
+
+.bm-item-list a
+  text-decoration: none
+  color: $accent-color
+  font-size: 2.2vw
+  font-family: 'ComfortaaL', 'sans-serif'
+
+.bm-overlay
+  background: rgba(0, 0, 0, 0.3)
+  margin-left: 1vw
+
+.img-blur
+  background: url($image-burger-menu) no-repeat
+  background-size: 100%
+  width: 39vw
+  height: 25vw
+  margin-left: -2vw
+  margin-bottom: 6vh
+  -webkit-filter: blur(3.5px)
+  -moz-filter: blur(3.5px)
+  filter: blur(3.5px)
+  opacity: .3
+
+.burger-icon
+  width: 7vw
+  float: left
+  color: $accent-color
+  font-size: 2.1vw
+  text-align: center

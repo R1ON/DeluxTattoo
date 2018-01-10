@@ -4,8 +4,6 @@ import { Icon } from 'react-fa';
 import { Parallax, Background } from 'react-parallax';
 import Masonry from 'react-masonry-component';
 
-import '../Styles/HomeStyle.sass'
-
 const IMPORTANTLY_ABOUT = [
   `If you want to get to the session, 
   find out the cost of a tattoo, 

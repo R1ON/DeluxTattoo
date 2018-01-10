@@ -10,7 +10,7 @@ import {
 
 import RegistrationForm from '../Components/Forms/RegistrationForm';
 
-import '../Styles/HomeStyle.sass';
+import '../../../Assets/sass/StylingComponents/ModalStyle.sass';
 
 const overlayBackground = {
   overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }

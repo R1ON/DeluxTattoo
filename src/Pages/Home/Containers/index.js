@@ -11,7 +11,9 @@ import HeaderComponent from '../Components/HeaderComponent';
 import MainComponent from '../Components/MainComponent';
 import FooterComponent from '../Components/FooterComponent';
 
-import '../Styles/HomeStyle.sass';
+import '../Styles/HeaderStyle.sass';
+import '../Styles/MainStyle.sass';
+import '../Styles/FooterStyle.sass';
 
 // import { Link } from 'react-router';
 
