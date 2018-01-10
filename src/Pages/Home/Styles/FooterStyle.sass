@@ -1,12 +1,16 @@
+@import "../../../Assets/sass/vars"
+
 .home-footer
   &-carousel
-    background: #E0E0E0
+    background: lighten($accent-color, 7%)
     height: 60vh
     cursor: default
     display: flex
     justify-content: center
     align-items: center
   &-container
+    box-shadow: 0 0 20px rgba(0, 0, 0, .3)
+    border-radius: 5px
     background: white
     display: flex
     justify-content: center
@@ -22,14 +26,27 @@
   &-review
     margin-left: 2vw
     max-width: 50vw
-    text-align: left
+    text-align: justify
   &-title
-    border-bottom: 1px solid black
+    text-indent: 2vw
+    border-bottom: 2px solid darken($accent-color, 5%)
     font-size: 2em
     font-family: 'ComfortaaB', 'sans-serif'
   &-comment, &-quality, &-price
     font-size: 1.5em
     font-family: 'ComfortaaR', 'sans-serif'
+  &-comment
+    text-indent: 2vw
+    margin-top: 1.5vh
+  &-quality
+    margin-top: 1vh
+  &-stars
+    text-indent: .2vw
+    color: darken($accent-color, 5%)
+    margin-left: .5vw
+    &-selected
+      color: $second-color
+
 
 
 .carousel .control-next.control-arrow:before
@@ -45,3 +62,6 @@
   border-right: 2vw solid #000
   border-top: 1.5vw solid transparent
   border-bottom: 1.5vw solid transparent
+
+.carousel .control-dots .dot
+  background: lighten($main-color, 10%)

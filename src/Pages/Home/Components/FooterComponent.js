@@ -10,8 +10,8 @@ class FooterComponent extends Component {
   starComponent() {
     return (
       <span className="home-footer-stars">
-        <Icon name="star" />
-        <Icon name="star" />
+        <Icon name="star" className="home-footer-stars-selected" />
+        <Icon name="star" className="home-footer-stars-selected" />
         <Icon name="star" />
         <Icon name="star" />
         <Icon name="star" />
@@ -34,30 +34,30 @@ class FooterComponent extends Component {
                 <img src={require(`../../../Assets/img/test.jpg`)} />
               </div>
               <span className="home-footer-review">
-                <div className="home-footer-title">Алексей Навальный</div>
+                <div className="home-footer-title">Rudolph Crawford</div>
                 <div className="home-footer-comment">
-                  Хуячил татуху в вашей студии, кольщик мразь, от него воняло говном и выглядел странно
-                  но татуху сделал качественную, за это респектую
+                  I did the tattoo in your salon and was satisfied with the quality of the work.
+                  After the session, I was served free coffee and given a cookie :)
                 </div>
-                <div className="home-footer-quality">Качество: {this.starComponent()}</div>
-                <div className="home-footer-price">Цена: {this.starComponent()}</div>
+                <div className="home-footer-quality">Quality: {this.starComponent()}</div>
+                <div className="home-footer-price">Price: {this.starComponent()}</div>
               </span>
-
             </div>
           </div>
 
           <div className="home-footer-carousel">
             <div className="home-footer-container">
               <div className="home-footer-avatar">
-                <img src={require(`../../../Assets/img/test2.jpeg`)} />
+                <img src={require(`../../../Assets/img/test.jpg`)} />
               </div>
               <span className="home-footer-review">
-                <div className="home-footer-title">Самый красивый Путин в мире</div>
+                <div className="home-footer-title">Rudolph Crawford</div>
                 <div className="home-footer-comment">
-                  Тату мастер не платил налоги, ну я и набил ему ебало, а потом еще татуху набил, карочи зачотно
+                  I did the tattoo in your salon and was satisfied with the quality of the work.
+                  After the session, I was served free coffee and given a cookie :)
                 </div>
-                <div className="home-footer-quality">Качество: {this.starComponent()}</div>
-                <div className="home-footer-price">Цена: {this.starComponent()}</div>
+                <div className="home-footer-quality">Quality: {this.starComponent()}</div>
+                <div className="home-footer-price">Price: {this.starComponent()}</div>
               </span>
             </div>
           </div>
