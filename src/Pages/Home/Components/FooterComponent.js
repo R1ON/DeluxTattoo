@@ -52,7 +52,6 @@ class FooterComponent extends Component {
   render() {
     return (
       <div className="home-footer">
-
         <Carousel
           showStatus={false}
           showThumbs={false}
@@ -64,6 +63,64 @@ class FooterComponent extends Component {
             )
           ))}
         </Carousel>
+
+        <div className="home-footer-links">
+          <Row>
+            <Col md={6}>
+              <div>Sign in <span>DELUX TATTOO</span></div>
+              <div>
+                <input type="text"/>
+              </div>
+              <div>
+                <input type="text"/>
+              </div>
+               <button style={{color: "black"}}>hui</button>
+               <button style={{color: "black"}}>hui</button>
+            </Col>
+            <Col md={6}>
+              <Col md={4}>
+                <div>NAVIGATE</div>
+                <div>Home</div>
+                <div>Portfolio</div>
+                <div>Registration</div>
+                <div>About</div>
+              </Col>
+              <Col md={4}>
+                <div>CONTACTS</div>
+                <div>Admin:</div>
+                <div>Number: <span>4134134</span></div>
+                <div>E-mail: <span>reqr@reqr.req</span></div>
+
+                <div>Helper:</div>
+                <div>Number: <span>431653735</span></div>
+                <div>E-mail: <span>zcxcz@zcxz.ru</span></div>
+              </Col>
+              <Col md={4}>
+                <div>ABOUT US IN FIGURES</div>
+                <div>5 TATTOO MASTERS</div>
+                <div>666 made tattoos</div>
+                <div>1488 ready sketches</div>
+                <div>26 regular visitors</div>
+              </Col>
+            </Col>
+          </Row>
+        </div>
+
+        <div className="home-footer-developer">
+          <Row>
+            <Col md={12}>
+              <span>© 2018 Tattoo Delux Studio | All Rights Reserved.</span>
+              <span>Developer: R1ON</span>
+              <span>Privacy Policy</span>
+
+
+              <Icon name="youtube-square" />
+              <Icon name="github-square" />
+              <Icon name="telegram" />
+              <Icon name="vk" />
+            </Col>
+          </Row>
+        </div>
       </div>
     );
   }
