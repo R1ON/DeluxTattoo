@@ -43,6 +43,8 @@
   &-links
     position: relative
     height: 50vh
+    font-family: 'ComfortaaL', 'sans-serif'
+    font-size: 1.4em
     background: rgba(34, 34, 34, 0.9)
     color: $accent-color
     text-align: center
@@ -56,11 +58,67 @@
       height: 100%
       background: url('../../../Assets/img/backgroundFooter.jpg') no-repeat
       background-size: cover
+    &-icon
+      margin-top: 2vh
+      margin-left: 1vw
+      font-size: 3em
+      color: $accent-color
+      cursor: pointer
+      transition: .3s ease
+      &:hover
+        transition: .3s ease
+        color: lighten($second-color, 7%)
+      &:active
+        transition: .3s ease
+        color: darken($second-color, 2%)
+  &-delux
+    font-size: 1.7em
+    margin-bottom: 2vh
+    margin-top: 6vh
+    &-logo
+      font-family: 'Indie Flower', 'sans-serif'
+  &-button
+    width: 27vw
+    padding: 12px 0 12px 0
+    margin: 0 auto 3vh
+    color: $accent-color
+    border: 1px solid $accent-color
+    background: none
+    font-size: 1em
+    font-family: 'ComfortaaR', 'sans-serif'
+    transition: .5s ease
+    border-radius: 5px
+    &:hover
+      cursor: pointer
+      border: 1px solid rgba(255, 0, 21, 0.05)
+      background: $second-color
+      opacity: .7
+      color: $accent-color
+      transition: .5s ease
+    &:active
+      background: darken($second-color, 5%)
+      color: $accent-color
+      transition: .5s ease
   &-developer
     height: 7vh
     background: lighten($main-color, 2%)
     color: white
     text-align: center
+    font-size: 1.3em
+    font-family: 'ComfortaaL', 'sans-serif'
+    padding-top: 1.7vh
+    &-info
+      color: $accent-color
+      margin-left: 2vw
+  &-navigate
+    text-align: left
+    margin-top: 3vh
+    &-title
+      font-size: 1.3em
+      border-bottom: 1px solid $accent-color
+      margin-bottom: 2vh
+    &-tagline
+      margin-top: 2vh
 
 .star-container
   margin-top: -.4vh

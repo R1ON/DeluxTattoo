@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import { Icon } from 'react-fa';
 import scrollToComponent from 'react-scroll-to-component';
 
 import { isOpenModalAction } from '../Actions/ModalActions';
@@ -95,7 +96,9 @@ class Home extends Component {
             onImageModalOpen={this.onImageModalOpen}
             onModalOpen={this.onRegistrationModalOpen}
           />
-          <FooterComponent />
+          <FooterComponent
+            onModalOpen={this.onSignInModalOpen}
+          />
         </div>
       </div>
     );

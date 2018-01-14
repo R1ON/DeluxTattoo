@@ -50,6 +50,8 @@ class FooterComponent extends Component {
   }
 
   render() {
+    const { onModalOpen } = this.props;
+
     return (
       <div className="home-footer">
         <Carousel
@@ -66,41 +68,37 @@ class FooterComponent extends Component {
 
         <div className="home-footer-links">
           <Row>
-            <Col md={6}>
-              <div>Sign in <span>DELUX TATTOO</span></div>
-              <div>
-                <input type="text"/>
+            <Col md={5}>
+              <div className="home-footer-delux">
+                Sign in
+                <span className="home-footer-delux-logo"> DELUX TATTOO</span>
               </div>
-              <div>
-                <input type="text"/>
-              </div>
-               <button style={{color: "black"}}>hui</button>
-               <button style={{color: "black"}}>hui</button>
+              <p className="home-footer-button" onClick={onModalOpen}>SIGN IN</p>
+
+              <div>You can subscribe to us in social networks</div>
+              <Icon className="home-footer-links-icon" name="youtube" />
+              <Icon className="home-footer-links-icon" name="github" />
+              <Icon className="home-footer-links-icon" name="telegram" />
+              <Icon className="home-footer-links-icon" name="vk" />
             </Col>
-            <Col md={6}>
-              <Col md={4}>
-                <div>NAVIGATE</div>
+
+            <Col md={7}>
+              <Col md={4} className="home-footer-navigate">
+                <div className="home-footer-navigate-title">NAVIGATE</div>
                 <div>Home</div>
                 <div>Portfolio</div>
                 <div>Registration</div>
                 <div>About</div>
               </Col>
-              <Col md={4}>
-                <div>CONTACTS</div>
-                <div>Admin:</div>
-                <div>Number: <span>4134134</span></div>
-                <div>E-mail: <span>reqr@reqr.req</span></div>
+              <Col md={8} className="home-footer-navigate">
+                <div className="home-footer-navigate-title">CONTACTS</div>
+                <div>Administrator:</div>
+                <div>Number: <span>8 (930) 849-65-18</span></div>
+                <div>E-mail: <span>r.maximov2012@yandex.ru</span></div>
 
-                <div>Helper:</div>
-                <div>Number: <span>431653735</span></div>
-                <div>E-mail: <span>zcxcz@zcxz.ru</span></div>
-              </Col>
-              <Col md={4}>
-                <div>ABOUT US IN FIGURES</div>
-                <div>5 TATTOO MASTERS</div>
-                <div>666 made tattoos</div>
-                <div>1488 ready sketches</div>
-                <div>26 regular visitors</div>
+                <div className="home-footer-navigate-tagline">Assistant:</div>
+                <div>Number: <span>8 (800) 555-35-35</span></div>
+                <div>E-mail: <span>test@yandex.ru</span></div>
               </Col>
             </Col>
           </Row>
@@ -109,15 +107,9 @@ class FooterComponent extends Component {
         <div className="home-footer-developer">
           <Row>
             <Col md={12}>
-              <span>© 2018 Tattoo Delux Studio | All Rights Reserved.</span>
-              <span>Developer: R1ON</span>
-              <span>Privacy Policy</span>
-
-
-              <Icon name="youtube-square" />
-              <Icon name="github-square" />
-              <Icon name="telegram" />
-              <Icon name="vk" />
+              <span className="home-footer-developer-info">© 2018 Tattoo Delux Studio. All Rights Reserved</span>
+              <span className="home-footer-developer-info">Developer: R1ON</span>
+              <span className="home-footer-developer-info">Privacy Policy</span>
             </Col>
           </Row>
         </div>

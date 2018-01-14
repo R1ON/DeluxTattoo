@@ -37,6 +37,8 @@
     height: 100vh
     width: 108vw
     &-down
+      position: relative
+      top: 0
       color: $accent-color
       cursor: pointer
       margin-top: 25vh
@@ -47,7 +49,7 @@
         animation: none
         transition: 1s ease
       &:active
-        margin-top: 27vh
+        top: 1.5vh
         transition: .3s linear
     div
       color: $main-color
@@ -64,6 +66,7 @@
       margin-left: 23%
       font-size: 1.6vw
       font-family: 'ComfortaaL', 'sans-serif'
+      outline: none
       a
         float: left
         margin-left: 2vw
@@ -101,21 +104,22 @@
         transform: scale(0.98, 0.98)
         background: darken($second-color, 5%)
         color: $accent-color
+        transition: .5s ease
 
 
 @keyframes moveDown
   70%
-    margin-top: 25vh
+    top: 0
   76%
-    margin-top: 23vh
+    top: -2vh
   82%
-    margin-top: 26.5vh
+    top: 1.5vh
   88%
-    margin-top: 24vh
+    top: -1vh
   94%
-    margin-top: 25.5vh
+    top: .5vh
   100%
-    margin-top: 25vh
+    top: 0
 
 
 @import "../../../Assets/sass/media"
