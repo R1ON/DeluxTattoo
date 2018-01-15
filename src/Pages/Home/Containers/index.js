@@ -55,7 +55,7 @@ class Home extends Component {
   }
 
   onBottomScroll(mainTitle) {
-    scrollToComponent(mainTitle, { offset: -35 ,align: 'top', duration: 1000 });
+    scrollToComponent(mainTitle, { offset: 10 ,align: 'top', duration: 1000 });
   }
 
   render() {

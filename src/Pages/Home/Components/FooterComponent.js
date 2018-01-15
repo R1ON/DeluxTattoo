@@ -21,32 +21,31 @@ class FooterComponent extends Component {
             <div className="home-footer-comment">{comment}</div>
             <div className="home-footer-quality">Quality:
               <span className="home-footer-stars">
-                <StarRatings
-                  rating={quality}
-                  starSpacing="1px"
-                  starWidthAndHeight="2.3vw"
-                  starRatedColor='#5d2532'
-                  isAggregateRating={false}
-                  numOfStars={ 5 }
-                />
+                {this.starComponent(quality)}
               </span>
             </div>
             <div className="home-footer-price">Price:
               <span className="home-footer-stars">
-                <StarRatings
-                  rating={price}
-                  starSpacing="1px"
-                  starWidthAndHeight="2.3vw"
-                  starRatedColor='#5d2532'
-                  isAggregateRating={false}
-                  numOfStars={ 5 }
-                />
+                {this.starComponent(price)}
               </span>
             </div>
           </span>
         </div>
       </div>
     );
+  }
+
+  starComponent(rating) {
+    return (
+      <StarRatings
+        rating={rating}
+        starSpacing="1px"
+        starWidthAndHeight="2.3vw"
+        starRatedColor='#5d2532'
+        isAggregateRating={false}
+        numOfStars={5}
+      />
+    )
   }
 
   render() {
@@ -60,6 +59,7 @@ class FooterComponent extends Component {
           emulateTouch={true}
           autoPlay={true}
           infiniteLoop={true}
+          interval={8000}
         >
           {COMMENTS.map((comment, index) => (
             this.reviewComponent(
