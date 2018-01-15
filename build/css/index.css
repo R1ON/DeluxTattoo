@@ -3560,6 +3560,8 @@ body {
   height: 100vh;
   width: 108vw; }
   .home-header-down {
+    position: relative;
+    top: 0;
     color: #E0E0E0;
     cursor: pointer;
     margin-top: 25vh;
@@ -3570,7 +3572,7 @@ body {
       animation: none;
       transition: 1s ease; }
     .home-header-down:active {
-      margin-top: 27vh;
+      top: 1.5vh;
       transition: .3s linear; }
   .home-header div {
     color: #0c0c0c;
@@ -3588,6 +3590,7 @@ body {
     font-size: 1.6vw;
     font-family: 'ComfortaaL', 'sans-serif'; }
     .home-header-link a {
+      outline: none;
       float: left;
       margin-left: 2vw;
       color: #0c0c0c;
@@ -3623,21 +3626,22 @@ body {
     .home-header-button:active {
       transform: scale(0.98, 0.98);
       background: #4b1e28;
-      color: #E0E0E0; }
+      color: #E0E0E0;
+      transition: .5s ease; }
 
 @keyframes moveDown {
   70% {
-    margin-top: 25vh; }
+    top: 0; }
   76% {
-    margin-top: 23vh; }
+    top: -2vh; }
   82% {
-    margin-top: 26.5vh; }
+    top: 1.5vh; }
   88% {
-    margin-top: 24vh; }
+    top: -1vh; }
   94% {
-    margin-top: 25.5vh; }
+    top: .5vh; }
   100% {
-    margin-top: 25vh; } }
+    top: 0; } }
 
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */
@@ -3837,6 +3841,7 @@ body {
     font-family: 'ComfortaaL', 'sans-serif';
     margin-bottom: 3vh; }
     .home-main-tagline a {
+      outline: none;
       color: #5d2532;
       font-family: 'ComfortaaB', 'sans-serif';
       border-bottom: 0 solid #5d2532;
@@ -4214,6 +4219,105 @@ body {
 .home-footer-stars {
   margin-left: .8vw; }
 
+.home-footer-links {
+  position: relative;
+  height: 50vh;
+  font-family: 'ComfortaaL', 'sans-serif';
+  font-size: 1.4em;
+  background: rgba(34, 34, 34, 0.9);
+  color: #E0E0E0;
+  text-align: center; }
+  .home-footer-links::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    background: url(../images/backgroundFooter.jpg) no-repeat;
+    background-size: cover; }
+  .home-footer-links-icon {
+    margin-top: 2vh;
+    margin-left: 1vw;
+    font-size: 3em;
+    color: #E0E0E0;
+    cursor: pointer;
+    transition: .3s ease; }
+    .home-footer-links-icon:hover {
+      transition: .3s ease;
+      color: #772f40; }
+    .home-footer-links-icon:active {
+      transition: .3s ease;
+      color: #56222e; }
+
+.home-footer-delux {
+  font-size: 1.7em;
+  margin-bottom: 2vh;
+  margin-top: 6vh; }
+  .home-footer-delux-logo {
+    font-family: 'Indie Flower', 'sans-serif'; }
+
+.home-footer-button {
+  width: 27vw;
+  padding: 12px 0 12px 0;
+  margin: 0 auto 3vh;
+  color: #E0E0E0;
+  border: 1px solid #E0E0E0;
+  background: none;
+  font-size: 1em;
+  font-family: 'ComfortaaR', 'sans-serif';
+  transition: .5s ease;
+  border-radius: 5px; }
+  .home-footer-button:hover {
+    cursor: pointer;
+    border: 1px solid rgba(255, 0, 21, 0.05);
+    background: #5d2532;
+    opacity: .7;
+    color: #E0E0E0;
+    transition: .5s ease; }
+  .home-footer-button:active {
+    background: #4b1e28;
+    color: #E0E0E0;
+    transition: .5s ease; }
+
+.home-footer-navigate {
+  text-align: left;
+  margin-top: 3vh; }
+  .home-footer-navigate a {
+    color: #E0E0E0;
+    text-decoration: none;
+    border-bottom: 0 solid #E0E0E0;
+    transition: .1s ease; }
+    .home-footer-navigate a:hover {
+      border-bottom: 3px solid #E0E0E0;
+      transition: .2s ease; }
+  .home-footer-navigate-title {
+    font-size: 1.3em;
+    border-bottom: 1px solid #E0E0E0;
+    margin-bottom: 2vh; }
+  .home-footer-navigate-tagline {
+    margin-top: 2vh; }
+
+.home-footer-developer {
+  height: 7vh;
+  background: #111111;
+  color: white;
+  text-align: center;
+  font-size: 1.3em;
+  font-family: 'ComfortaaL', 'sans-serif';
+  padding-top: 1.7vh; }
+  .home-footer-developer-info {
+    margin-left: 2vw; }
+    .home-footer-developer-info a {
+      color: #E0E0E0;
+      text-decoration: none;
+      border-bottom: 0 solid #E0E0E0;
+      transition: .1s ease; }
+      .home-footer-developer-info a:hover {
+        border-bottom: 3px solid #E0E0E0;
+        transition: .2s ease; }
+
 .star-container {
   margin-top: -.4vh; }
 
@@ -4482,10 +4586,10 @@ body {
       border-top-left-radius: 3px; }
       .modal-footer-cancel:hover {
         transition: .3s ease;
-        background: #878787; }
+        background: #943b4f; }
       .modal-footer-cancel:active {
         transition: .3s ease;
-        background: #6d6d6d; }
+        background: #813446; }
     .modal-footer-okay {
       border-bottom-right-radius: 3px;
       border-top-right-radius: 3px;

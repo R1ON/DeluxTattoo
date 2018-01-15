@@ -9,9 +9,9 @@ import { COMMENTS } from '../Constants';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 class FooterComponent extends Component {
-  reviewComponent(img, title, comment, quality, price) {
+  reviewComponent(img, title, comment, quality, price, index) {
     return (
-      <div className="home-footer-carousel">
+      <div className="home-footer-carousel" key={index}>
         <div className="home-footer-container">
           <div className="home-footer-avatar">
             <img src={require(`../../../Assets/img/peoplePhoto/${img}.jpg`)} />
@@ -58,10 +58,12 @@ class FooterComponent extends Component {
           showStatus={false}
           showThumbs={false}
           emulateTouch={true}
+          autoPlay={true}
+          infiniteLoop={true}
         >
-          {COMMENTS.map(comment => (
+          {COMMENTS.map((comment, index) => (
             this.reviewComponent(
-              comment.img, comment.title, comment.text, comment.quality, comment.price
+              comment.img, comment.title, comment.text, comment.quality, comment.price, index
             )
           ))}
         </Carousel>
@@ -76,19 +78,27 @@ class FooterComponent extends Component {
               <p className="home-footer-button" onClick={onModalOpen}>SIGN IN</p>
 
               <div>You can subscribe to us in social networks</div>
-              <Icon className="home-footer-links-icon" name="youtube" />
-              <Icon className="home-footer-links-icon" name="github" />
-              <Icon className="home-footer-links-icon" name="telegram" />
-              <Icon className="home-footer-links-icon" name="vk" />
+              <a href="https://www.youtube.com/user/2cssTV/featured" target="_blank">
+                <Icon className="home-footer-links-icon" name="youtube" />
+              </a>
+              <a href="https://github.com/R1ON" target="_blank">
+                <Icon className="home-footer-links-icon" name="github" />
+              </a>
+              <a href="https://t.me/zdarova1234" target="_blank">
+                <Icon className="home-footer-links-icon" name="telegram" />
+              </a>
+              <a href="https://vk.com/sobaka_bez_anusa" target="_blank">
+                <Icon className="home-footer-links-icon" name="vk" />
+              </a>
             </Col>
 
             <Col md={7}>
               <Col md={4} className="home-footer-navigate">
                 <div className="home-footer-navigate-title">NAVIGATE</div>
-                <div>Home</div>
-                <div>Portfolio</div>
-                <div>Registration</div>
-                <div>About</div>
+                <div><a href="#">Home</a></div>
+                <div><a href="#">Portfolio</a></div>
+                <div><a href="#">Registration</a></div>
+                <div><a href="#">About</a></div>
               </Col>
               <Col md={8} className="home-footer-navigate">
                 <div className="home-footer-navigate-title">CONTACTS</div>
@@ -109,7 +119,7 @@ class FooterComponent extends Component {
             <Col md={12}>
               <span className="home-footer-developer-info">© 2018 Tattoo Delux Studio. All Rights Reserved</span>
               <span className="home-footer-developer-info">Developer: R1ON</span>
-              <span className="home-footer-developer-info">Privacy Policy</span>
+              <span className="home-footer-developer-info"><a href="#">Privacy Policy</a></span>
             </Col>
           </Row>
         </div>

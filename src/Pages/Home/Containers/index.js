@@ -8,7 +8,7 @@ import { isOpenImageModalAction } from '../Actions/ImageModalActions';
 
 import BurgerMenu from '../../../Components/BurgerMenu';
 
-import HeaderComponent from '../Components/HeaderComponent';
+import HeaderContainer from './HeaderContainer';
 import MainComponent from '../Components/MainComponent';
 import FooterComponent from '../Components/FooterComponent';
 
@@ -23,16 +23,8 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      style: {
-        backgroundPositionX: '10%',
-        backgroundPositionY: '10%'
-      },
       display: ''
     };
-
-    if (document.body.clientWidth < 991) {
-      this.onMouseMoveParallaxEffect = () => {};
-    } else this.onMouseMoveParallaxEffect = this.onMouseMoveParallaxEffect.bind(this);
 
     if (document.body.clientWidth < 480) {
       this.onImageModalOpen = () => {};
@@ -46,17 +38,6 @@ class Home extends Component {
     this.onSignInModalOpen = this.onSignInModalOpen.bind(this);
 
     this.onBottomScroll = this.onBottomScroll.bind(this);
-  }
-
-  onMouseMoveParallaxEffect(e) {
-    let x = (e.pageX * -1 / 20), y = (e.pageY * -1 / 10);
-
-    this.setState({
-      style: {
-        backgroundPositionX: x,
-        backgroundPositionY: y - 50
-      }
-    })
   }
 
   onRegistrationModalOpen() {
@@ -86,9 +67,7 @@ class Home extends Component {
 
         <div className="home-container">
           <BurgerMenu />
-          <HeaderComponent
-            styles={this.state.style}
-            onMouseMove={this.onMouseMoveParallaxEffect}
+          <HeaderContainer
             onBottomScroll={this.onBottomScroll}
             onModalOpen={this.onSignInModalOpen}
           />

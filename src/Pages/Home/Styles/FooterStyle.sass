@@ -99,6 +99,23 @@
       background: darken($second-color, 5%)
       color: $accent-color
       transition: .5s ease
+  &-navigate
+    text-align: left
+    margin-top: 3vh
+    a
+      color: $accent-color
+      text-decoration: none
+      border-bottom: 0 solid $accent-color
+      transition: .1s ease
+      &:hover
+        border-bottom: 3px solid $accent-color
+        transition: .2s ease
+    &-title
+      font-size: 1.3em
+      border-bottom: 1px solid $accent-color
+      margin-bottom: 2vh
+    &-tagline
+      margin-top: 2vh
   &-developer
     height: 7vh
     background: lighten($main-color, 2%)
@@ -108,17 +125,16 @@
     font-family: 'ComfortaaL', 'sans-serif'
     padding-top: 1.7vh
     &-info
-      color: $accent-color
       margin-left: 2vw
-  &-navigate
-    text-align: left
-    margin-top: 3vh
-    &-title
-      font-size: 1.3em
-      border-bottom: 1px solid $accent-color
-      margin-bottom: 2vh
-    &-tagline
-      margin-top: 2vh
+      a
+        color: $accent-color
+        text-decoration: none
+        border-bottom: 0 solid $accent-color
+        transition: .1s ease
+        &:hover
+          border-bottom: 3px solid $accent-color
+          transition: .2s ease
+
 
 .star-container
   margin-top: -.4vh
