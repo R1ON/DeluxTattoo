@@ -10,6 +10,34 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
   .home-footer
+    &-navigate
+      a
+        &:hover
+          border: 0
+      &-tagline
+        margin-top: 0
+    &-subscribe
+      margin-top: 3vh
+    &-developer-info a
+      &:hover
+        border: 0
+    &-button
+      &:hover
+        color: $accent-color
+        border: 1px solid $accent-color
+        background: none
+        opacity: 1
+    &-links
+      height: 50vh !important
+      &-icon
+        &:hover
+          color: $accent-color
+        &:active
+          color: $accent-color
+
+
+
+  .home-footer
     &-carousel
       height: 70vh
     &-container
@@ -84,9 +112,25 @@
     &:hover
       border-bottom: none
 
+
+@media only screen and (max-width : 844px)
+  .home-footer
+    &-developer
+      font-size: 2.3vw
+      padding-top: 2.3vh
+    &-navigate-tagline
+      margin-top: 2vh
+
+  .home-header-link
+    display: none
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
   .home-footer
+    &-navigate
+      text-align: center
+    &-links
+      height: 80vh !important
     &-carousel
       height: 90vh
     &-container
@@ -173,6 +217,8 @@
       padding: 1vw 0 1vw 0
       width: 40vw
       font-size: 4vw
+    &-down
+      display: none
 
 @media only screen and (max-width : 550px)
   .home-footer

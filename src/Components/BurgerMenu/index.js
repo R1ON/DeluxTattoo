@@ -39,7 +39,7 @@ class BurgerMenu extends Component {
               <a href="#">{MENU_LINKS.LINK_2}</a><br />
 
               <span className="burger-icon">
-                <Icon size="lg" name="user-plus" />
+                <Icon size="lg" name="shopping-basket" />
               </span>
               <a href="#">{MENU_LINKS.LINK_3}</a><br />
 

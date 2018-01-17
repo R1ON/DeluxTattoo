@@ -71,45 +71,52 @@ class FooterComponent extends Component {
 
         <div className="home-footer-links">
           <Row>
-            <Col sm={12} md={5}>
-              <div className="home-footer-delux">
-                Sign in
-                <span className="home-footer-delux-logo"> DELUX TATTOO</span>
-              </div>
-              <p className="home-footer-button" onClick={onModalOpen}>SIGN IN</p>
+            <Col xs={12} sm={12} md={5}>
+              <Col sm={6} md={12}>
+                <div className="home-footer-delux">
+                  Sign in
+                  <span className="home-footer-delux-logo"> DELUX TATTOO</span>
+                </div>
+                <p className="home-footer-button" onClick={onModalOpen}>SIGN IN</p>
+              </Col>
 
-              <div>You can subscribe to us in social networks</div>
-              <a href="https://www.youtube.com/user/2cssTV/featured" target="_blank">
-                <Icon className="home-footer-links-icon" name="youtube" />
-              </a>
-              <a href="https://github.com/R1ON" target="_blank">
-                <Icon className="home-footer-links-icon" name="github" />
-              </a>
-              <a href="https://t.me/zdarova1234" target="_blank">
-                <Icon className="home-footer-links-icon" name="telegram" />
-              </a>
-              <a href="https://vk.com/sobaka_bez_anusa" target="_blank">
-                <Icon className="home-footer-links-icon" name="vk" />
-              </a>
+              <Col sm={6} md={12}>
+                <div className="home-footer-subscribe">You can subscribe to us in social networks</div>
+                <a href="https://www.youtube.com/user/2cssTV/featured" target="_blank">
+                  <Icon className="home-footer-links-icon" name="youtube" />
+                </a>
+                <a href="https://github.com/R1ON" target="_blank">
+                  <Icon className="home-footer-links-icon" name="github" />
+                </a>
+                <a href="https://t.me/zdarova1234" target="_blank">
+                  <Icon className="home-footer-links-icon" name="telegram" />
+                </a>
+                <a href="https://vk.com/sobaka_bez_anusa" target="_blank">
+                  <Icon className="home-footer-links-icon" name="vk" />
+                </a>
+              </Col>
             </Col>
 
-            <Col sm={12} md={7}>
-              <Col sm={6} md={4} className="home-footer-navigate">
+            <Col xs={12} sm={12} md={7}>
+              <Col sm={2} md={4} className="home-footer-navigate hidden-xs">
                 <div className="home-footer-navigate-title">NAVIGATE</div>
                 <div><a href="#">{MENU_LINKS.LINK_1}</a></div>
                 <div><a href="#">{MENU_LINKS.LINK_2}</a></div>
                 <div><a href="#">{MENU_LINKS.LINK_3}</a></div>
                 <div><a href="#">{MENU_LINKS.LINK_4}</a></div>
               </Col>
-              <Col sm={6} md={8} className="home-footer-navigate">
+              <Col xs={12} sm={10} md={8} className="home-footer-navigate">
                 <div className="home-footer-navigate-title">CONTACTS</div>
-                <div>Administrator:</div>
-                <div>Number: <span>8 (930) 849-65-18</span></div>
-                <div>E-mail: <span>r.maximov2012@yandex.ru</span></div>
-
-                <div className="home-footer-navigate-tagline">Assistant:</div>
-                <div>Number: <span>8 (800) 555-35-35</span></div>
-                <div>E-mail: <span>test@yandex.ru</span></div>
+                <Col xs={12} sm={6} md={12}>
+                  <div>Administrator:</div>
+                  <div>Number: <span>8 (930) 849-65-18</span></div>
+                  <div>E-mail: <span>r.maximov2012@yandex.ru</span></div>
+                </Col>
+                <Col xs={12} sm={6} md={12}>
+                  <div className="home-footer-navigate-tagline">Assistant:</div>
+                  <div>Number: <span>8 (800) 555-35-35</span></div>
+                  <div>E-mail: <span>test@yandex.ru</span></div>
+                </Col>
               </Col>
             </Col>
           </Row>
