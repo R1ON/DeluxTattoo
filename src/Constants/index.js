@@ -1,6 +1,6 @@
 export const MENU_LINKS = {
-  LINK_1: 'HOME',
-  LINK_2: 'PORTFOLIO',
-  LINK_3: 'REGISTRATION',
-  LINK_4: 'ABOUT'
+  LINK_1: 'Home',
+  LINK_2: 'Portfolio',
+  LINK_3: 'Shop',
+  LINK_4: 'About'
 };

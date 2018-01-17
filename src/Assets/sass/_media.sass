@@ -18,6 +18,12 @@
       width: 15vw
       img
         height: 15vw
+    &-links
+      font-size: 1.2em
+      &-icon
+        font-size: 2.5em
+    &-delux
+      font-size: 1.4em
 
   .modal
     width: 50vw
@@ -66,21 +72,44 @@
       font-size: 2.5em
       &:hover
         color: $accent-color
-        border: 0px solid $main-lighten-color !important
+        border: 0 solid $main-lighten-color !important
         background: $second-color
         opacity: 1
       &:active
         color: $accent-color
-        border: 0px solid $main-lighten-color !important
+        border: 0 solid $main-lighten-color !important
         background: $second-color
 
   .home-main-tagline a
     &:hover
       border-bottom: none
 
-
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+  .home-footer
+    &-carousel
+      height: 90vh
+    &-container
+      height: 70vh
+      display: block
+    &-avatar
+      margin: 2vh auto
+      width: 20vw
+      img
+        height: 20vw
+    &-review
+      margin: 0 auto
+      max-width: 60vw
+    &-title
+      margin: 0 auto
+      text-align: center
+    &-comment, &-quality, &-price
+      margin: 0 auto
+    &-comment
+      margin-top: 1.5vh
+      margin-bottom: 1.5vh
+
+
   .modal
     width: 70vw
     &-input
@@ -145,9 +174,28 @@
       width: 40vw
       font-size: 4vw
 
+@media only screen and (max-width : 550px)
+  .home-footer
+    &-carousel
+      height: 100vh
+    &-container
+      height: 80vh
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+  .home-footer
+    &-container
+      height: 90vh
+    &-comment
+      text-indent: 0
+      font-size: 1.3em
+    &-quality, &-price
+      font-size: 1.3em
+      text-align: center
+    &-stars
+      display: block
+
   .img-blur
     width: 57vw
     height: 35vw

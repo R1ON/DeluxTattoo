@@ -5,6 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import StarRatings from 'react-star-ratings';
 
 import { COMMENTS } from '../Constants';
+import { MENU_LINKS } from '../../../Constants';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
@@ -16,7 +17,7 @@ class FooterComponent extends Component {
           <div className="home-footer-avatar">
             <img src={require(`../../../Assets/img/peoplePhoto/${img}.jpg`)} />
           </div>
-          <span className="home-footer-review">
+          <div className="home-footer-review">
             <div className="home-footer-title">{title}</div>
             <div className="home-footer-comment">{comment}</div>
             <div className="home-footer-quality">Quality:
@@ -29,7 +30,7 @@ class FooterComponent extends Component {
                 {this.starComponent(price)}
               </span>
             </div>
-          </span>
+          </div>
         </div>
       </div>
     );
@@ -40,7 +41,7 @@ class FooterComponent extends Component {
       <StarRatings
         rating={rating}
         starSpacing="1px"
-        starWidthAndHeight="2.3vw"
+        starWidthAndHeight="30px"
         starRatedColor='#5d2532'
         isAggregateRating={false}
         numOfStars={5}
@@ -59,7 +60,7 @@ class FooterComponent extends Component {
           emulateTouch={true}
           autoPlay={true}
           infiniteLoop={true}
-          interval={8000}
+          interval={10000}
         >
           {COMMENTS.map((comment, index) => (
             this.reviewComponent(
@@ -70,7 +71,7 @@ class FooterComponent extends Component {
 
         <div className="home-footer-links">
           <Row>
-            <Col md={5}>
+            <Col sm={12} md={5}>
               <div className="home-footer-delux">
                 Sign in
                 <span className="home-footer-delux-logo"> DELUX TATTOO</span>
@@ -92,15 +93,15 @@ class FooterComponent extends Component {
               </a>
             </Col>
 
-            <Col md={7}>
-              <Col md={4} className="home-footer-navigate">
+            <Col sm={12} md={7}>
+              <Col sm={6} md={4} className="home-footer-navigate">
                 <div className="home-footer-navigate-title">NAVIGATE</div>
-                <div><a href="#">Home</a></div>
-                <div><a href="#">Portfolio</a></div>
-                <div><a href="#">Registration</a></div>
-                <div><a href="#">About</a></div>
+                <div><a href="#">{MENU_LINKS.LINK_1}</a></div>
+                <div><a href="#">{MENU_LINKS.LINK_2}</a></div>
+                <div><a href="#">{MENU_LINKS.LINK_3}</a></div>
+                <div><a href="#">{MENU_LINKS.LINK_4}</a></div>
               </Col>
-              <Col md={8} className="home-footer-navigate">
+              <Col sm={6} md={8} className="home-footer-navigate">
                 <div className="home-footer-navigate-title">CONTACTS</div>
                 <div>Administrator:</div>
                 <div>Number: <span>8 (930) 849-65-18</span></div>
@@ -116,7 +117,7 @@ class FooterComponent extends Component {
 
         <div className="home-footer-developer">
           <Row>
-            <Col md={12}>
+            <Col sm={12} md={12}>
               <span className="home-footer-developer-info">© 2018 Tattoo Delux Studio. All Rights Reserved</span>
               <span className="home-footer-developer-info">Developer: R1ON</span>
               <span className="home-footer-developer-info"><a href="#">Privacy Policy</a></span>
