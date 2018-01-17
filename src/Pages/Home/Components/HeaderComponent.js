@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { Row, Col } from 'reactstrap';
 import { Icon } from 'react-fa';
 
@@ -28,7 +29,7 @@ class HeaderComponent extends Component {
           <Col md={8} className="hidden-xs hidden-sm">
             <div className="home-header-link">
               <a href="#">{MENU_LINKS.LINK_1.toUpperCase()}</a>
-              <a href="#">{MENU_LINKS.LINK_2.toUpperCase()}</a>
+              <Link to="/portfolio">{MENU_LINKS.LINK_2.toUpperCase()}</Link>
               <a href="#">{MENU_LINKS.LINK_3.toUpperCase()}</a>
               <a href="#">{MENU_LINKS.LINK_4.toUpperCase()}</a>
             </div>

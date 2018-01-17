@@ -16,8 +16,6 @@ import '../Styles/HeaderStyle.sass';
 import '../Styles/MainStyle.sass';
 import '../Styles/FooterStyle.sass';
 
-// import { Link } from 'react-router';
-
 class Home extends Component {
   constructor(props) {
     super(props);

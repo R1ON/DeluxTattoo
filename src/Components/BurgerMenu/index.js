@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { Col } from 'reactstrap';
 import { Icon } from 'react-fa';
 import { slide as Menu } from 'react-burger-menu';
@@ -36,7 +37,7 @@ class BurgerMenu extends Component {
               <span className="burger-icon">
                 <Icon size="lg" name="picture-o" />
               </span>
-              <a href="#">{MENU_LINKS.LINK_2}</a><br />
+              <Link to="/portfolio">{MENU_LINKS.LINK_2}</Link><br />
 
               <span className="burger-icon">
                 <Icon size="lg" name="shopping-basket" />

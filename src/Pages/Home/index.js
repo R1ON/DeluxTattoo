@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import HomeContainer from './Containers';
 import RegistrationModal from './Containers/RegistrationModal';

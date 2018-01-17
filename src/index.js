@@ -14,6 +14,7 @@ import './Assets/sass/main.sass';
 import RootReducers from './Reducers';
 
 import Home from './Pages/Home';
+import Portfolio from './Pages/Portfolio';
 
 const store = createStore(RootReducers, composeWithDevTools(
 	applyMiddleware(thunk)
@@ -28,6 +29,7 @@ const renderApp = () => {
 			<Provider store={store}>
 				<Router history={history}>
 					<Route path='/' component={Home} />
+					<Route path='/portfolio' component={Portfolio} />
 				</Router>
 			</Provider>
 		</div>,

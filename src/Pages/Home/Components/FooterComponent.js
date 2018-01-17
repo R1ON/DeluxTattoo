@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { Row, Col } from 'reactstrap';
 import { Icon } from 'react-fa';
 import { Carousel } from 'react-responsive-carousel';
@@ -101,7 +102,7 @@ class FooterComponent extends Component {
               <Col sm={2} md={4} className="home-footer-navigate hidden-xs">
                 <div className="home-footer-navigate-title">NAVIGATE</div>
                 <div><a href="#">{MENU_LINKS.LINK_1}</a></div>
-                <div><a href="#">{MENU_LINKS.LINK_2}</a></div>
+                <div><Link to="/portfolio">{MENU_LINKS.LINK_2}</Link></div>
                 <div><a href="#">{MENU_LINKS.LINK_3}</a></div>
                 <div><a href="#">{MENU_LINKS.LINK_4}</a></div>
               </Col>
