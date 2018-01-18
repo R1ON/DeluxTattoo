@@ -101,19 +101,19 @@ class FooterComponent extends Component {
             <Col xs={12} sm={12} md={7}>
               <Col sm={2} md={4} className="home-footer-navigate hidden-xs">
                 <div className="home-footer-navigate-title">NAVIGATE</div>
-                <div><a href="#">{MENU_LINKS.LINK_1}</a></div>
-                <div><Link to="/portfolio">{MENU_LINKS.LINK_2}</Link></div>
-                <div><a href="#">{MENU_LINKS.LINK_3}</a></div>
-                <div><a href="#">{MENU_LINKS.LINK_4}</a></div>
+
+                {MENU_LINKS.map(link => {
+                  return <div key={link.id}><Link to={link.url}>{link.title}</Link></div>
+                })}
               </Col>
               <Col xs={12} sm={10} md={8} className="home-footer-navigate">
                 <div className="home-footer-navigate-title">CONTACTS</div>
-                <Col xs={12} sm={6} md={12}>
+                <Col xs={12} sm={6} md={12} className="home-footer-navigate-info">
                   <div>Administrator:</div>
                   <div>Number: <span>8 (930) 849-65-18</span></div>
                   <div>E-mail: <span>r.maximov2012@yandex.ru</span></div>
                 </Col>
-                <Col xs={12} sm={6} md={12}>
+                <Col xs={12} sm={6} md={12} className="home-footer-navigate-info">
                   <div className="home-footer-navigate-tagline">Assistant:</div>
                   <div>Number: <span>8 (800) 555-35-35</span></div>
                   <div>E-mail: <span>test@yandex.ru</span></div>
@@ -122,6 +122,8 @@ class FooterComponent extends Component {
             </Col>
           </Row>
         </div>
+
+         {/*На солнце горит водород, а при горении появляется вода. Куда вода девается на солнце? (с) Игорь*/}
 
         <div className="home-footer-developer">
           <Row>

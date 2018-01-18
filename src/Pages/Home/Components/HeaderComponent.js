@@ -28,10 +28,9 @@ class HeaderComponent extends Component {
           </Col>
           <Col md={8} className="hidden-xs hidden-sm">
             <div className="home-header-link">
-              <a href="#">{MENU_LINKS.LINK_1.toUpperCase()}</a>
-              <Link to="/portfolio">{MENU_LINKS.LINK_2.toUpperCase()}</Link>
-              <a href="#">{MENU_LINKS.LINK_3.toUpperCase()}</a>
-              <a href="#">{MENU_LINKS.LINK_4.toUpperCase()}</a>
+              {MENU_LINKS.map(link => {
+                return <Link key={link.id} to={link.url}>{link.title.toUpperCase()}</Link>
+              })}
             </div>
           </Col>
 

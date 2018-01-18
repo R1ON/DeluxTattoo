@@ -29,25 +29,14 @@ class BurgerMenu extends Component {
           <div className="outer-container">
             <Menu width={ this.state.width }>
               <div className="img-blur"></div>
-              <span className="burger-icon">
-                <Icon size="lg" name="home" />
-              </span>
-              <a href="#">{MENU_LINKS.LINK_1}</a><br />
-
-              <span className="burger-icon">
-                <Icon size="lg" name="picture-o" />
-              </span>
-              <Link to="/portfolio">{MENU_LINKS.LINK_2}</Link><br />
-
-              <span className="burger-icon">
-                <Icon size="lg" name="shopping-basket" />
-              </span>
-              <a href="#">{MENU_LINKS.LINK_3}</a><br />
-
-              <span className="burger-icon">
-                <Icon size="lg" name="info" />
-              </span>
-              <a href="#">{MENU_LINKS.LINK_4}</a>
+              {MENU_LINKS.map(link => (
+                <div key={link.id}>
+                  <span className="burger-icon">
+                    <Icon size="lg" name={link.icon} />
+                  </span>
+                  <Link to={link.url}>{link.title.toUpperCase()}</Link>
+                </div>
+              ))}
             </Menu>
           </div>
         </Col>
