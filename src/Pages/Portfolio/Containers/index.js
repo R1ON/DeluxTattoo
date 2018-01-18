@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 
 import HeaderComponent from '../Components/HeaderComponent';
 
+import '../Styles/HeaderStyle.sass';
+
 class PortfolioContainer extends Component {
   render() {
     return (
-      <div>
+      <div className="portfolio">
         <HeaderComponent />
       </div>
     );
