@@ -4541,6 +4541,8 @@ body {
 .home-footer-navigate {
   text-align: left;
   margin-top: 3vh; }
+  .home-footer-navigate-info {
+    margin-left: -1vw; }
   .home-footer-navigate a {
     color: #E0E0E0;
     text-decoration: none;
@@ -5052,3 +5054,26 @@ body {
 
 ::-ms-input-placeholder {
   text-align: left; }
+.portfolio {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw; }
+  .portfolio-header {
+    background: #39161e;
+    height: 10vh;
+    text-align: right;
+    padding-top: 2vh; }
+    .portfolio-header-logo {
+      color: #E0E0E0;
+      text-align: left !important; }
+    .portfolio-header-links {
+      margin-left: 1vw;
+      margin-right: 1vw;
+      text-decoration: none;
+      font-size: 2vw;
+      color: #E0E0E0; }
+      .portfolio-header-links:last-child {
+        padding-right: 2vw; }
