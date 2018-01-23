@@ -15,9 +15,7 @@ class BurgerMenu extends Component {
     this.state = {
       width: '40%'
     };
-  }
 
-  componentWillMount() {
     if (document.body.clientWidth < 768)
       this.setState({ width: '60%' })
   }

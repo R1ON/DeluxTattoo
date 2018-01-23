@@ -17,7 +17,7 @@ class HeaderParallaxContainer extends Component {
   }
 
   onMouseMoveParallaxEffect(e) {
-    let x = (e.pageX * -1 / 20), y = (e.pageY * -1 / 10);
+    let x = (e.pageX * -1 / 30), y = (e.pageY * -1 / 20);
 
     this.setState({
       backgroundPositionX: x,

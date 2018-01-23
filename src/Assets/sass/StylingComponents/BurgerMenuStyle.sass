@@ -17,12 +17,19 @@
   padding: 0 2vw 0
   background: $main-lighten-color
 
-.bm-item-list a
-  padding-top: .4vh
-  text-decoration: none
-  color: $accent-color
-  font-size: 2.2vw
-  font-family: 'ComfortaaL', 'sans-serif'
+.bm-item-list
+  div
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+    padding-bottom: 1vh
+    padding-top: 2vh
+  &:first-child
+    border-bottom: 0
+  a
+    padding-top: .4vh
+    text-decoration: none
+    color: $accent-color
+    font-size: 2.2vw
+    font-family: 'ComfortaaL', 'sans-serif'
 
 .bm-overlay
   background: rgba(0, 0, 0, 0.3)
