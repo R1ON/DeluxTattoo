@@ -33,7 +33,11 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "node-mock-server": "^0.20.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.1",
+    "mongoose": "^5.0.1",
+    "morgan": "^1.9.0",
     "prop-types": "^15.6.0",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.6.2",

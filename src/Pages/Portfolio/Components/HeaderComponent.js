@@ -9,10 +9,14 @@ class HeaderComponent extends Component {
     return (
       <div>
         <div className="portfolio-header">
-          <span className="portfolio-header-logo">DELUX TATTOO</span>
-          {MENU_LINKS.map(link => {
-            return <Link className="portfolio-header-links" key={link.id} to={link.url}>{link.title.toUpperCase()}</Link>
-          })}
+          <div className="portfolio-header-logo">
+            <span>DELUX TATTOO</span>
+          </div>
+          <div className="portfolio-header-links">
+            {MENU_LINKS.map(link => {
+              return <Link  key={link.id} to={link.url}>{link.title.toUpperCase()}</Link>
+            })}
+          </div>
         </div>
 
         <div className="portfolio-header-parallax"></div>

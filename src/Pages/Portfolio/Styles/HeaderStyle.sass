@@ -10,16 +10,29 @@
   &-header
     background: darken($second-color, 10%)
     height: 10vh
-    text-align: right
-    padding-top: 2vh
     &-logo
+      margin-left: 4vw
+      padding-top: 1vh
       color: $accent-color
-      text-align: left !important
+      text-align: left
+      font-size: 3vw
+      font-family: 'Indie Flower', 'sans-serif'
     &-links
-      margin-left: 1vw
-      margin-right: 1vw
-      text-decoration: none
-      font-size: 2vw
-      color: $accent-color
-      &:last-child
-        padding-right: 2vw
+      text-align: right
+      margin-top: -6.5vh
+      a
+        outline: none
+        margin-left: 1vw
+        margin-right: 1vw
+        text-decoration: none
+        font-size: 1.6vw
+        font-family: 'ComfortaaL', 'sans-serif'
+        color: $accent-color
+        border: 0 $accent-color solid
+        transition: .1s ease
+        &:hover
+          border-bottom: 3px $accent-color solid
+          transition: .2s ease
+          color: white
+        &:last-child
+          padding-right: 4vw

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import HeaderComponent from '../Components/HeaderComponent';
+import MainComponent from '../Components/MainComponent';
 
-class HeaderContainer extends Component {
+class MainContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -26,16 +26,12 @@ class HeaderContainer extends Component {
   }
 
   render() {
-    const { onBottomScroll, onModalOpen } = this.props;
-
     return (
       <div>
         <div className="home-container">
-          <HeaderComponent
+          <MainComponent
             styles={this.state}
             onMouseMove={this.onMouseMoveParallaxEffect}
-            onBottomScroll={onBottomScroll}
-            onModalOpen={onModalOpen}
           />
         </div>
       </div>
@@ -43,4 +39,4 @@ class HeaderContainer extends Component {
   }
 };
 
-export default HeaderContainer;
+export default MainContainer;
