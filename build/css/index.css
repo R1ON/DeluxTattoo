@@ -3580,6 +3580,14 @@ body {
   padding: 0 2vw 0;
   background: #1F1F1F; }
 
+.bm-item-list div {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1vh;
+  padding-top: 2vh; }
+
+.bm-item-list:first-child {
+  border-bottom: 0; }
+
 .bm-item-list a {
   padding-top: .4vh;
   text-decoration: none;
@@ -4481,19 +4489,10 @@ body {
   height: 50vh;
   font-family: 'ComfortaaL', 'sans-serif';
   font-size: 1.4em;
-  background: rgba(34, 34, 34, 0.9);
+  background: url(../images/backgroundFooter.jpg) no-repeat;
+  background-size: cover;
   color: #E0E0E0;
   text-align: center; }
-  .home-footer-links::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -2;
-    width: 100%;
-    height: 100%;
-    background: url(../images/backgroundFooter.jpg) no-repeat;
-    background-size: cover; }
   .home-footer-links-icon {
     margin-top: 2vh;
     margin-left: 1vw;
@@ -5063,17 +5062,38 @@ body {
   margin-right: -50vw; }
   .portfolio-header {
     background: #39161e;
-    height: 10vh;
-    text-align: right;
-    padding-top: 2vh; }
+    height: 10vh; }
     .portfolio-header-logo {
+      margin-left: 4vw;
+      padding-top: 1vh;
       color: #E0E0E0;
-      text-align: left !important; }
+      text-align: left;
+      font-size: 3vw;
+      font-family: 'Indie Flower', 'sans-serif'; }
     .portfolio-header-links {
-      margin-left: 1vw;
-      margin-right: 1vw;
-      text-decoration: none;
-      font-size: 2vw;
-      color: #E0E0E0; }
-      .portfolio-header-links:last-child {
-        padding-right: 2vw; }
+      text-align: right;
+      margin-top: -6.5vh; }
+      .portfolio-header-links a {
+        outline: none;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        text-decoration: none;
+        font-size: 1.6vw;
+        font-family: 'ComfortaaL', 'sans-serif';
+        color: #E0E0E0;
+        border: 0 #E0E0E0 solid;
+        transition: .1s ease; }
+        .portfolio-header-links a:hover {
+          border-bottom: 3px #E0E0E0 solid;
+          transition: .2s ease;
+          color: white; }
+        .portfolio-header-links a:last-child {
+          padding-right: 4vw; }
+.portfolio-main {
+  text-align: center;
+  font-size: 3.125em;
+  background: url(../images/backgroundPortfolio.jpg) no-repeat;
+  background-size: 120%;
+  margin-left: -3vw;
+  height: 90vh;
+  width: 108vw; }

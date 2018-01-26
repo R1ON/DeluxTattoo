@@ -16,6 +16,9 @@ class HeaderComponent extends Component {
           style={styles}
           onMouseMove={onMouseMove}
         >
+          <img className="portfolio-main-master" src={require(`../../../Assets/img/test.png`)} />
+          <img className="portfolio-main-master" src={require(`../../../Assets/img/test.png`)} />
+          <img className="portfolio-main-master" src={require(`../../../Assets/img/test.png`)} />
         </Row>
       </div>
     );

@@ -15,7 +15,7 @@ var port     =  80; // set our port
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/testAPI'); // connect to our database
 var db = mongoose.connection;
-db.on('connect', function () { console.log('connected'); });
+//db.on('connect', function () { console.log('connected'); });
 var Device     = require('./Schema');
 
 // ROUTES FOR OUR API
