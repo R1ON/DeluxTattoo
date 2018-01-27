@@ -9,11 +9,33 @@
     margin-left: -3vw
     height: 90vh
     width: 108vw
+    &-text
+      &::before
+        content: 'Your dad'
+        font-style: italic
+        font-family: 'ComfortaaL', 'sans-serif'
+        position: absolute
+        top: -1vh
+        left: 13vw
+        color: white
+        opacity: 0
+        transition: .7s ease
+      &:hover
+        .portfolio-main-master
+          cursor: pointer
+          filter: grayscale(0%) !important
+          transition: .5s ease
+          transform: scale(1.05, 1.05)
+        &::before
+          transition: .5s ease
+          top: 1vh
+          opacity: 1
     &-master
+      will-change: transform, opacity
       filter: grayscale(100%)
-      transition: .5s ease
-      margin-top: 30vh
-      width: 35vw
+      transition: .7s ease
+      margin-top: 5vh
+      width: 30vw
       &:hover
         cursor: pointer
         filter: grayscale(0%) !important

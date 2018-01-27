@@ -9,7 +9,7 @@ class MainContainer extends Component {
     this.state = {
     	style: {
 		    backgroundPositionX: '10%',
-		    backgroundPositionY: '10%'
+		    backgroundPositionY: '40%'
 	    }
     };
 
@@ -25,7 +25,7 @@ class MainContainer extends Component {
     this.setState({
     	style: {
 		    backgroundPositionX: x,
-		    backgroundPositionY: y - 50
+		    backgroundPositionY: y - 110
 	    }
     });
   }
