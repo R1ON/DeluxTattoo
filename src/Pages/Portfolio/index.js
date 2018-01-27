@@ -2,16 +2,13 @@ import React from 'react';
 
 import PortfolioContainer from './Containers';
 
-
-const Portfolio = () => {
-  return (
+const Portfolio = () => (
+  <div>
     <div>
-      <div>
-        <PortfolioContainer />
-      </div>
+      <PortfolioContainer />
     </div>
-  );
-};
+  </div>
+);
 
 export {
   Portfolio as default

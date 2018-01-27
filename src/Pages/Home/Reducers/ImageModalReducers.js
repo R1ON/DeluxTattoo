@@ -15,22 +15,28 @@ export function isOpenImageModalReducer(state = initialState, action) {
       return {
         ...state,
         isOpenImage: action.isOpenImage,
-        imageSrc: parseInt(action.imageSrc.replace(/[^0-9]/g, ''))
+        imageSrc: parseInt(action.imageSrc.replace(/[^0-9]/g, ''), 10)
       };
 
     case SWITCH_IMAGE_LEFT:
-      if (state.imageSrc === 1)
-        return {...state, imageSrc: 14};
-
+      if (state.imageSrc === 1) {
+	      return {
+	      	...state,
+		      imageSrc: 14
+	      };
+      }
       return {
         ...state,
         imageSrc: state.imageSrc - 1
       };
 
     case SWITCH_IMAGE_RIGHT:
-      if (state.imageSrc === 14)
-        return {...state, imageSrc: 1};
-
+      if (state.imageSrc === 14) {
+	      return {
+	      	...state,
+		      imageSrc: 1
+	      };
+      }
       return {
         ...state,
         imageSrc: state.imageSrc + 1

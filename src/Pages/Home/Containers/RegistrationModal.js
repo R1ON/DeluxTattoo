@@ -13,7 +13,10 @@ import RegistrationForm from '../Components/Forms/RegistrationForm';
 import '../../../Assets/sass/StylingComponents/ModalStyle.sass';
 
 const overlayBackground = {
-  overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }
+  overlay: {
+  	backgroundColor: 'rgba(0, 0, 0, 0.8)',
+	  zIndex: '999'
+  }
 };
 
 class RegistrationModal extends Component {
@@ -57,7 +60,7 @@ class RegistrationModal extends Component {
       </Modal>
     );
   }
-};
+}
 
 const selector = formValueSelector('registrationModal');
 
@@ -73,16 +76,13 @@ function mapStateToProps(state) {
   const inputConfirmReg = selector(state, 'inputConfirmReg');
 
   return {
-    isOpenRegistration, isOpenSignIn,
-    inputLoginReg, inputMailReg, inputPasswordReg, inputConfirmReg
+    isOpenRegistration, isOpenSignIn, inputLoginReg, inputMailReg, inputPasswordReg, inputConfirmReg
   };
-};
+}
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn))
-    // submitRegistration: () => dispatch(submitRegistration())
-  }
-};
+const mapDispatchToProps = dispatch => ({
+	isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn))
+  // submitRegistration: () => dispatch(submitRegistration())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegistrationModal);

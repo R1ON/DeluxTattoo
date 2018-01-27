@@ -16,6 +16,6 @@ class PortfolioContainer extends Component {
       </div>
     );
   }
-};
+}
 
 export default PortfolioContainer;

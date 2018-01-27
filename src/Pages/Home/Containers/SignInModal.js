@@ -10,7 +10,10 @@ import SignInForm from '../Components/Forms/SignInForm';
 import '../../../Assets/sass/StylingComponents/ModalStyle.sass';
 
 const overlayBackground = {
-  overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }
+  overlay: {
+  	backgroundColor: 'rgba(0, 0, 0, 0.8)',
+	  zIndex: '999'
+  }
 };
 
 class SignInModal extends Component {
@@ -27,7 +30,7 @@ class SignInModal extends Component {
   }
 
   onRegistrationModalOpen() {
-    this.props.isOpenModalAction(!this.props.isOpenRegistration, false)
+    this.props.isOpenModalAction(!this.props.isOpenRegistration, false);
   }
 
   onCloseModal() {
@@ -53,8 +56,7 @@ class SignInModal extends Component {
       </Modal>
     );
   }
-};
-
+}
 
 const selector = formValueSelector('signInModal');
 
@@ -67,13 +69,13 @@ function mapStateToProps(state) {
   const inputMailSign = selector(state, 'inputMailSign');
   const inputPasswordSign = selector(state, 'inputPasswordSign');
 
-  return { isOpenRegistration, isOpenSignIn, inputMailSign, inputPasswordSign };
-};
-
-const mapDispatchToProps = (dispatch) => {
   return {
-    isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn))
-  }
-};
+  	isOpenRegistration, isOpenSignIn, inputMailSign, inputPasswordSign
+  };
+}
+
+const mapDispatchToProps = dispatch => ({
+  isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignInModal);

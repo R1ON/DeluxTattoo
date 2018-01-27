@@ -12,7 +12,10 @@ import {
 import '../../../Assets/sass/StylingComponents/ModalStyle.sass';
 
 const overlayBackground = {
-  overlay : { backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: '999' }
+  overlay: {
+  	backgroundColor: 'rgba(0, 0, 0, 0.8)',
+	  zIndex: '999'
+  }
 };
 
 class ImageModal extends Component {
@@ -25,16 +28,17 @@ class ImageModal extends Component {
   }
 
   onCloseModal(event) {
-    if (event.target.tagName !== 'IMG')
-      this.props.isOpenImageModalAction(!this.props.isOpenImage, '')
+    if (event.target.tagName !== 'IMG') {
+	    this.props.isOpenImageModalAction(!this.props.isOpenImage, '');
+    }
   }
 
   switchImageLeft() {
-    this.props.switchImageLeft()
+    this.props.switchImageLeft();
   }
 
   switchImageRight() {
-    this.props.switchImageRight()
+    this.props.switchImageRight();
   }
 
   render() {
@@ -55,13 +59,12 @@ class ImageModal extends Component {
         </div>
 
         <div className="modal-image-container" onClick={this.onCloseModal}>
-          <img src={`images/${imageSrc}.jpg`} />
+          <img src={`images/${imageSrc}.jpg`} alt="" />
         </div>
       </Modal>
     );
   }
-};
-
+}
 
 function mapStateToProps(state) {
   const {
@@ -70,14 +73,12 @@ function mapStateToProps(state) {
   } = state.HomeReducers.isOpenImageModalReducer;
 
   return { isOpenImage, imageSrc };
-};
+}
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    isOpenImageModalAction: (isOpenImage, imageSrc) => dispatch(isOpenImageModalAction(isOpenImage, imageSrc)),
-    switchImageLeft: () => dispatch(switchImageLeft()),
-    switchImageRight: () => dispatch(switchImageRight())
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  isOpenImageModalAction: (isOpenImage, imageSrc) => dispatch(isOpenImageModalAction(isOpenImage, imageSrc)),
+  switchImageLeft: () => dispatch(switchImageLeft()),
+  switchImageRight: () => dispatch(switchImageRight())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ImageModal);

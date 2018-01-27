@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'reactstrap';
+import { Row } from 'reactstrap';
 
 
 class HeaderComponent extends Component {
@@ -16,13 +16,13 @@ class HeaderComponent extends Component {
           style={styles}
           onMouseMove={onMouseMove}
         >
-          <img className="portfolio-main-master" src={require(`../../../Assets/img/test.png`)} />
-          <img className="portfolio-main-master" src={require(`../../../Assets/img/test.png`)} />
-          <img className="portfolio-main-master" src={require(`../../../Assets/img/test.png`)} />
+          <img className="portfolio-main-master" src={require('../../../Assets/img/test.png')} alt="" />
+          <img className="portfolio-main-master" src={require('../../../Assets/img/test.png')} alt="" />
+          <img className="portfolio-main-master" src={require('../../../Assets/img/test.png')} alt="" />
         </Row>
       </div>
     );
   }
-};
+}
 
 export default HeaderComponent;

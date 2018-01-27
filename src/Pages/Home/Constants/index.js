@@ -31,7 +31,7 @@ export const COMMENTS = [
   {
     img: 'photo4',
     title: 'Flora Allison',
-    text: `I did one more tattoo in your studio and I was very pleased, thank you.`,
+    text: 'I did one more tattoo in your studio and I was very pleased, thank you.',
     quality: 4,
     price: 4
   },
@@ -42,5 +42,5 @@ export const COMMENTS = [
     I still do not believe that I did the tattoo, but still it was worth it.`,
     quality: 5,
     price: 5
-  },
+  }
 ];

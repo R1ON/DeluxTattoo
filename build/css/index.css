@@ -5061,7 +5061,7 @@ body {
   margin-left: -50vw;
   margin-right: -50vw; }
   .portfolio-header {
-    background: #39161e;
+    background: #0c0c0c;
     height: 10vh; }
     .portfolio-header-logo {
       margin-left: 4vw;
@@ -5088,7 +5088,7 @@ body {
           transition: .2s ease;
           color: white; }
         .portfolio-header-links a:last-child {
-          padding-right: 4vw; }
+          margin-right: 4vw; }
 .portfolio-main {
   text-align: center;
   font-size: 3.125em;
@@ -5097,3 +5097,13 @@ body {
   margin-left: -3vw;
   height: 90vh;
   width: 108vw; }
+  .portfolio-main-master {
+    filter: grayscale(100%);
+    transition: .5s ease;
+    margin-top: 30vh;
+    width: 35vw; }
+    .portfolio-main-master:hover {
+      cursor: pointer;
+      filter: grayscale(0%) !important;
+      transition: .5s ease;
+      transform: scale(1.05, 1.05); }

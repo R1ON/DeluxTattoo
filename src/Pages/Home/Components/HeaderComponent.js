@@ -16,11 +16,7 @@ class HeaderComponent extends Component {
 
     return (
       <div>
-        <Row
-          className="home-header"
-          style={styles}
-          onMouseMove={onMouseMove}
-        >
+        <Row className="home-header" style={styles} onMouseMove={onMouseMove}>
           <Col md={4}>
             <div className="home-header-logo">
               DELUX TATTOO
@@ -28,9 +24,9 @@ class HeaderComponent extends Component {
           </Col>
           <Col md={8} className="hidden-xs hidden-sm">
             <div className="home-header-link">
-              {MENU_LINKS.map(link => {
-                return <Link key={link.id} to={link.url}>{link.title.toUpperCase()}</Link>
-              })}
+              {MENU_LINKS.map(link => (
+              	<Link key={link.id} to={link.url}>{link.title.toUpperCase()}</Link>
+              ))}
             </div>
           </Col>
 
@@ -43,9 +39,9 @@ class HeaderComponent extends Component {
 
           <Col md={12}>
             <Icon
-              className="home-header-down"
-              name="angle-double-down"
-              onClick={() => onBottomScroll(this.mainTitle)}
+	            className="home-header-down"
+	            name="angle-double-down"
+	            onClick={() => onBottomScroll(this.mainTitle)}
             />
           </Col>
         </Row>
@@ -53,7 +49,7 @@ class HeaderComponent extends Component {
         <div className="home-main">
           <Row>
             <Col md={12}>
-              <div className="home-main-title" ref={(title) => { this.mainTitle = title }}>
+              <div className="home-main-title" ref={(title) => { this.mainTitle = title; }}>
                 ABOUT US
               </div>
             </Col>
@@ -67,6 +63,6 @@ class HeaderComponent extends Component {
       </div>
     );
   }
-};
+}
 
 export default HeaderComponent;

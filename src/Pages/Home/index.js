@@ -7,18 +7,16 @@ import ImageModal from './Containers/ImageModal';
 
 import HomeReducers from './Reducers';
 
-const Home = () => {
-  return (
-      <div>
-        <div className="home-container">
-          <HomeContainer />
-          <RegistrationModal />
-          <SignInModal />
-          <ImageModal />
-        </div>
-      </div>
-    );
-};
+const Home = () => (
+  <div>
+    <div className="home-container">
+      <HomeContainer />
+      <RegistrationModal />
+      <SignInModal />
+      <ImageModal />
+    </div>
+  </div>
+);
 
 export {
   Home as default,

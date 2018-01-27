@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --env development",
-    "build": "webpack --env production"
+    "build": "webpack --env production",
+    "eslint": "eslint src/"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -18,6 +19,11 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-3": "*",
     "css-loader": "^0.26.1",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.26.0",

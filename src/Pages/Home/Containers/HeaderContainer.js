@@ -7,8 +7,10 @@ class HeaderContainer extends Component {
     super(props);
 
     this.state = {
-      backgroundPositionX: '10%',
-      backgroundPositionY: '10%'
+    	style: {
+		    backgroundPositionX: '10%',
+		    backgroundPositionY: '10%'
+	    }
     };
 
     if (document.body.clientWidth < 991) {
@@ -17,12 +19,15 @@ class HeaderContainer extends Component {
   }
 
   onMouseMoveParallaxEffect(e) {
-    let x = (e.pageX * -1 / 20), y = (e.pageY * -1 / 10);
+    const x = ((e.pageX * -1) / 20);
+    const y = ((e.pageY * -1) / 10);
 
     this.setState({
-      backgroundPositionX: x,
-      backgroundPositionY: y - 50
-    })
+	    style: {
+		    backgroundPositionX: x,
+		    backgroundPositionY: y - 50
+	    }
+    });
   }
 
   render() {
@@ -32,7 +37,7 @@ class HeaderContainer extends Component {
       <div>
         <div className="home-container">
           <HeaderComponent
-            styles={this.state}
+            styles={this.state.style}
             onMouseMove={this.onMouseMoveParallaxEffect}
             onBottomScroll={onBottomScroll}
             onModalOpen={onModalOpen}
@@ -41,6 +46,6 @@ class HeaderContainer extends Component {
       </div>
     );
   }
-};
+}
 
 export default HeaderContainer;

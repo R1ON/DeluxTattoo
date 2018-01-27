@@ -7,8 +7,10 @@ class MainContainer extends Component {
     super(props);
 
     this.state = {
-      backgroundPositionX: '10%',
-      backgroundPositionY: '10%'
+    	style: {
+		    backgroundPositionX: '10%',
+		    backgroundPositionY: '10%'
+	    }
     };
 
     if (document.body.clientWidth < 991) {
@@ -17,12 +19,15 @@ class MainContainer extends Component {
   }
 
   onMouseMoveParallaxEffect(e) {
-    let x = (e.pageX * -1 / 20), y = (e.pageY * -1 / 10);
+    const x = ((e.pageX * -1) / 20);
+    const y = ((e.pageY * -1) / 10);
 
     this.setState({
-      backgroundPositionX: x,
-      backgroundPositionY: y - 50
-    })
+    	style: {
+		    backgroundPositionX: x,
+		    backgroundPositionY: y - 50
+	    }
+    });
   }
 
   render() {
@@ -30,13 +35,13 @@ class MainContainer extends Component {
       <div>
         <div className="home-container">
           <MainComponent
-            styles={this.state}
+            styles={this.state.style}
             onMouseMove={this.onMouseMoveParallaxEffect}
           />
         </div>
       </div>
     );
   }
-};
+}
 
 export default MainContainer;
