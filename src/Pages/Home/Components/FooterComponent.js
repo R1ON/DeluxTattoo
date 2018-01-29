@@ -16,7 +16,7 @@ class FooterComponent extends Component {
 			<div className="home-footer-carousel" key={index}>
 				<div className="home-footer-container">
 					<div className="home-footer-avatar">
-						<img src={require(`../../../Assets/img/peoplePhoto/${img}.jpg`)} alt="" />
+						<img src={require(`../../../Assets/img/homeImage/peoplePhoto/${img}.jpg`)} alt="" />
 					</div>
 					<div className="home-footer-review">
 						<div className="home-footer-title">{title}</div>

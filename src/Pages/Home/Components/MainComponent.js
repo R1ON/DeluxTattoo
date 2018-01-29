@@ -16,20 +16,20 @@ const IMPORTANTLY_ABOUT = [
 ];
 
 const MASONRY_IMAGES = [
-  require('../../../Assets/img/WorkExamples/1.jpg'),
-  require('../../../Assets/img/WorkExamples/2.jpg'),
-  require('../../../Assets/img/WorkExamples/3.jpg'),
-  require('../../../Assets/img/WorkExamples/4.jpg'),
-  require('../../../Assets/img/WorkExamples/5.jpg'),
-  require('../../../Assets/img/WorkExamples/6.jpg'),
-  require('../../../Assets/img/WorkExamples/7.jpg'),
-  require('../../../Assets/img/WorkExamples/8.jpg'),
-  require('../../../Assets/img/WorkExamples/9.jpg'),
-  require('../../../Assets/img/WorkExamples/10.jpg'),
-  require('../../../Assets/img/WorkExamples/11.jpg'),
-  require('../../../Assets/img/WorkExamples/12.jpg'),
-  require('../../../Assets/img/WorkExamples/13.jpg'),
-  require('../../../Assets/img/WorkExamples/14.jpg')
+	require('../../../Assets/img/homeImage/workExamples/1.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/2.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/3.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/4.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/5.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/6.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/7.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/8.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/9.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/10.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/11.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/12.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/13.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/14.jpg')
 ];
 
 const MainComponent = ({ onImageModalOpen, onModalOpen }) => (
@@ -71,7 +71,7 @@ const MainComponent = ({ onImageModalOpen, onModalOpen }) => (
     </Row>
 
     <div className="home-main-parallax">
-      <Parallax bgImage={require('../../../Assets/img/parallaxImage.jpg')} strength={400}>
+      <Parallax bgImage={require('../../../Assets/img/homeImage/parallaxImage.jpg')} strength={400}>
         <div className="home-main-parallax-container" />
       </Parallax>
     </div>

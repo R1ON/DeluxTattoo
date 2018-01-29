@@ -15,14 +15,14 @@ class HeaderComponent extends Component {
           style={styles}
           onMouseMove={onMouseMove}
         >
-          <span className="portfolio-main-text">
-	          <img className="portfolio-main-master" src={require('../../../Assets/img/1.png')} alt="" />
+          <span className="portfolio-main-text portfolio-main-text-one">
+	          <img className="portfolio-main-master" src={require('../../../Assets/img/portfolioImage/masters/1.png')} alt="" />
           </span>
-	        <span>
-		        <img className="portfolio-main-master" src={require('../../../Assets/img/2.png')} alt="" />
+	        <span className="portfolio-main-text portfolio-main-text-two">
+		        <img className="portfolio-main-master" src={require('../../../Assets/img/portfolioImage/masters/2.png')} alt="" />
 	        </span>
-	        <span>
-		        <img className="portfolio-main-master" src={require('../../../Assets/img/3.png')} alt="" />
+	        <span className="portfolio-main-text portfolio-main-text-three">
+		        <img className="portfolio-main-master" src={require('../../../Assets/img/portfolioImage/masters/3.png')} alt="" />
 	        </span>
         </Row>
       </div>
