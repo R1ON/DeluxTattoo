@@ -1,0 +1,46 @@
+{
+  "registration": [
+    {
+      "id": 1,
+      "login": "John",
+      "email": "test@test.test",
+      "password": "1234"
+    },
+    {
+      "id": "2",
+      "login": "test",
+      "email": "lol@lol.ru",
+      "password": "12345"
+    },
+    {
+      "login": "test1",
+      "email": "testt@mail.com",
+      "password": "123456789",
+      "id": "pTUd3RL"
+    },
+    {
+      "login": "test12",
+      "email": "testt@mail.com",
+      "password": "1234567",
+      "id": "SJWgu8i"
+    },
+    {
+      "login": "roman",
+      "email": "romochka@mail.com",
+      "password": "romka",
+      "id": "8Pe_xdN"
+    },
+    {
+      "login": "rqereqreqrqerqr",
+      "email": "qw@qw.qw",
+      "password": "12345",
+      "id": "Clb1wC6"
+    },
+    {
+      "login": "rqereqreqrqerqr4",
+      "email": "qw@qw.qqw",
+      "password": "12345",
+      "id": "g6G4TAp"
+    }
+  ]
+}

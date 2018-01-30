@@ -4,6 +4,7 @@ import {
 	SWITCH_IMAGE_RIGHT
 } from '../Constants';
 
+
 export function isOpenImageModalAction(isOpenImage, imageSrc) {
 	return {
 		type: IS_OPEN_IMAGE_MODAL,

@@ -5097,13 +5097,45 @@ body {
   margin-left: -3vw;
   height: 90vh;
   width: 108vw; }
-  .portfolio-main-master {
-    filter: grayscale(100%);
+  .portfolio-main-text::before {
+    content: 'Your dad';
+    font-style: italic;
+    font-family: 'ComfortaaL', 'sans-serif';
+    position: absolute;
+    top: -1vh;
+    left: 13vw;
+    color: white;
+    opacity: 0;
+    transition: .7s ease; }
+  .portfolio-main-text:hover .portfolio-main-master {
+    cursor: pointer;
+    filter: grayscale(0%) !important;
     transition: .5s ease;
-    margin-top: 30vh;
-    width: 35vw; }
+    transform: scale(1.05, 1.05); }
+  .portfolio-main-text:hover::before {
+    transition: .5s ease;
+    top: 1vh;
+    opacity: 1; }
+  .portfolio-main-master {
+    will-change: transform, opacity;
+    filter: grayscale(100%);
+    transition: .7s ease;
+    margin-top: 12vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 30vw; }
     .portfolio-main-master:hover {
       cursor: pointer;
       filter: grayscale(0%) !important;
       transition: .5s ease;
       transform: scale(1.05, 1.05); }
+.portfolio-footer {
+  height: 20vh;
+  background: white;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 999; }
+  .portfolio-footer-about {
+    background: red;
+    text-align: center; }

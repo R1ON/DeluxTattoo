@@ -1,3 +1,5 @@
+import SubmitRegistrationSource from '../../../Source/SubmitRegistrationSource';
+
 import {
 	IS_OPEN_MODAL
 } from '../Constants';
@@ -10,14 +12,11 @@ export function isOpenModalAction(isOpenRegistration, isOpenSignIn) {
 	};
 }
 
-// const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-// export function submitRegistration(validationModal) {
-//   // тут вызываем аксиос и шлем всю хуйню на сервер
-//
-//   sleep(1000).then(() => {
-//     return {
-//       type: VALIDATION_MODAL,
-//       validationModal
-//     }
-//   })
-// }
+export function submitRegistration({ inputLoginReg, inputMailReg, inputPasswordReg }) {
+	SubmitRegistrationSource.submitRegistration({ inputLoginReg, inputMailReg, inputPasswordReg });
+
+	return {
+		type: "ZAEBIS",
+		status: "OK"
+	}
+}
