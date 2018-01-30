@@ -1,1 +1,1 @@
-export const URL_REGISTRATION = 'http://localhost:3000/registration';
+export const URL_ACCOUNT = 'http://localhost:3000/account';

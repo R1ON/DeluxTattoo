@@ -1,5 +1,5 @@
 import {
-	SUBMIT_REGISTRATION_MODAL
+  SUBMIT_REGISTRATION
 } from '../Constants';
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
 
 export function submitRegistrationReducer(state = initialState, action) {
 	switch (action.type) {
-		case SUBMIT_REGISTRATION_MODAL:
+		case SUBMIT_REGISTRATION:
 			return {
 				...state,
 				registrationStatus: !state.registrationStatus

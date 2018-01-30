@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import HomeContainer from './Containers';
 import RegistrationModal from './Containers/RegistrationModal';
@@ -7,16 +7,22 @@ import ImageModal from './Containers/ImageModal';
 
 import HomeReducers from './Reducers';
 
-const Home = () => (
-  <div>
-    <div className="home-container">
-      <HomeContainer />
-      <RegistrationModal />
-      <SignInModal />
-      <ImageModal />
-    </div>
-  </div>
-);
+class Home extends Component {
+  componentWillReceiveProps() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <div className="home-container">
+        <HomeContainer />
+        <RegistrationModal />
+        <SignInModal />
+        <ImageModal />
+      </div>
+    );
+  }
+}
 
 export {
   Home as default,

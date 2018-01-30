@@ -1,5 +1,5 @@
 import {
-	SUBMIT_REGISTRATION_MODAL
+  SUBMIT_REGISTRATION
 } from '../Constants';
 
 import SubmitRegistrationSource from '../../../Source/SubmitRegistrationSource';
@@ -8,6 +8,6 @@ export function submitRegistration({ inputLoginReg, inputMailReg, inputPasswordR
 	SubmitRegistrationSource.submitRegistration({ inputLoginReg, inputMailReg, inputPasswordReg });
 
 	return {
-		type: SUBMIT_REGISTRATION_MODAL
+		type: SUBMIT_REGISTRATION
 	};
 }

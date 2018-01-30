@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { formValueSelector } from 'redux-form';
 
 import { isOpenModalAction } from '../Actions/ModalActions';
+import { submitSignIn } from '../Actions/SubmitSignIn';
 
 import SignInForm from '../Components/Forms/SignInForm';
 
@@ -21,8 +22,10 @@ class SignInModal extends Component {
     super(props);
 
     this.handleSubmit = (event) => {
-      // функция для экшена, где вызывается аксиос
+      // const { inputLoginReg, inputMailReg, inputPasswordReg } = this.props;
+      // const query = { inputLoginReg, inputMailReg, inputPasswordReg };
       event.preventDefault();
+      this.props.submitSignIn();
     };
 
     this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
@@ -75,7 +78,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn))
+  isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn)),
+  submitSignIn: () => dispatch(submitSignIn())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignInModal);

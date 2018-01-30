@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --env development",
     "build": "webpack --env production",
-    "eslint": "eslint src/"
+    "eslint": "eslint src/",
+    "server": "json-server mockData.json"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
