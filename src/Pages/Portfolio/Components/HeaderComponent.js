@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import { MENU_LINKS } from '../../../Constants';
+import { MENU_LINKS } from '../../../Constants/MenuLinks';
 
 const HeaderComponent = () => (
   <div>

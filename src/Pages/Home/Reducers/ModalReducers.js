@@ -4,8 +4,7 @@ import {
 
 const initialState = {
   isOpenRegistration: false,
-  isOpenSignIn: false,
-	status: ''
+  isOpenSignIn: false
 };
 
 export function isOpenModalReducer(state = initialState, action) {
@@ -16,12 +15,6 @@ export function isOpenModalReducer(state = initialState, action) {
         isOpenRegistration: action.isOpenRegistration,
         isOpenSignIn: action.isOpenSignIn
       };
-
-	  case 'ZAEBIS':
-	  	return {
-			  ...state,
-			  status: action.status
-		  }
 
     default:
       return state;

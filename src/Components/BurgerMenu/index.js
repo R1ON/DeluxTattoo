@@ -4,7 +4,7 @@ import { Col } from 'reactstrap';
 import { Icon } from 'react-fa';
 import { slide as Menu } from 'react-burger-menu';
 
-import { MENU_LINKS } from '../../Constants';
+import { MENU_LINKS } from '../../Constants/MenuLinks';
 
 import '../../Assets/sass/StylingComponents/BurgerMenuStyle.sass';
 

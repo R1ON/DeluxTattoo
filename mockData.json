@@ -1,18 +1,6 @@
 {
   "registration": [
     {
-      "id": 1,
-      "login": "John",
-      "email": "test@test.test",
-      "password": "1234"
-    },
-    {
-      "id": "2",
-      "login": "test",
-      "email": "lol@lol.ru",
-      "password": "12345"
-    },
-    {
       "login": "test1",
       "email": "testt@mail.com",
       "password": "123456789",

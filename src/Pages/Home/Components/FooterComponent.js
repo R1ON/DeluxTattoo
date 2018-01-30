@@ -7,7 +7,7 @@ import StarRatings from 'react-star-ratings';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { COMMENTS } from '../Constants';
-import { MENU_LINKS } from '../../../Constants';
+import { MENU_LINKS } from '../../../Constants/MenuLinks';
 
 
 class FooterComponent extends Component {

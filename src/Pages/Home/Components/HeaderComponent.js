@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { Row, Col } from 'reactstrap';
 import { Icon } from 'react-fa';
 
-import { MENU_LINKS } from '../../../Constants';
+import { MENU_LINKS } from '../../../Constants/MenuLinks';
 
 class HeaderComponent extends Component {
   render() {

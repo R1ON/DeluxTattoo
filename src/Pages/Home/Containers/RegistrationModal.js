@@ -3,10 +3,8 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import { formValueSelector } from 'redux-form';
 
-import {
-  isOpenModalAction,
-  submitRegistration
-} from '../Actions/ModalActions';
+import { isOpenModalAction } from '../Actions/ModalActions';
+import { submitRegistration } from '../Actions/SubmitRegistration';
 
 import RegistrationForm from '../Components/Forms/RegistrationForm';
 
@@ -83,7 +81,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = dispatch => ({
 	isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn)),
-  submitRegistration: (query) => dispatch(submitRegistration(query))
+  submitRegistration: query => dispatch(submitRegistration(query))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegistrationModal);

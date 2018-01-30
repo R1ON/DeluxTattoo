@@ -1,15 +1,13 @@
 import axios from 'axios';
 
-// import { URL_ACCOUNTS } from '../Constants/Url';
+import { URL_REGISTRATION } from '../Constants/Url';
 
 export default {
 	submitRegistration({ inputLoginReg, inputMailReg, inputPasswordReg }) {
-		return axios.post('http://localhost:3000/registration', {
+		return axios.post(URL_REGISTRATION, {
 			login: inputLoginReg,
 			email: inputMailReg,
 			password: inputPasswordReg
-		})
-			.then(response => console.log(response))
-			.catch(error => console.log(error));
+		});
 	}
 };

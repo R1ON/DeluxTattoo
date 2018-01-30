@@ -2,6 +2,32 @@ export const IS_OPEN_MODAL = 'REGISTRATION_MODAL';
 export const IS_OPEN_IMAGE_MODAL = 'IS_OPEN_IMAGE_MODAL';
 export const SWITCH_IMAGE_LEFT = 'SWITCH_IMAGE_LEFT';
 export const SWITCH_IMAGE_RIGHT = 'SWITCH_IMAGE_RIGHT';
+export const SUBMIT_REGISTRATION_MODAL = 'SUBMIT_REGISTRATION_MODAL';
+
+export const IMPORTANTLY_ABOUT = [
+	`If you want to get to the session, 
+  find out the cost of a tattoo, 
+  consult a master, draw a unique sketch or 
+  just learn how to make tattoos, 
+  then you need to register on our site`
+];
+
+export const MASONRY_IMAGES = [
+	require('../../../Assets/img/homeImage/workExamples/1.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/2.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/3.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/4.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/5.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/6.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/7.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/8.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/9.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/10.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/11.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/12.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/13.jpg'),
+	require('../../../Assets/img/homeImage/workExamples/14.jpg')
+];
 
 export const COMMENTS = [
   {
