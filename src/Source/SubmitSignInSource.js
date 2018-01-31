@@ -3,17 +3,17 @@ import axios from 'axios';
 import { URL_ACCOUNT } from '../Constants/Url';
 
 export default {
-  submitSignIn() {
-    const test = axios.get(URL_ACCOUNT);
-    const omg = test.then(res => {
-      return res.data.filter(r => {
-        if (r.login == 'test1')
-          return r;
+  submitSignIn({ inputMailSign, inputPasswordSign }) {
+    const users = axios.get(URL_ACCOUNT);
+
+    const data = users.then(response => (
+      response.data.filter((user) => {
+        if (user.email === inputMailSign && user.password === inputPasswordSign) {
+          return user;
+        }
       })
+    ));
 
-
-    })
-
-    return omg;
+    return data;
   }
 };

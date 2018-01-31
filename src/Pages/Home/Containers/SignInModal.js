@@ -22,10 +22,11 @@ class SignInModal extends Component {
     super(props);
 
     this.handleSubmit = (event) => {
-      // const { inputLoginReg, inputMailReg, inputPasswordReg } = this.props;
-      // const query = { inputLoginReg, inputMailReg, inputPasswordReg };
+      const { inputMailSign, inputPasswordSign } = this.props;
+      const query = { inputMailSign, inputPasswordSign };
+
       event.preventDefault();
-      this.props.submitSignIn();
+      this.props.submitSignIn(query);
     };
 
     this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
@@ -79,7 +80,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = dispatch => ({
   isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn)),
-  submitSignIn: () => dispatch(submitSignIn())
+  submitSignIn: query => dispatch(submitSignIn(query))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignInModal);

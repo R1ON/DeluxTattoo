@@ -3,7 +3,8 @@ export const IS_OPEN_IMAGE_MODAL = 'IS_OPEN_IMAGE_MODAL';
 export const SWITCH_IMAGE_LEFT = 'SWITCH_IMAGE_LEFT';
 export const SWITCH_IMAGE_RIGHT = 'SWITCH_IMAGE_RIGHT';
 export const SUBMIT_REGISTRATION = 'SUBMIT_REGISTRATION';
-export const SUBMIT_SIGN_IN = 'SUBMIT_SIGN_IN';
+export const SUCCESS_SUBMIT_SIGN_IN = 'SUCCESS_SUBMIT_SIGN_IN';
+export const ERROR_SUBMIT_SIGN_IN = 'ERROR_SUBMIT_SIGN_IN';
 
 export const IMPORTANTLY_ABOUT = [
 	`If you want to get to the session, 

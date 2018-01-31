@@ -1,17 +1,21 @@
 import {
-  SUBMIT_SIGN_IN
+  SUCCESS_SUBMIT_SIGN_IN,
+  ERROR_SUBMIT_SIGN_IN
 } from '../Constants';
 
 import SubmitSignInSource from '../../../Source/SubmitSignInSource';
 
-export function submitSignIn() {
-  const response = SubmitSignInSource.submitSignIn();
+export function submitSignIn({ inputMailSign, inputPasswordSign }) {
+  const response = SubmitSignInSource.submitSignIn({ inputMailSign, inputPasswordSign });
 
-  response.then(t => console.log('ЭКШН', t))
+  response.then((data) => {
+    if (data) {
+      return { type: SUCCESS_SUBMIT_SIGN_IN };
+    }
 
-
-
-  return {
-    type: SUBMIT_SIGN_IN
-  };
+    return {
+      type: ERROR_SUBMIT_SIGN_IN,
+      error: 'User is not found'
+    };
+  });
 }
