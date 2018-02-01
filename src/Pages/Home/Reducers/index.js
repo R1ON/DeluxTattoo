@@ -8,6 +8,6 @@ import { submitSignInReducer } from './SubmitSignInReducers';
 export default combineReducers({
   isOpenModalReducer,
   isOpenImageModalReducer,
-	submitRegistrationReducer,
+  submitRegistrationReducer,
   submitSignInReducer
 });

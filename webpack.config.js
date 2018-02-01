@@ -12,51 +12,51 @@ const fonts = require('./webpack/fonts');
 const jsx = require('./webpack/jsx');
 
 const PATHS = {
-    source: path.join(__dirname, 'src'),
-    build: path.join(__dirname, 'build')
+  source: path.join(__dirname, 'src'),
+  build: path.join(__dirname, 'build')
 };
 
 const common = merge([
-    {
-        entry: {
-          'index': PATHS.source + '/index.js',
-          'app': 'react-hot-loader/patch'
-        },
-        output: {
-            path: PATHS.build,
-            filename: 'js/[name].js'
-        },
-        plugins: [
-            new HtmlWebpackPlugin({
-                filename: 'index.html',
-                chunks: ['index', 'common'],
-                template: PATHS.source + '/Assets/index.html'
-            }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'common'
-            }),
-            new webpack.HotModuleReplacementPlugin()
-        ]
+  {
+    entry: {
+      index: `${PATHS.source}/index.js`,
+      app: 'react-hot-loader/patch'
     },
-    jsx(),
-    images(),
-    fonts()
+    output: {
+      path: PATHS.build,
+      filename: 'js/[name].js'
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        chunks: ['index', 'common'],
+        template: `${PATHS.source}/Assets/index.html`
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'common'
+      }),
+      new webpack.HotModuleReplacementPlugin()
+    ]
+  },
+  jsx(),
+  images(),
+  fonts()
 ]);
 
-module.exports = function(env) {
-    if (env === 'production'){
-        return merge([
-            common,
-            extractCSS(),
-            uglifyJS()
-        ]);
-    }
-    if (env === 'development'){
-        return merge([
-            common,
-            devserver(),
-            sass(),
-            css()
-        ])
-    }
+module.exports = function (env) {
+  if (env === 'production') {
+    return merge([
+      common,
+      extractCSS(),
+      uglifyJS()
+    ]);
+  }
+  if (env === 'development') {
+    return merge([
+      common,
+      devserver(),
+      sass(),
+      css()
+    ]);
+  }
 };

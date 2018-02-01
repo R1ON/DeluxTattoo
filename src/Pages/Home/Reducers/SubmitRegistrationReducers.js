@@ -3,18 +3,18 @@ import {
 } from '../Constants';
 
 const initialState = {
-	registrationStatus: false
+  registrationStatus: false
 };
 
 export function submitRegistrationReducer(state = initialState, action) {
-	switch (action.type) {
-		case SUBMIT_REGISTRATION:
-			return {
-				...state,
-				registrationStatus: !state.registrationStatus
-			};
+  switch (action.type) {
+    case SUBMIT_REGISTRATION:
+      return {
+        ...state,
+        registrationStatus: !state.registrationStatus
+      };
 
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 }

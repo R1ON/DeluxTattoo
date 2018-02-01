@@ -15,7 +15,7 @@ class PortfolioContainer extends Component {
       <div className="portfolio">
         <HeaderComponent />
         <MainContainer />
-	      <FooterComponent />
+        <FooterComponent />
       </div>
     );
   }

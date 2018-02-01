@@ -11,6 +11,7 @@ export default {
         if (user.email === inputMailSign && user.password === inputPasswordSign) {
           return user;
         }
+        return false;
       })
     ));
 

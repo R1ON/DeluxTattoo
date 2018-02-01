@@ -25,7 +25,7 @@ class HeaderComponent extends Component {
           <Col md={8} className="hidden-xs hidden-sm">
             <div className="home-header-link">
               {MENU_LINKS.map(link => (
-              	<Link key={link.id} to={link.url}>{link.title.toUpperCase()}</Link>
+                <Link key={link.id} to={link.url}>{link.title.toUpperCase()}</Link>
               ))}
             </div>
           </Col>
@@ -39,9 +39,9 @@ class HeaderComponent extends Component {
 
           <Col md={12}>
             <Icon
-	            className="home-header-down"
-	            name="angle-double-down"
-	            onClick={() => onBottomScroll(this.mainTitle)}
+              className="home-header-down"
+              name="angle-double-down"
+              onClick={() => onBottomScroll(this.mainTitle)}
             />
           </Col>
         </Row>

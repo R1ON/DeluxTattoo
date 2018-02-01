@@ -7,7 +7,7 @@ export const SUCCESS_SUBMIT_SIGN_IN = 'SUCCESS_SUBMIT_SIGN_IN';
 export const ERROR_SUBMIT_SIGN_IN = 'ERROR_SUBMIT_SIGN_IN';
 
 export const IMPORTANTLY_ABOUT = [
-	`If you want to get to the session, 
+  `If you want to get to the session, 
   find out the cost of a tattoo, 
   consult a master, draw a unique sketch or 
   just learn how to make tattoos, 
@@ -15,20 +15,20 @@ export const IMPORTANTLY_ABOUT = [
 ];
 
 export const MASONRY_IMAGES = [
-	require('../../../Assets/img/homeImage/workExamples/1.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/2.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/3.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/4.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/5.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/6.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/7.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/8.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/9.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/10.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/11.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/12.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/13.jpg'),
-	require('../../../Assets/img/homeImage/workExamples/14.jpg')
+  require('../../../Assets/img/homeImage/workExamples/1.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/2.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/3.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/4.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/5.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/6.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/7.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/8.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/9.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/10.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/11.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/12.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/13.jpg'),
+  require('../../../Assets/img/homeImage/workExamples/14.jpg')
 ];
 
 export const COMMENTS = [
