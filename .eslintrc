@@ -10,9 +10,9 @@
   },
   "rules": {
     "linebreak-style": 0,
-    "indent": ["off", "tab"],
-    "react/jsx-indent": ["off", "tab"],
-    "react/jsx-indent-props": ["off", "tab"],
+    "indent": [2, 2],
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 2],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-tabs": 0,
     "comma-dangle": ["error", "never"],

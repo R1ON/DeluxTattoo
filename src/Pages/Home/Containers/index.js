@@ -24,14 +24,14 @@ class Home extends Component {
     // this.state = {
     //   display: ''
     // };
+    //
+    // window.onload = () => {
+    //   this.setState({ display: 'none' });
+    // };
 
     if (document.body.clientWidth < 480) {
       this.onImageModalOpen = () => {};
     } else this.onImageModalOpen = this.onImageModalOpen.bind(this);
-
-    // window.onload = () => {
-    //   this.setState({ display: 'none' });
-    // };
 
     this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
     this.onSignInModalOpen = this.onSignInModalOpen.bind(this);
@@ -61,7 +61,7 @@ class Home extends Component {
     return (
       <div>
         {/* <div style={{ display: this.state.display}} className="preloader"> */}
-          {/* <Icon size="5x" spin name="spinner" /> */}
+        {/* <Icon size="5x" spin name="spinner" /> */}
         {/* </div> */}
 
         <div className="home-container">

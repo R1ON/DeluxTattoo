@@ -70,11 +70,13 @@ function mapStateToProps(state) {
     isOpenSignIn
   } = state.HomeReducers.isOpenModalReducer;
 
+  const { successSignIn } = state.HomeReducers.submitSignInReducer;
+
   const inputMailSign = selector(state, 'inputMailSign');
   const inputPasswordSign = selector(state, 'inputPasswordSign');
 
   return {
-  	isOpenRegistration, isOpenSignIn, inputMailSign, inputPasswordSign
+  	isOpenRegistration, isOpenSignIn, inputMailSign, inputPasswordSign, successSignIn
   };
 }
 

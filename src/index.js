@@ -21,22 +21,22 @@ const store = createStore(RootReducers, composeWithDevTools(applyMiddleware(thun
 const history = syncHistoryWithStore(hashHistory, store);
 
 const renderApp = () => {
-	render(
-		<div>
-			<Favicon url={icoFavicon} />
-			<Provider store={store}>
-				<Router history={history}>
-					<Route path="/" component={Home} />
-					<Route path="/portfolio" component={Portfolio} />
-				</Router>
-			</Provider>
-		</div>,
-		document.querySelector('#mount_place')
-	);
+  render(
+    <div>
+      <Favicon url={icoFavicon} />
+      <Provider store={store}>
+        <Router history={history}>
+          <Route path="/" component={Home} />
+          <Route path="/portfolio" component={Portfolio} />
+        </Router>
+      </Provider>
+    </div>,
+    document.querySelector('#mount_place')
+  );
 };
 
 renderApp();
 
 if (module.hot) {
-	module.hot.accept(Home, () => { renderApp(); });
+  module.hot.accept(Home, () => { renderApp(); });
 }
