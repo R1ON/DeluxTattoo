@@ -1,24 +1,16 @@
 import React from 'react';
-import thunk from 'redux-thunk';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { syncHistoryWithStore } from 'react-router-redux';
-import { Router, Route, hashHistory } from 'react-router';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { Router, Route } from 'react-router';
 import Favicon from 'react-favicon';
+
 import icoFavicon from './Assets/img/fav.ico';
-
-import './Assets/sass/main.sass';
-
-import RootReducers from './Reducers';
+import { store, history } from './Store';
 
 import Home from './Pages/Home';
 import Portfolio from './Pages/Portfolio';
 
-const store = createStore(RootReducers, composeWithDevTools(applyMiddleware(thunk)));
-
-const history = syncHistoryWithStore(hashHistory, store);
+import './Assets/sass/main.sass';
 
 const renderApp = () => {
   render(
