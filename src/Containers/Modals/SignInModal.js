@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import { formValueSelector } from 'redux-form';
 
-import { isOpenModalAction } from '../Actions/ModalActions';
-import { submitSignIn } from '../Actions/SubmitSignIn';
+import { isOpenModalAction } from '../../Pages/Home/Actions/ModalActions';
+import { submitSignIn } from '../../Pages/Home/Actions/SubmitSignIn';
 
-import SignInForm from '../Components/Forms/SignInForm';
+import SignInForm from '../../Components/ModalForms/SignInForm';
 
-import '../../../Assets/sass/StylingComponents/ModalStyle.sass';
+import '../../Assets/sass/StylingComponents/ModalStyle.sass';
 
 const overlayBackground = {
   overlay: {

@@ -5,11 +5,11 @@ import scrollToComponent from 'react-scroll-to-component';
 import { isOpenModalAction } from '../Actions/ModalActions';
 import { isOpenImageModalAction } from '../Actions/ImageModalActions';
 
-import BurgerMenu from '../../../Components/BurgerMenu';
-
 import HeaderContainer from './HeaderContainer';
 import MainComponent from '../Components/MainComponent';
 import FooterComponent from '../Components/FooterComponent';
+
+import BurgerMenu from '../../../Components/BurgerMenu';
 
 import '../Styles/HeaderStyle.sass';
 import '../Styles/MainStyle.sass';

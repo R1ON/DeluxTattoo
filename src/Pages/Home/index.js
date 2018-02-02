@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
 import HomeContainer from './Containers';
-import RegistrationModal from './Containers/RegistrationModal';
-import SignInModal from './Containers/SignInModal';
+import HomeReducers from './Reducers';
 import ImageModal from './Containers/ImageModal';
 
-import HomeReducers from './Reducers';
+import RegistrationModal from '../../Containers/Modals/RegistrationModal';
+import SignInModal from '../../Containers/Modals/SignInModal';
+
 
 class Home extends Component {
   componentWillReceiveProps() {

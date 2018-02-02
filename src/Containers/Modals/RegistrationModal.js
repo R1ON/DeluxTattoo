@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import { formValueSelector } from 'redux-form';
 
-import { isOpenModalAction } from '../Actions/ModalActions';
-import { submitRegistration } from '../Actions/SubmitRegistration';
+import { isOpenModalAction } from '../../Pages/Home/Actions/ModalActions';
+import { submitRegistration } from '../../Pages/Home/Actions/SubmitRegistration';
 
-import RegistrationForm from '../Components/Forms/RegistrationForm';
+import RegistrationForm from '../../Components/ModalForms/RegistrationForm';
 
-import '../../../Assets/sass/StylingComponents/ModalStyle.sass';
+import '../../Assets/sass/StylingComponents/ModalStyle.sass';
 
 const overlayBackground = {
   overlay: {
@@ -22,7 +22,7 @@ class RegistrationModal extends Component {
     super(props);
 
     this.handleSubmit = () => {
-			const { inputLoginReg, inputMailReg, inputPasswordReg } = this.props;
+      const { inputLoginReg, inputMailReg, inputPasswordReg } = this.props;
 	    const query = { inputLoginReg, inputMailReg, inputPasswordReg };
 
       this.props.submitRegistration(query);
@@ -80,7 +80,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = dispatch => ({
-	isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn)),
+  isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn)),
   submitRegistration: query => dispatch(submitRegistration(query))
 });
 

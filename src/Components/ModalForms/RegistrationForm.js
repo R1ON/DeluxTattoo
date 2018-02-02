@@ -2,8 +2,8 @@ import React from 'react';
 import { Row, Col } from 'reactstrap';
 import { Form, Field, reduxForm } from 'redux-form';
 
-import validate from '../../Validation/ValidateRegistrationForm';
 import RenderField from './RenderField';
+import validate from '../../Validation/ValidateRegistrationForm';
 
 const RegistrationForm = ({ onSubmit, onCloseModal, onSignInModalOpen }) => (
   <Form onSubmit={onSubmit}>
