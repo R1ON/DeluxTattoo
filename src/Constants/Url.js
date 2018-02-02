@@ -1,1 +1,1 @@
-export const URL_ACCOUNT = 'http://localhost:3000/account';
+export const URL_ACCOUNT = '/account';
