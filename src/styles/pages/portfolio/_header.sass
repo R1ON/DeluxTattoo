@@ -1,0 +1,38 @@
+@import "../../main/vars"
+
+.portfolio
+  position: relative
+  top: 50%
+  left: 50%
+  width: 100vw
+  margin-left: -50vw
+  margin-right: -50vw
+  &-header
+    background: $main-color
+    height: 10vh
+    &-logo
+      margin-left: 4vw
+      padding-top: 1vh
+      color: $accent-color
+      text-align: left
+      font-size: 3vw
+      font-family: 'Indie Flower', 'sans-serif'
+    &-links
+      text-align: right
+      margin-top: -6.5vh
+      a
+        outline: none
+        margin-left: 1vw
+        margin-right: 1vw
+        text-decoration: none
+        font-size: 1.6vw
+        font-family: 'ComfortaaL', 'sans-serif'
+        color: $accent-color
+        border: 0 $accent-color solid
+        transition: .1s ease
+        &:hover
+          border-bottom: 3px $accent-color solid
+          transition: .2s ease
+          color: white
+        &:last-child
+          margin-right: 4vw

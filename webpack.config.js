@@ -9,7 +9,7 @@ const extractCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglify');
 const images = require('./webpack/images');
 const fonts = require('./webpack/fonts');
-const jsx = require('./webpack/jsx');
+const js = require('./webpack/js');
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
@@ -19,18 +19,21 @@ const PATHS = {
 const common = merge([
   {
     entry: {
-      index: `${PATHS.source}/index.js`,
+      index: `${PATHS.source}/scripts/index.js`,
       app: 'react-hot-loader/patch'
     },
     output: {
       path: PATHS.build,
       filename: 'js/[name].js'
     },
+    resolve: {
+      extensions: ['.js', '.jsx']
+    },
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
         chunks: ['index', 'common'],
-        template: `${PATHS.source}/Assets/index.html`
+        template: `${PATHS.source}/views/index.html`
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'common'
@@ -38,7 +41,7 @@ const common = merge([
       new webpack.HotModuleReplacementPlugin()
     ]
   },
-  jsx(),
+  js(),
   images(),
   fonts()
 ]);
