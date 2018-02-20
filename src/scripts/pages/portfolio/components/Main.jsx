@@ -5,7 +5,7 @@ class HeaderComponent extends Component {
   render() {
     const {
       styles,
-      onMouseMove
+      mouseMove
     } = this.props;
 
     return (
@@ -13,7 +13,7 @@ class HeaderComponent extends Component {
         <Row
           className="portfolio-main"
           style={styles}
-          onMouseMove={onMouseMove}
+          onMouseMove={mouseMove}
         >
           <span className="portfolio-main-text portfolio-main-text-one">
             <img className="portfolio-main-master" src={require('../../../../images/portfolioImage/masters/1.png')} alt="" />

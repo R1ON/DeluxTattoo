@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import HeaderComponent from '../components/Header';
 
-class HeaderContainer extends Component {
+class HeaderWrapper extends Component {
   constructor(props) {
     super(props);
 
@@ -18,9 +18,9 @@ class HeaderContainer extends Component {
     } else this.onMouseMoveParallaxEffect = this.onMouseMoveParallaxEffect.bind(this);
   }
 
-  onMouseMoveParallaxEffect(e) {
-    const x = ((e.pageX * -1) / 20);
-    const y = ((e.pageY * -1) / 10);
+  onMouseMoveParallaxEffect(event) {
+    const x = ((event.pageX * -1) / 20);
+    const y = ((event.pageY * -1) / 10);
 
     this.setState({
 	    style: {
@@ -31,16 +31,16 @@ class HeaderContainer extends Component {
   }
 
   render() {
-    const { onBottomScroll, onModalOpen } = this.props;
+    const { scrollBottom, openModal } = this.props;
 
     return (
       <div>
         <div className="home-container">
           <HeaderComponent
             styles={this.state.style}
-            onMouseMove={this.onMouseMoveParallaxEffect}
-            onBottomScroll={onBottomScroll}
-            onModalOpen={onModalOpen}
+            mouseMove={this.onMouseMoveParallaxEffect}
+            scrollBottom={scrollBottom}
+            openModal={openModal}
           />
         </div>
       </div>
@@ -48,4 +48,4 @@ class HeaderContainer extends Component {
   }
 }
 
-export default HeaderContainer;
+export default HeaderWrapper;

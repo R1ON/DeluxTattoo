@@ -46,7 +46,7 @@ class FooterComponent extends Component {
   }
 
   render() {
-    const { onModalOpen } = this.props;
+    const { openModal } = this.props;
 
     return (
       <div className="home-footer">
@@ -71,7 +71,7 @@ class FooterComponent extends Component {
 									Sign in
                   <span className="home-footer-delux-logo"> DELUX TATTOO</span>
                 </div>
-                <p className="home-footer-button" onClick={onModalOpen}>SIGN IN</p>
+                <p className="home-footer-button" onClick={openModal}>SIGN IN</p>
               </Col>
 
               <Col sm={6} md={12}>

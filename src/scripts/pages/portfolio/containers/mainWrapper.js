@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import MainComponent from '../components/Main';
 
-class MainContainer extends Component {
+class MainWrapper extends Component {
   constructor(props) {
     super(props);
 
@@ -18,9 +18,9 @@ class MainContainer extends Component {
     } else this.onMouseMoveParallaxEffect = this.onMouseMoveParallaxEffect.bind(this);
   }
 
-  onMouseMoveParallaxEffect(e) {
-    const x = ((e.pageX * -1) / 20);
-    const y = ((e.pageY * -1) / 10);
+  onMouseMoveParallaxEffect(event) {
+    const x = ((event.pageX * -1) / 20);
+    const y = ((event.pageY * -1) / 10);
 
     this.setState({
     	style: {
@@ -36,7 +36,7 @@ class MainContainer extends Component {
         <div className="home-container">
           <MainComponent
             styles={this.state.style}
-            onMouseMove={this.onMouseMoveParallaxEffect}
+            mouseMove={this.onMouseMoveParallaxEffect}
           />
         </div>
       </div>
@@ -44,4 +44,4 @@ class MainContainer extends Component {
   }
 }
 
-export default MainContainer;
+export default MainWrapper;

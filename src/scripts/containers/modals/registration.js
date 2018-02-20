@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import { formValueSelector } from 'redux-form';
 
-import { isOpenModalAction } from '../../actions/modalActions';
-import { submitRegistration } from '../../actions/submitRegistration';
+import { isOpenModal } from '../../actions/modalActions';
+import { submitRegistration } from '../../actions/submitActions';
 
 import RegistrationForm from '../../components/modals/Registration';
 
@@ -28,16 +28,20 @@ class RegistrationModal extends Component {
       this.props.submitRegistration(query);
     };
 
-    this.onSignInModalOpen = this.onSignInModalOpen.bind(this);
+    this.onSignInModalOpening = this.onSignInModalOpening.bind(this);
     this.onCloseModal = this.onCloseModal.bind(this);
   }
 
-  onSignInModalOpen() {
-    this.props.isOpenModalAction(false, !this.props.isOpenSignIn);
+  onSignInModalOpening() {
+    const { isOpenSignIn } = this.props;
+
+    this.props.isOpenModal(false, !isOpenSignIn);
   }
 
   onCloseModal() {
-    this.props.isOpenModalAction(!this.props.isOpenRegistration, false);
+    const { isOpenRegistration } = this.props;
+
+    this.props.isOpenModal(!isOpenRegistration, false);
   }
 
   render() {
@@ -52,9 +56,9 @@ class RegistrationModal extends Component {
         ariaHideApp={false}
       >
         <RegistrationForm
-          onSubmit={this.handleSubmit}
-          onCloseModal={this.onCloseModal}
-          onSignInModalOpen={this.onSignInModalOpen}
+          submit={this.handleSubmit}
+          closeModal={this.onCloseModal}
+          openSignInModal={this.onSignInModalOpening}
         />
       </Modal>
     );
@@ -80,7 +84,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn)),
+  isOpenModal: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModal(isOpenRegistration, isOpenSignIn)),
   submitRegistration: query => dispatch(submitRegistration(query))
 });
 

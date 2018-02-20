@@ -9,14 +9,14 @@ class HeaderComponent extends Component {
   render() {
     const {
       styles,
-      onMouseMove,
-      onBottomScroll,
-      onModalOpen
+      mouseMove,
+      scrollBottom,
+      openModal
     } = this.props;
 
     return (
       <div>
-        <Row className="home-header" style={styles} onMouseMove={onMouseMove}>
+        <Row className="home-header" style={styles} onMouseMove={mouseMove}>
           <Col md={4}>
             <div className="home-header-logo">
               DELUX TATTOO
@@ -32,7 +32,7 @@ class HeaderComponent extends Component {
 
           <Col md={12}>
             <div className="home-header-title">WELCOME TO OUR STUDIO</div>
-            <p className="home-header-button" onClick={onModalOpen}>
+            <p className="home-header-button" onClick={openModal}>
               SIGN IN
             </p>
           </Col>
@@ -41,7 +41,7 @@ class HeaderComponent extends Component {
             <Icon
               className="home-header-down"
               name="angle-double-down"
-              onClick={() => onBottomScroll(this.mainTitle)}
+              onClick={() => scrollBottom(this.mainTitle)}
             />
           </Col>
         </Row>

@@ -1,13 +1,22 @@
 import {
+  SUBMIT_REGISTRATION,
   SUCCESS_SUBMIT_SIGN_IN
   // ERROR_SUBMIT_SIGN_IN
-} from '../pages/home/constants/home';
+} from '../constants/types';
 
-import SubmitSignInSource from '../source/modalsSource';
+import submitSource from '../source/modalsSource';
+
+export function submitRegistration({ inputLoginReg, inputMailReg, inputPasswordReg }) {
+  submitSource.submitRegistration({ inputLoginReg, inputMailReg, inputPasswordReg });
+
+  return {
+    type: SUBMIT_REGISTRATION
+  };
+}
 
 export function submitSignIn({ inputMailSign, inputPasswordSign }) {
   return (dispatch) => {
-    const promise = SubmitSignInSource.submitSignIn({ inputMailSign, inputPasswordSign });
+    const promise = submitSource.submitSignIn({ inputMailSign, inputPasswordSign });
 
     promise.then((response) => {
       if (response) {

@@ -5,8 +5,8 @@ import { Form, Field, reduxForm } from 'redux-form';
 import RenderField from './RenderField';
 import validate from '../../validation/registrationForm';
 
-const RegistrationForm = ({ onSubmit, onCloseModal, onSignInModalOpen }) => (
-  <Form onSubmit={onSubmit}>
+const RegistrationForm = ({ submit, closeModal, openSignInModal }) => (
+  <Form onSubmit={submit}>
     <Row className="modal-button">
       <Col
         lg={6}
@@ -23,7 +23,7 @@ const RegistrationForm = ({ onSubmit, onCloseModal, onSignInModalOpen }) => (
         sm={6}
         xs={6}
         className="modal-header modal-header-sign modal-not-active"
-        onClick={onSignInModalOpen}
+        onClick={openSignInModal}
       >
         Sign in
       </Col>
@@ -48,7 +48,7 @@ const RegistrationForm = ({ onSubmit, onCloseModal, onSignInModalOpen }) => (
     </div>
 
     <Row className="modal-button">
-      <Col md={6} onClick={onCloseModal} className="modal-footer modal-footer-cancel">
+      <Col md={6} onClick={closeModal} className="modal-footer modal-footer-cancel">
         Cancel
       </Col>
       <Col md={6} className="modal-footer modal-footer-okay">

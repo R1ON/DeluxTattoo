@@ -1,20 +1,20 @@
 import {
-  IS_OPEN_IMAGE_MODAL,
+  IS_OPEN_SLIDER,
   SWITCH_IMAGE_LEFT,
   SWITCH_IMAGE_RIGHT
-} from '../constants/home';
+} from '../constants/types';
 
 const initialState = {
-  isOpenImage: false,
+  isOpen: false,
   imageSrc: ''
 };
 
-export function isOpenImageModalReducer(state = initialState, action) {
+export function isOpenSliderReducer(state = initialState, action) {
   switch (action.type) {
-    case IS_OPEN_IMAGE_MODAL:
+    case IS_OPEN_SLIDER:
       return {
         ...state,
-        isOpenImage: action.isOpenImage,
+        isOpen: action.isOpen,
         imageSrc: parseInt(action.imageSrc.replace(/[^0-9]/g, ''), 10)
       };
 

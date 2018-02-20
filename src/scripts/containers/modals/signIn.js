@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import { formValueSelector } from 'redux-form';
 
-import { isOpenModalAction } from '../../actions/modalActions';
-import { submitSignIn } from '../../actions/submitSignIn';
+import { isOpenModal } from '../../actions/modalActions';
+import { submitSignIn } from '../../actions/submitActions';
 
 import SignInForm from '../../components/modals/SignIn';
 
@@ -29,16 +29,20 @@ class SignInModal extends Component {
       this.props.submitSignIn(query);
     };
 
-    this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
+    this.onRegistrationModalOpening = this.onRegistrationModalOpening.bind(this);
     this.onCloseModal = this.onCloseModal.bind(this);
   }
 
-  onRegistrationModalOpen() {
-    this.props.isOpenModalAction(!this.props.isOpenRegistration, false);
+  onRegistrationModalOpening() {
+    const { isOpenRegistration } = this.props;
+
+    this.props.isOpenModal(!isOpenRegistration, false);
   }
 
   onCloseModal() {
-    this.props.isOpenModalAction(false, !this.props.isOpenSignIn);
+    const { isOpenSignIn } = this.props;
+
+    this.props.isOpenModal(false, !isOpenSignIn);
   }
 
   render() {
@@ -53,9 +57,9 @@ class SignInModal extends Component {
         ariaHideApp={false}
       >
         <SignInForm
-          onSubmit={this.handleSubmit}
-          onCloseModal={this.onCloseModal}
-          onRegistrationModalOpen={this.onRegistrationModalOpen}
+          submit={this.handleSubmit}
+          closeModal={this.onCloseModal}
+          openRegistrationModal={this.onRegistrationModalOpening}
         />
       </Modal>
     );
@@ -81,7 +85,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn)),
+  isOpenModal: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModal(isOpenRegistration, isOpenSignIn)),
   submitSignIn: query => dispatch(submitSignIn(query))
 });
 

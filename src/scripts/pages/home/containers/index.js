@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import scrollToComponent from 'react-scroll-to-component';
 
-import { isOpenModalAction } from '../../../actions/modalActions';
-import { isOpenImageModalAction } from '../actions/imageModalActions';
+import { isOpenModal } from '../../../actions/modalActions';
+import { isOpenSlider } from '../actions/sliderActions';
 
-import HeaderContainer from './headerWrapper';
+import HeaderWrapper from './headerWrapper';
 
 import MainComponent from '../components/Main';
 import FooterComponent from '../components/Footer';
@@ -29,30 +29,35 @@ class Home extends Component {
     // };
 
     if (document.body.clientWidth < 480) {
-      this.onImageModalOpen = () => {};
-    } else this.onImageModalOpen = this.onImageModalOpen.bind(this);
+      this.onSliderOpening = () => {};
+    } else this.onSliderOpening = this.onSliderOpening.bind(this);
 
-    this.onRegistrationModalOpen = this.onRegistrationModalOpen.bind(this);
-    this.onSignInModalOpen = this.onSignInModalOpen.bind(this);
+    this.onRegistrationModalOpening = this.onRegistrationModalOpening.bind(this);
+    this.onSignInModalOpening = this.onSignInModalOpening.bind(this);
 
-    this.onBottomScroll = this.onBottomScroll.bind(this);
+    this.bottomScrolling = this.bottomScrolling.bind(this);
   }
 
-  onRegistrationModalOpen() {
-    this.props.isOpenModalAction(!this.props.isOpenRegistration, false);
+  onRegistrationModalOpening() {
+    const { isOpenRegistration } = this.props;
+
+    this.props.isOpenModal(!isOpenRegistration, false);
   }
 
-  onSignInModalOpen() {
-    this.props.isOpenModalAction(false, !this.props.isOpenSignIn);
+  onSignInModalOpening() {
+    const { isOpenSignIn } = this.props;
+
+    this.props.isOpenModal(false, !isOpenSignIn);
   }
 
-  onImageModalOpen(event) {
+  onSliderOpening(event) {
+    const { isOpen } = this.props;
     const imageSrc = event.target.querySelectorAll('img')[0].attributes[0].nodeValue;
 
-    this.props.isOpenImageModalAction(!this.props.isOpenImage, imageSrc);
+    this.props.isOpenSlider(!isOpen, imageSrc);
   }
 
-  onBottomScroll(mainTitle) {
+  bottomScrolling(mainTitle) {
     scrollToComponent(mainTitle, { offset: 10, align: 'top', duration: 1000 });
   }
 
@@ -65,16 +70,16 @@ class Home extends Component {
 
         <div className="home-container">
           <BurgerMenu />
-          <HeaderContainer
-            onBottomScroll={this.onBottomScroll}
-            onModalOpen={this.onSignInModalOpen}
+          <HeaderWrapper
+            scrollBottom={this.bottomScrolling}
+            openModal={this.onSignInModalOpening}
           />
           <MainComponent
-            onImageModalOpen={this.onImageModalOpen}
-            onModalOpen={this.onRegistrationModalOpen}
+            openSlider={this.onSliderOpening}
+            openModal={this.onRegistrationModalOpening}
           />
           <FooterComponent
-            onModalOpen={this.onSignInModalOpen}
+            openModal={this.onSignInModalOpening}
           />
         </div>
       </div>
@@ -87,15 +92,15 @@ const mapStateToProps = (state) => {
     isOpenRegistration,
     isOpenSignIn
   } = state.modalReducers.isOpenModalReducer;
-  const { isOpenImage } = state.HomeReducers.isOpenImageModalReducer;
+  const { isOpen } = state.homeReducers.isOpenSliderReducer;
 
-  return { isOpenRegistration, isOpenSignIn, isOpenImage };
+  return { isOpenRegistration, isOpenSignIn, isOpen };
 };
 
 
 const mapDispatchToProps = dispatch => ({
-  isOpenModalAction: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModalAction(isOpenRegistration, isOpenSignIn)),
-  isOpenImageModalAction: (isOpenImage, imageSrc) => dispatch(isOpenImageModalAction(isOpenImage, imageSrc))
+  isOpenModal: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModal(isOpenRegistration, isOpenSignIn)),
+  isOpenSlider: (isOpen, imageSrc) => dispatch(isOpenSlider(isOpen, imageSrc))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

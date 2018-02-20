@@ -4,10 +4,10 @@ import Modal from 'react-modal';
 import { Icon } from 'react-fa';
 
 import {
-  isOpenImageModalAction,
+  isOpenSlider,
   switchImageLeft,
   switchImageRight
-} from '../actions/imageModalActions';
+} from '../actions/sliderActions';
 
 import '../../../../styles/common/modals.sass';
 
@@ -18,7 +18,7 @@ const overlayBackground = {
   }
 };
 
-class ImageModal extends Component {
+class Slider extends Component {
   constructor(props) {
     super(props);
 
@@ -28,8 +28,11 @@ class ImageModal extends Component {
   }
 
   onCloseModal(event) {
-    if (event.target.tagName !== 'IMG') {
-	    this.props.isOpenImageModalAction(!this.props.isOpenImage, '');
+    const { isOpen } = this.props;
+    const { tagName } = event.target;
+
+    if (tagName !== 'IMG') {
+      this.props.isOpenSlider(!isOpen, '');
     }
   }
 
@@ -42,11 +45,11 @@ class ImageModal extends Component {
   }
 
   render() {
-    const { isOpenImage, imageSrc } = this.props;
+    const { isOpen, imageSrc } = this.props;
 
     return (
       <Modal
-        isOpen={isOpenImage}
+        isOpen={isOpen}
         className="modal-image"
         style={overlayBackground}
         ariaHideApp={false}
@@ -68,17 +71,17 @@ class ImageModal extends Component {
 
 function mapStateToProps(state) {
   const {
-    isOpenImage,
+    isOpen,
     imageSrc
-  } = state.HomeReducers.isOpenImageModalReducer;
+  } = state.homeReducers.isOpenSliderReducer;
 
-  return { isOpenImage, imageSrc };
+  return { isOpen, imageSrc };
 }
 
 const mapDispatchToProps = dispatch => ({
-  isOpenImageModalAction: (isOpenImage, imageSrc) => dispatch(isOpenImageModalAction(isOpenImage, imageSrc)),
+  isOpenSlider: (isOpen, imageSrc) => dispatch(isOpenSlider(isOpen, imageSrc)),
   switchImageLeft: () => dispatch(switchImageLeft()),
   switchImageRight: () => dispatch(switchImageRight())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ImageModal);
+export default connect(mapStateToProps, mapDispatchToProps)(Slider);

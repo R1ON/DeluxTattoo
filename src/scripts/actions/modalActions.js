@@ -1,8 +1,8 @@
 import {
   IS_OPEN_MODAL
-} from '../pages/home/constants/home';
+} from '../constants/types';
 
-export function isOpenModalAction(isOpenRegistration, isOpenSignIn) {
+export function isOpenModal(isOpenRegistration, isOpenSignIn) {
   return {
     type: IS_OPEN_MODAL,
     isOpenRegistration,

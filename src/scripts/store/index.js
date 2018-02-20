@@ -6,7 +6,6 @@ import RootReducers from '../reducers';
 
 const store = createStore(RootReducers, composeWithDevTools(applyMiddleware(thunk)));
 
-
 export {
   store
 };

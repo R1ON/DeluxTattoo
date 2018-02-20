@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import MainContainer from './mainWrapper';
+import MainWrapper from './mainWrapper';
 
 import HeaderComponent from '../components/Header';
 import FooterComponent from '../components/Footer';
@@ -12,7 +12,7 @@ class PortfolioContainer extends Component {
     return (
       <div className="portfolio">
         <HeaderComponent />
-        <MainContainer />
+        <MainWrapper />
         <FooterComponent />
       </div>
     );

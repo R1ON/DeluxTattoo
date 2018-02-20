@@ -8,7 +8,7 @@ import Masonry from 'react-masonry-component';
 import { IMPORTANTLY_ABOUT, MASONRY_IMAGES } from '../constants/home';
 import { MENU_SECTIONS } from '../../../constants/menu';
 
-const MainComponent = ({ onImageModalOpen, onModalOpen }) => (
+const MainComponent = ({ openSlider, openModal }) => (
   <div className="home-main">
     <Row>
       <Col md={4} sm={6} xs={12}>
@@ -79,7 +79,7 @@ const MainComponent = ({ onImageModalOpen, onModalOpen }) => (
           <div
             className={name}
             key={index}
-            onClick={onImageModalOpen}
+            onClick={openSlider}
           >
             <img src={image} alt="" />
           </div>
@@ -100,7 +100,7 @@ const MainComponent = ({ onImageModalOpen, onModalOpen }) => (
         </div>
       </Col>
       <Col md={12}>
-        <p onClick={onModalOpen} className="home-header-button importantly-button">REGISTRATION</p>
+        <p onClick={openModal} className="home-header-button importantly-button">REGISTRATION</p>
       </Col>
     </Row>
   </div>

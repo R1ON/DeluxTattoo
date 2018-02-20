@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import HomeReducers from './reducers';
+import homeReducers from './reducers';
 
 import HomeContainer from './containers';
-import ImageModal from './containers/imageModal';
 
+import Slider from './containers/slider';
 import RegistrationModal from '../../containers/modals/registration';
 import SignInModal from '../../containers/modals/signIn';
 
@@ -20,7 +20,7 @@ class Home extends Component {
         <HomeContainer />
         <RegistrationModal />
         <SignInModal />
-        <ImageModal />
+        <Slider />
       </div>
     );
   }
@@ -28,5 +28,5 @@ class Home extends Component {
 
 export {
   Home as default,
-  HomeReducers
+  homeReducers
 };

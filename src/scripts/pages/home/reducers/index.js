@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import { isOpenImageModalReducer } from './imageModalReducers';
+import { isOpenSliderReducer } from './sliderReducers';
 
 export default combineReducers({
-  isOpenImageModalReducer
+  isOpenSliderReducer
 });

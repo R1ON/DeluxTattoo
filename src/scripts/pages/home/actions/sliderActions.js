@@ -1,13 +1,13 @@
 import {
-  IS_OPEN_IMAGE_MODAL,
+  IS_OPEN_SLIDER,
   SWITCH_IMAGE_LEFT,
   SWITCH_IMAGE_RIGHT
-} from '../constants/home';
+} from '../constants/types';
 
-export function isOpenImageModalAction(isOpenImage, imageSrc) {
+export function isOpenSlider(isOpen, imageSrc) {
   return {
-    type: IS_OPEN_IMAGE_MODAL,
-    isOpenImage,
+    type: IS_OPEN_SLIDER,
+    isOpen,
     imageSrc
   };
 }

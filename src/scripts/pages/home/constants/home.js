@@ -1,7 +1,3 @@
-export const IS_OPEN_IMAGE_MODAL = 'IS_OPEN_IMAGE_MODAL';
-export const SWITCH_IMAGE_LEFT = 'SWITCH_IMAGE_LEFT';
-export const SWITCH_IMAGE_RIGHT = 'SWITCH_IMAGE_RIGHT';
-
 export const IMPORTANTLY_ABOUT = [
   `If you want to get to the session, 
   find out the cost of a tattoo, 
