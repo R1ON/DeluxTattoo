@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import { Icon } from 'react-fa';
@@ -32,7 +33,7 @@ class Slider extends Component {
     const { tagName } = event.target;
 
     if (tagName !== 'IMG') {
-      this.props.isOpenSlider(!isOpen, '');
+      this.props.isOpenSlider(!isOpen, 0);
     }
   }
 
@@ -68,6 +69,11 @@ class Slider extends Component {
     );
   }
 }
+
+Slider.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  imageSrc: PropTypes.number.isRequired
+};
 
 function mapStateToProps(state) {
   const {

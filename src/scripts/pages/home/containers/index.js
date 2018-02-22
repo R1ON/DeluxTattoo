@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import scrollToComponent from 'react-scroll-to-component';
 
@@ -52,7 +53,9 @@ class Home extends Component {
 
   onSliderOpening(event) {
     const { isOpen } = this.props;
-    const imageSrc = event.target.querySelectorAll('img')[0].attributes[0].nodeValue;
+
+    let imageSrc = event.target.querySelectorAll('img')[0].attributes[0].nodeValue;
+    imageSrc = parseInt(imageSrc.replace(/[^0-9]/g, ''), 10);
 
     this.props.isOpenSlider(!isOpen, imageSrc);
   }
@@ -87,6 +90,12 @@ class Home extends Component {
   }
 }
 
+Home.propTypes = {
+  isOpenRegistration: PropTypes.bool.isRequired,
+  isOpenSignIn: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool.isRequired
+};
+
 const mapStateToProps = (state) => {
   const {
     isOpenRegistration,
@@ -96,7 +105,6 @@ const mapStateToProps = (state) => {
 
   return { isOpenRegistration, isOpenSignIn, isOpen };
 };
-
 
 const mapDispatchToProps = dispatch => ({
   isOpenModal: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModal(isOpenRegistration, isOpenSignIn)),

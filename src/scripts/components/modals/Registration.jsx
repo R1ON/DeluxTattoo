@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
 import { Form, Field, reduxForm } from 'redux-form';
 
@@ -58,6 +59,11 @@ const RegistrationForm = ({ submit, closeModal, openSignInModal }) => (
   </Form>
 );
 
+RegistrationForm.propTypes = {
+  submit: PropTypes.func.isRequired,
+  closeModal: PropTypes.func.isRequired,
+  openSignInModal: PropTypes.func.isRequired
+};
 
 export default reduxForm({
   form: 'registrationModal', validate

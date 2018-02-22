@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   isOpen: false,
-  imageSrc: ''
+  imageSrc: 0
 };
 
 export function isOpenSliderReducer(state = initialState, action) {
@@ -15,31 +15,19 @@ export function isOpenSliderReducer(state = initialState, action) {
       return {
         ...state,
         isOpen: action.isOpen,
-        imageSrc: parseInt(action.imageSrc.replace(/[^0-9]/g, ''), 10)
+        imageSrc: action.imageSrc
       };
 
     case SWITCH_IMAGE_LEFT:
-      if (state.imageSrc === 1) {
-	      return {
-	      	...state,
-		      imageSrc: 14
-	      };
-      }
       return {
         ...state,
-        imageSrc: state.imageSrc - 1
+        imageSrc: state.imageSrc === 1 ? 14 : state.imageSrc - 1
       };
 
     case SWITCH_IMAGE_RIGHT:
-      if (state.imageSrc === 14) {
-	      return {
-	      	...state,
-		      imageSrc: 1
-	      };
-      }
       return {
         ...state,
-        imageSrc: state.imageSrc + 1
+        imageSrc: state.imageSrc === 14 ? 1 : state.imageSrc + 1
       };
 
     default:

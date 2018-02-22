@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import { formValueSelector } from 'redux-form';
@@ -64,6 +65,11 @@ class RegistrationModal extends Component {
     );
   }
 }
+
+RegistrationModal.propTypes = {
+  isOpenRegistration: PropTypes.bool.isRequired,
+  isOpenSignIn: PropTypes.bool.isRequired
+};
 
 const selector = formValueSelector('registrationModal');
 

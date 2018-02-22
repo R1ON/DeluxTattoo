@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { Row, Col } from 'reactstrap';
 import { Icon } from 'react-fa';
@@ -135,5 +136,9 @@ class FooterComponent extends Component {
     );
   }
 }
+
+FooterComponent.propTypes = {
+  openModal: PropTypes.func.isRequired
+};
 
 export default FooterComponent;

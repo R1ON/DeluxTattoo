@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import { formValueSelector } from 'redux-form';
@@ -66,6 +67,11 @@ class SignInModal extends Component {
   }
 }
 
+SignInModal.propTypes = {
+  isOpenRegistration: PropTypes.bool.isRequired,
+  isOpenSignIn: PropTypes.bool.isRequired
+};
+
 const selector = formValueSelector('signInModal');
 
 function mapStateToProps(state) {
@@ -80,7 +86,7 @@ function mapStateToProps(state) {
   const inputPasswordSign = selector(state, 'inputPasswordSign');
 
   return {
-  	isOpenRegistration, isOpenSignIn, inputMailSign, inputPasswordSign, successSignIn
+    isOpenRegistration, isOpenSignIn, inputMailSign, inputPasswordSign, successSignIn
   };
 }
 

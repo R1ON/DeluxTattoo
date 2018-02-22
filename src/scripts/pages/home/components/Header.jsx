@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { Row, Col } from 'reactstrap';
 import { Icon } from 'react-fa';
@@ -64,5 +65,12 @@ class HeaderComponent extends Component {
     );
   }
 }
+
+HeaderComponent.propTypes = {
+  styles: PropTypes.object.isRequired,
+  mouseMove: PropTypes.func.isRequired,
+  scrollBottom: PropTypes.func.isRequired,
+  openModal: PropTypes.func.isRequired
+};
 
 export default HeaderComponent;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { Row, Col } from 'reactstrap';
 import { Icon } from 'react-fa';
@@ -105,5 +106,10 @@ const MainComponent = ({ openSlider, openModal }) => (
     </Row>
   </div>
 );
+
+MainComponent.propTypes = {
+  openSlider: PropTypes.func.isRequired,
+  openModal: PropTypes.func.isRequired
+};
 
 export default MainComponent;
