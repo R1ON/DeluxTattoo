@@ -11,8 +11,6 @@ import HeaderWrapper from './headerWrapper';
 import MainComponent from '../components/Main';
 import FooterComponent from '../components/Footer';
 
-import BurgerMenu from '../../../components/burgerMenu/Menu';
-
 import '../../../../styles/pages/home/index.sass';
 
 // import { Icon } from 'react-fa';
@@ -72,7 +70,6 @@ class Home extends Component {
         {/* </div> */}
 
         <div className="home-container">
-          <BurgerMenu />
           <HeaderWrapper
             scrollBottom={this.bottomScrolling}
             openModal={this.onSignInModalOpening}

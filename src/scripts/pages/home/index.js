@@ -5,9 +5,10 @@ import homeReducers from './reducers';
 import HomeContainer from './containers';
 
 import Slider from './containers/slider';
+
 import RegistrationModal from '../../containers/modals/registration';
 import SignInModal from '../../containers/modals/signIn';
-
+import BurgerMenu from '../../components/burgerMenu/Menu';
 
 class Home extends Component {
   componentWillReceiveProps() {
@@ -17,6 +18,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home-container">
+        <BurgerMenu />
         <HomeContainer />
         <RegistrationModal />
         <SignInModal />

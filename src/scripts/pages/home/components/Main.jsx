@@ -82,7 +82,7 @@ const MainComponent = ({ openSlider, openModal }) => (
             key={index}
             onClick={openSlider}
           >
-            <img src={image} alt="" />
+            <img src={require(`../../../../images/homeImage/workExamples/${image}.jpg`)} alt="" />
           </div>
         );
       })}

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
+import portfolioReducers from './reducers';
+
 import PortfolioContainer from './containers';
+
+import BurgerMenu from '../../components/burgerMenu/Menu';
 
 class Portfolio extends Component {
   componentWillReceiveProps() {
@@ -9,7 +13,8 @@ class Portfolio extends Component {
 
   render() {
     return (
-      <div>
+      <div className="portfolio">
+        <BurgerMenu />
         <PortfolioContainer />
       </div>
     );
@@ -17,5 +22,6 @@ class Portfolio extends Component {
 }
 
 export {
-  Portfolio as default
+  Portfolio as default,
+  portfolioReducers
 };

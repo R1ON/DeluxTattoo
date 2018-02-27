@@ -7,16 +7,16 @@
     background: url($image-portfolio-header) no-repeat
     background-size: 120%
     margin-left: -3vw
-    height: 90vh
+    height: 82vh
     width: 108vw
     &-text
       &::before
-        content: 'Your dad'
+        content: ''
         font-style: italic
         font-family: 'ComfortaaL', 'sans-serif'
         position: absolute
-        top: -1vh
-        left: 13vw
+        top: -1.5vh
+        left: 18vw
         color: white
         opacity: 0
         transition: .7s ease
@@ -28,13 +28,25 @@
           transform: scale(1.05, 1.05)
         &::before
           transition: .5s ease
-          top: 1vh
+          top: 0.5vh
           opacity: 1
+      &-one
+        &::before
+          content: 'Dan'
+      &-two
+        &::before
+          content: 'Helga'
+          left: 48vw
+      &-three
+        &::before
+          content: 'Mike'
+          left: 78vw
+
     &-master
       will-change: transform, opacity
       filter: grayscale(100%)
       transition: .7s ease
-      margin-top: 12vh
+      margin-top: 11vh
       margin-left: 1vw
       margin-right: 1vw
       width: 30vw

@@ -31,11 +31,14 @@ class MainWrapper extends Component {
   }
 
   render() {
+    const { props, state: { style } } = this;
+
     return (
       <div>
         <div className="home-container">
           <MainComponent
-            styles={this.state.style}
+            {...props}
+            styles={style}
             mouseMove={this.onMouseMoveParallaxEffect}
           />
         </div>

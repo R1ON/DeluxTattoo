@@ -1,12 +1,5 @@
 @import "vars"
 
-/*==========  Desktop First  ==========*/
-
-/* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-  /**/
-
-
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
   .home-footer
@@ -58,7 +51,9 @@
     &-input
       width: 40vw
     &-footer
-      width: 20vw
+      width: 20vw !important
+      &-cancel
+        margin-left: 5vw
 
   .modal-image-container img
     max-width: 70vw
@@ -159,7 +154,7 @@
     &-input
       width: 60vw
     &-footer
-      width: 30vw
+      width: 30vw !important
 
   .home-main-examples
     &:hover
@@ -289,34 +284,3 @@
       margin-bottom: 3vh
     &-button
       color: white
-
-/* Custom, iPhone Retina */
-@media only screen and (max-width : 320px)
-	/**/
-
-
-/*==========  Mobile First  ==========*/
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px)
-	/**/
-
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)
-	/**/
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
-	/**/
-
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px)
-	/**/
-
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
-	/**/

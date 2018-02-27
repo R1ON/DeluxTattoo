@@ -3753,6 +3753,10 @@ lodash.defaults@^4.0.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
 
+lodash.delay@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.delay/-/lodash.delay-4.1.1.tgz#8a3b424988252ab912356d8e3ce93eb172d9f231"
+
 lodash.isarguments@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
