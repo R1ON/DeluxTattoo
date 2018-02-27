@@ -1,3 +1,8 @@
+export const QUANTITY_IMAGE = {
+  firstImage: 1,
+  lastImage: 14
+};
+
 export const IMPORTANTLY_ABOUT = [
   `If you want to get to the session, 
   find out the cost of a tattoo, 

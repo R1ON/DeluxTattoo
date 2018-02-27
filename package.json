@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "classnames": "^2.2.5",
     "lodash.delay": "^4.1.1",
     "prop-types": "^15.6.0",
     "react": "^15.4.2",

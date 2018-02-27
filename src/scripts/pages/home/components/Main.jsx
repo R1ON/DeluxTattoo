@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
@@ -68,14 +69,10 @@ const MainComponent = ({ openSlider, openModal }) => (
 
     <Masonry className="home-main-masonry">
       {MASONRY_IMAGES.map((image, index) => {
-        let name = 'home-main-examples';
+        const smDisable = index === 3 || index === 4 || index === 6 || index === 10 || index === 12;
+        const xsDisable = index === 8 || index === 11 || index === 13;
+        const name = classNames('home-main-examples', { 'sm-disable': smDisable, 'xs-disable': xsDisable });
 
-        if (index === 3 || index === 4 || index === 6 || index === 10 || index === 12) {
-          name += ' sm-disable';
-        }
-        if (index === 8 || index === 11 || index === 13) {
-          name += ' xs-disable';
-        }
         return (
           <div
             className={name}

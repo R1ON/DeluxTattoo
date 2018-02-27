@@ -3,6 +3,7 @@ import {
   SWITCH_IMAGE_LEFT,
   SWITCH_IMAGE_RIGHT
 } from '../constants/types';
+import { QUANTITY_IMAGE } from '../constants/home';
 
 const initialState = {
   isOpen: false,
@@ -21,13 +22,13 @@ export function isOpenSliderReducer(state = initialState, action) {
     case SWITCH_IMAGE_LEFT:
       return {
         ...state,
-        imageSrc: state.imageSrc === 1 ? 14 : state.imageSrc - 1
+        imageSrc: state.imageSrc === QUANTITY_IMAGE.firstImage ? QUANTITY_IMAGE.lastImage : state.imageSrc - 1
       };
 
     case SWITCH_IMAGE_RIGHT:
       return {
         ...state,
-        imageSrc: state.imageSrc === 14 ? 1 : state.imageSrc + 1
+        imageSrc: state.imageSrc === QUANTITY_IMAGE.lastImage ? QUANTITY_IMAGE.firstImage : state.imageSrc + 1
       };
 
     default:
