@@ -17,7 +17,6 @@ class PortfolioContainer extends Component {
     super(props);
 
     this.selectingMaster = this.selectingMaster.bind(this);
-    this.bottomScrolling = this.bottomScrolling.bind(this);
   }
 
   selectingMaster(event, mainTitle) {
@@ -25,12 +24,8 @@ class PortfolioContainer extends Component {
 
     this.props.selectMasterAction(master);
     delay(() => (
-      scrollToComponent(mainTitle, { offset: 10, align: 'top', duration: 500 })
+      scrollToComponent(mainTitle, { offset: 10, align: 'top', duration: 1000 })
     ), 50);
-  }
-
-  bottomScrolling(mainTitle) {
-    scrollToComponent(mainTitle, { offset: 10, align: 'top', duration: 1000 });
   }
 
   render() {

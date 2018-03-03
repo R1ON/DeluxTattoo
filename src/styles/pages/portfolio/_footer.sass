@@ -17,8 +17,38 @@
     height: 8vh
     text-align: center
     margin: 0 auto
-    //&-name, &-experience, &-title
-
+    &-name
+      margin-top: 10vh
+      font-size: 3.5vw
+    &-experience
+      margin-bottom: 2vh
+  &-works
+    img
+      width: 30vw
+      object-fit: cover
+      height: 60vh
+      margin-bottom: 4vh
   &-master
     height: auto
     padding-bottom: 2vh
+  &-more
+    margin: 0 auto
+    width: 30vw
+    padding: 12px 0 12px 0
+    color: $accent-color
+    border: 1px solid $accent-color
+    background: $second-color
+    font-size: 1em
+    font-family: 'ComfortaaR', 'sans-serif'
+    transition: .5s ease
+    border-radius: 5px
+    &:hover
+      cursor: pointer
+      border: 1px solid rgba(255, 0, 21, 0.05)
+      background: lighten($second-color, 5%)
+      color: $accent-color
+      transition: .5s ease
+    &:active
+      background: darken($second-color, 5%)
+      color: $accent-color
+      transition: .5s ease

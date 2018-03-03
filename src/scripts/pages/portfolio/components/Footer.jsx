@@ -21,15 +21,18 @@ const FooterComponent = ({ master }) => (
               <div className="portfolio-footer-about-experience">
                 {`Experience: ${selectedMaster.experience} year`}
               </div>
-              <div className="portfolio-footer-about-title">Works</div>
+
+              <Row>
+                {selectedMaster.images.map((image, index) => (
+                  <Col key={index} md={4} className="portfolio-footer-works">
+                    <img src={require(`../../../../images/homeImage/workExamples/${image}.jpg`)} alt="" />
+                  </Col>
+                ))}
+              </Row>
             </div>
           ))
         }
-        <Row>
-          <Col md={4}>img</Col>
-          <Col md={4}>img</Col>
-          <Col md={4}>img</Col>
-        </Row>
+        <div className="portfolio-footer-more">MORE</div>
       </div>
     )}
   </div>
