@@ -1,5 +1,6 @@
 import delay from 'lodash.delay';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import scrollToComponent from 'react-scroll-to-component';
 
@@ -44,6 +45,10 @@ class PortfolioContainer extends Component {
     );
   }
 }
+
+PortfolioContainer.propTypes = {
+  master: PropTypes.number.isRequired
+};
 
 const mapStateToProps = (state) => {
   const {

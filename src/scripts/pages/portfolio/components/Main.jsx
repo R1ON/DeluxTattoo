@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Row } from 'reactstrap';
 
 class HeaderComponent extends Component {
@@ -46,5 +47,11 @@ class HeaderComponent extends Component {
     );
   }
 }
+
+HeaderComponent.propTypes = {
+  styles: PropTypes.object.isRequired,
+  mouseMove: PropTypes.func.isRequired,
+  selectedMaster: PropTypes.func.isRequired
+};
 
 export default HeaderComponent;

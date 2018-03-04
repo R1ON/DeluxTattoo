@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
 
 import { MASTER_OPTION, MASTER_INFO } from '../constants/portfolio';
@@ -37,5 +38,9 @@ const FooterComponent = ({ master }) => (
     )}
   </div>
 );
+
+FooterComponent.propTypes = {
+  master: PropTypes.number.isRequired
+};
 
 export default FooterComponent;
