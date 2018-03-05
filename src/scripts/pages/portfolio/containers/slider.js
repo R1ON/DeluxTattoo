@@ -10,12 +10,14 @@ import {
   switchImageRight
 } from '../actions/sliderActions';
 
+import { MASTER_INFO } from '../constants/portfolio';
+
 import '../../../../styles/common/modals.sass';
 
 const overlayBackground = {
   overlay: {
-  	backgroundColor: 'rgba(0, 0, 0, 0.8)',
-	  zIndex: '999'
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    zIndex: '999'
   }
 };
 
@@ -46,12 +48,12 @@ class Slider extends Component {
   }
 
   render() {
-    const { isOpen, imageSrc } = this.props;
+    const { master, isOpen, imageSrc } = this.props;
 
     return (
       <Modal
         isOpen={isOpen}
-        className="modal-image"
+        className="modal-image modal-image-portfolio"
         style={overlayBackground}
         ariaHideApp={false}
       >
@@ -62,8 +64,22 @@ class Slider extends Component {
           <Icon name="angle-right" />
         </div>
 
-        <div className="modal-image-container" onClick={this.onCloseModal}>
+        <div className="modal-image-container modal-image-container-portfolio" onClick={this.onCloseModal}>
           <img src={`images/${imageSrc}.jpg`} alt="" />
+        </div>
+
+        <div className="modal-image-about">
+          {MASTER_INFO
+            .filter(selectedMaster => selectedMaster.id === master)
+            .map(selectedMaster => selectedMaster.images
+              .filter(image => image.id === imageSrc)
+              .map(image => (
+                <div key={image.id}>
+                  <span>Price: {image.price} $.</span>
+                  <span>Time: {image.time} h.</span>
+                  <span>Style: {image.style}</span>
+                </div>
+              )))}
         </div>
       </Modal>
     );
@@ -71,14 +87,18 @@ class Slider extends Component {
 }
 
 Slider.propTypes = {
+  master: PropTypes.number.isRequired,
   isOpen: PropTypes.bool.isRequired,
   imageSrc: PropTypes.number.isRequired
 };
 
 const mapStateToProps = (state) => {
-  const { isOpen, imageSrc } = state.homeReducers.isOpenSliderReducer;
+  const { selectMasterReducer, isOpenSliderReducer } = state.portfolioReducers;
 
-  return { isOpen, imageSrc };
+  const { master } = selectMasterReducer;
+  const { isOpen, imageSrc } = isOpenSliderReducer;
+
+  return { master, isOpen, imageSrc };
 };
 
 const mapDispatchToProps = dispatch => ({

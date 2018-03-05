@@ -23,7 +23,7 @@ export function submitSignIn({ inputMailSign, inputPasswordSign }) {
         dispatch({ type: SUCCESS_SUBMIT_SIGN_IN });
       }
 
-      console.log(response)
+      // console.log(response)
       // если массив пустой, то сделать диспатч
       // else dispatch({ type: ERROR_SUBMIT_SIGN_IN });
     });

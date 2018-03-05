@@ -117,6 +117,8 @@
       max-height: 90vh
       margin-left: -1vw
       animation: imageVisible .5s ease
+    &-portfolio img
+      max-height: 80vh
   &-button
     position: absolute
     top: 0
@@ -148,6 +150,22 @@
       transition: .5s ease
       background: rgba(0, 0, 0, 0.7)
       color: darken($accent-color, 10%)
+  &-portfolio
+    height: 95vh
+  &-about
+    margin: -3vh auto
+    border-radius: 5px
+    background: darken($accent-color, 5%)
+    color: $main-color
+    font-family: 'ComfortaaR', 'sans-serif'
+    font-size: 2vw
+    width: 55vw
+    text-align: center
+    animation: upSpan .5s ease
+    span
+      padding-left: 2vw
+      padding-right: 2vw
+
 
 @keyframes imageVisible
   0%
@@ -170,6 +188,12 @@
   100%
     opacity: 1
     margin-left: 0
+
+@keyframes upSpan
+  0%
+    margin-top: 5vh
+  100%
+    margin-top: -3vh
 
 @keyframes errorAppearance
   0%

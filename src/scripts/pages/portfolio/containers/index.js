@@ -7,6 +7,7 @@ import scrollToComponent from 'react-scroll-to-component';
 import MainWrapper from './mainWrapper';
 
 import { selectMasterAction } from '../actions/selectMasterActions';
+import { isOpenSlider } from '../actions/sliderActions';
 
 import HeaderComponent from '../components/Header';
 import FooterComponent from '../components/Footer';
@@ -17,7 +18,20 @@ class PortfolioContainer extends Component {
   constructor(props) {
     super(props);
 
+    if (document.body.clientWidth < 480) {
+      this.onSliderOpening = () => {};
+    } else this.onSliderOpening = this.onSliderOpening.bind(this);
+
     this.selectingMaster = this.selectingMaster.bind(this);
+  }
+
+  onSliderOpening(event) {
+    const { isOpen } = this.props;
+
+    let imageSrc = event.target.attributes[0].nodeValue;
+    imageSrc = parseInt(imageSrc.replace(/[^0-9]/g, ''), 10);
+
+    this.props.isOpenSlider(!isOpen, imageSrc);
   }
 
   selectingMaster(event, mainTitle) {
@@ -40,6 +54,7 @@ class PortfolioContainer extends Component {
         />
         <FooterComponent
           master={master}
+          openSlider={this.onSliderOpening}
         />
       </div>
     );
@@ -47,19 +62,22 @@ class PortfolioContainer extends Component {
 }
 
 PortfolioContainer.propTypes = {
-  master: PropTypes.number.isRequired
+  master: PropTypes.number.isRequired,
+  isOpen: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = (state) => {
-  const {
-    master
-  } = state.portfolioReducers.selectMasterReducer;
+  const { selectMasterReducer, isOpenSliderReducer } = state.portfolioReducers;
 
-  return { master };
+  const { master } = selectMasterReducer;
+  const { isOpen } = isOpenSliderReducer;
+
+  return { master, isOpen };
 };
 
 const mapDispatchToProps = dispatch => ({
-  selectMasterAction: master => dispatch(selectMasterAction(master))
+  selectMasterAction: master => dispatch(selectMasterAction(master)),
+  isOpenSlider: (isOpen, imageSrc) => dispatch(isOpenSlider(isOpen, imageSrc))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PortfolioContainer);

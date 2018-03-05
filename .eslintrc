@@ -33,6 +33,7 @@
     "no-mixed-spaces-and-tabs": "off",
     "react/prop-types": "off",
     "react/no-array-index-key": "off",
-    "react/forbid-prop-types": "off"
+    "react/forbid-prop-types": "off",
+    "object-curly-newline": "off"
   }
 }

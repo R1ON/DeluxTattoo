@@ -74,11 +74,8 @@ SignInModal.propTypes = {
 
 const selector = formValueSelector('signInModal');
 
-function mapStateToProps(state) {
-  const {
-    isOpenRegistration,
-    isOpenSignIn
-  } = state.modalReducers.isOpenModalReducer;
+const mapStateToProps = (state) => {
+  const { isOpenRegistration, isOpenSignIn } = state.modalReducers.isOpenModalReducer;
 
   const { successSignIn } = state.modalReducers.submitSignInReducer;
 
@@ -88,7 +85,7 @@ function mapStateToProps(state) {
   return {
     isOpenRegistration, isOpenSignIn, inputMailSign, inputPasswordSign, successSignIn
   };
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   isOpenModal: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModal(isOpenRegistration, isOpenSignIn)),

@@ -4,6 +4,8 @@ import portfolioReducers from './reducers';
 
 import PortfolioContainer from './containers';
 
+import Slider from './containers/slider';
+
 import BurgerMenu from '../../components/burgerMenu/Menu';
 
 class Portfolio extends Component {
@@ -16,6 +18,7 @@ class Portfolio extends Component {
       <div className="portfolio">
         <BurgerMenu />
         <PortfolioContainer />
+        <Slider />
       </div>
     );
   }

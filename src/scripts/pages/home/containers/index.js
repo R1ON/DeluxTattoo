@@ -94,10 +94,7 @@ Home.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const {
-    isOpenRegistration,
-    isOpenSignIn
-  } = state.modalReducers.isOpenModalReducer;
+  const { isOpenRegistration, isOpenSignIn } = state.modalReducers.isOpenModalReducer;
   const { isOpen } = state.homeReducers.isOpenSliderReducer;
 
   return { isOpenRegistration, isOpenSignIn, isOpen };
