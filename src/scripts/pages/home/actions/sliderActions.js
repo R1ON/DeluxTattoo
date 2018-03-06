@@ -3,6 +3,7 @@ import {
   SWITCH_IMAGE_LEFT,
   SWITCH_IMAGE_RIGHT
 } from '../constants/types';
+import { QUANTITY_IMAGE } from '../constants/home';
 
 export function isOpenSlider(isOpen, imageSrc) {
   return {
@@ -12,14 +13,16 @@ export function isOpenSlider(isOpen, imageSrc) {
   };
 }
 
-export function switchImageLeft() {
+export function switchImageLeft(imageSrc) {
   return {
-    type: SWITCH_IMAGE_LEFT
+    type: SWITCH_IMAGE_LEFT,
+    imageSrc: imageSrc === QUANTITY_IMAGE.firstImage ? QUANTITY_IMAGE.lastImage : imageSrc - 1
   };
 }
 
-export function switchImageRight() {
+export function switchImageRight(imageSrc) {
   return {
-    type: SWITCH_IMAGE_RIGHT
+    type: SWITCH_IMAGE_RIGHT,
+    imageSrc: imageSrc === QUANTITY_IMAGE.lastImage ? QUANTITY_IMAGE.firstImage : imageSrc + 1
   };
 }

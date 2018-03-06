@@ -1,5 +1,6 @@
 export const MASTER_OPTION = {
-  absentMaster: 0
+  absentMaster: 0,
+  maxPhoto: 6
 };
 
 export const MASTER_INFO = [
@@ -13,7 +14,13 @@ export const MASTER_INFO = [
       { id: 3, price: 7000, time: 10, style: 'polka' },
       { id: 4, price: 5000, time: 7, style: 'sergei' },
       { id: 5, price: 2000, time: 1, style: 'test' },
-      { id: 6, price: 6000, time: 6, style: 'mamkeprivet' }
+      { id: 6, price: 6000, time: 6, style: 'mamkeprivet' },
+      { id: 7, price: 6000, time: 6, style: 'mamkeprivet' },
+      { id: 8, price: 6000, time: 6, style: 'mamkeprivet' },
+      { id: 9, price: 6000, time: 6, style: 'mamkeprivet' },
+      { id: 10, price: 6000, time: 6, style: 'mamkeprivet' },
+      { id: 11, price: 6000, time: 6, style: 'mamkeprivet' },
+      { id: 12, price: 6000, time: 6, style: 'mamkeprivet' }
     ]
   }, {
     id: 2,
@@ -23,9 +30,7 @@ export const MASTER_INFO = [
       { id: 1, price: 25000, time: 5, style: 'trash polka' },
       { id: 2, price: 15000, time: 15, style: 'trash' },
       { id: 3, price: 7000, time: 10, style: 'polka' },
-      { id: 4, price: 5000, time: 7, style: 'sergei' },
-      { id: 5, price: 2000, time: 1, style: 'test' },
-      { id: 6, price: 6000, time: 6, style: 'mamkeprivet' }
+      { id: 4, price: 5000, time: 7, style: 'sergei' }
     ]
   }, {
     id: 3,

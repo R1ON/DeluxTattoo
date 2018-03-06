@@ -21,13 +21,13 @@ export function isOpenSliderReducer(state = initialState, action) {
     case SWITCH_IMAGE_LEFT:
       return {
         ...state,
-        imageSrc: state.imageSrc === 1 ? 5 : state.imageSrc - 1
+        imageSrc: action.imageSrc
       };
 
     case SWITCH_IMAGE_RIGHT:
       return {
         ...state,
-        imageSrc: state.imageSrc === 5 ? 1 : state.imageSrc + 1
+        imageSrc: action.imageSrc
       };
 
     default:

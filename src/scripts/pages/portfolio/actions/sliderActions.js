@@ -12,14 +12,16 @@ export function isOpenSlider(isOpen, imageSrc) {
   };
 }
 
-export function switchImageLeft() {
+export function switchImageLeft(imageSrc) {
   return {
-    type: SWITCH_IMAGE_LEFT
+    type: SWITCH_IMAGE_LEFT,
+    imageSrc: imageSrc === 1 ? 5 : imageSrc - 1
   };
 }
 
-export function switchImageRight() {
+export function switchImageRight(imageSrc) {
   return {
-    type: SWITCH_IMAGE_RIGHT
+    type: SWITCH_IMAGE_RIGHT,
+    imageSrc: imageSrc === 5 ? 1 : imageSrc + 1
   };
 }

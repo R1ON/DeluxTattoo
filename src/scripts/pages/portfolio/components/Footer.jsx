@@ -4,7 +4,7 @@ import { Row, Col } from 'reactstrap';
 
 import { MASTER_OPTION, MASTER_INFO } from '../constants/portfolio';
 
-const FooterComponent = ({ master, openSlider }) => (
+const FooterComponent = ({ master, openSlider, countPhoto, residue, viewMore }) => (
   <div className="portfolio-footer">
     {master === MASTER_OPTION.absentMaster && (
       <div className="portfolio-footer-about">
@@ -24,7 +24,7 @@ const FooterComponent = ({ master, openSlider }) => (
               </div>
 
               <Row>
-                {selectedMaster.images.map(image => (
+                {selectedMaster.images.slice(0, countPhoto).map(image => (
                   <Col key={image.id} md={4} className="portfolio-footer-works">
                     <img
                       onClick={openSlider}
@@ -37,7 +37,10 @@ const FooterComponent = ({ master, openSlider }) => (
             </div>
           ))
         }
-        <div className="portfolio-footer-more">MORE</div>
+
+        {residue > 0 && (
+          <div className="portfolio-footer-more" onClick={viewMore}>VIEW MORE</div>
+        )}
       </div>
     )}
   </div>
@@ -45,7 +48,10 @@ const FooterComponent = ({ master, openSlider }) => (
 
 FooterComponent.propTypes = {
   master: PropTypes.number.isRequired,
-  openSlider: PropTypes.func.isRequired
+  openSlider: PropTypes.func.isRequired,
+  countPhoto: PropTypes.number.isRequired,
+  residue: PropTypes.number.isRequired,
+  viewMore: PropTypes.func.isRequired
 };
 
 export default FooterComponent;

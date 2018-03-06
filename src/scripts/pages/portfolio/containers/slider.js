@@ -40,11 +40,15 @@ class Slider extends Component {
   }
 
   switchImageLeft() {
-    this.props.switchImageLeft();
+    const { imageSrc } = this.props;
+
+    this.props.switchImageLeft(imageSrc);
   }
 
   switchImageRight() {
-    this.props.switchImageRight();
+    const { imageSrc } = this.props;
+
+    this.props.switchImageRight(imageSrc);
   }
 
   render() {
@@ -103,8 +107,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   isOpenSlider: (isOpen, imageSrc) => dispatch(isOpenSlider(isOpen, imageSrc)),
-  switchImageLeft: () => dispatch(switchImageLeft()),
-  switchImageRight: () => dispatch(switchImageRight())
+  switchImageLeft: imageSrc => dispatch(switchImageLeft(imageSrc)),
+  switchImageRight: imageSrc => dispatch(switchImageRight(imageSrc))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Slider);
