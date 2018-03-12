@@ -4,24 +4,23 @@ import {
   SWITCH_IMAGE_RIGHT
 } from '../constants/types';
 
-export function isOpenSlider(isOpen, imageSrc) {
+export function isOpenSlider(isOpen, imageSrc, imageCount) {
   return {
     type: IS_OPEN_SLIDER,
     isOpen,
-    imageSrc
+    imageSrc,
+    imageCount
   };
 }
 
-export function switchImageLeft(imageSrc) {
+export function switchImageLeft() {
   return {
-    type: SWITCH_IMAGE_LEFT,
-    imageSrc: imageSrc === 1 ? 5 : imageSrc - 1
+    type: SWITCH_IMAGE_LEFT
   };
 }
 
-export function switchImageRight(imageSrc) {
+export function switchImageRight() {
   return {
-    type: SWITCH_IMAGE_RIGHT,
-    imageSrc: imageSrc === 5 ? 1 : imageSrc + 1
+    type: SWITCH_IMAGE_RIGHT
   };
 }

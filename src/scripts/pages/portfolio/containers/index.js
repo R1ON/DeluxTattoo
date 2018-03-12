@@ -47,12 +47,14 @@ class PortfolioContainer extends Component {
   }
 
   onSliderOpening(event) {
-    const { isOpen } = this.props;
+    const { isOpen, countPhoto, residue } = this.props;
+
+    const imageCount = countPhoto + residue;
 
     let imageSrc = event.target.attributes[0].nodeValue;
     imageSrc = parseInt(imageSrc.replace(/[^0-9]/g, ''), 10);
 
-    this.props.isOpenSlider(!isOpen, imageSrc);
+    this.props.isOpenSlider(!isOpen, imageSrc, imageCount);
   }
 
   onViewMoreClicked() {
@@ -115,7 +117,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   selectMasterAction: master => dispatch(selectMasterAction(master)),
-  isOpenSlider: (isOpen, imageSrc) => dispatch(isOpenSlider(isOpen, imageSrc)),
+  isOpenSlider: (isOpen, imageSrc, imageCount) => dispatch(isOpenSlider(isOpen, imageSrc, imageCount)),
   setAmountData: (countPhoto, residue) => dispatch(setAmountData(countPhoto, residue))
 });
 

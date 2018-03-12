@@ -35,20 +35,16 @@ class Slider extends Component {
     const { tagName } = event.target;
 
     if (tagName !== 'IMG') {
-      this.props.isOpenSlider(!isOpen, 0);
+      this.props.isOpenSlider(!isOpen, 0, 0);
     }
   }
 
   switchImageLeft() {
-    const { imageSrc } = this.props;
-
-    this.props.switchImageLeft(imageSrc);
+    this.props.switchImageLeft();
   }
 
   switchImageRight() {
-    const { imageSrc } = this.props;
-
-    this.props.switchImageRight(imageSrc);
+    this.props.switchImageRight();
   }
 
   render() {
@@ -100,15 +96,15 @@ const mapStateToProps = (state) => {
   const { selectMasterReducer, isOpenSliderReducer } = state.portfolioReducers;
 
   const { master } = selectMasterReducer;
-  const { isOpen, imageSrc } = isOpenSliderReducer;
+  const { isOpen, imageSrc, imageCount } = isOpenSliderReducer;
 
-  return { master, isOpen, imageSrc };
+  return { master, isOpen, imageSrc, imageCount };
 };
 
 const mapDispatchToProps = dispatch => ({
-  isOpenSlider: (isOpen, imageSrc) => dispatch(isOpenSlider(isOpen, imageSrc)),
-  switchImageLeft: imageSrc => dispatch(switchImageLeft(imageSrc)),
-  switchImageRight: imageSrc => dispatch(switchImageRight(imageSrc))
+  isOpenSlider: (isOpen, imageSrc, imageCount) => dispatch(isOpenSlider(isOpen, imageSrc, imageCount)),
+  switchImageLeft: () => dispatch(switchImageLeft()),
+  switchImageRight: () => dispatch(switchImageRight())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Slider);

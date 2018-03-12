@@ -1,6 +1,7 @@
 export const MASTER_OPTION = {
   absentMaster: 0,
-  maxPhoto: 6
+  maxPhoto: 6,
+  firstImage: 1
 };
 
 export const MASTER_INFO = [
