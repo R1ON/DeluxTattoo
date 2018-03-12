@@ -13,12 +13,6 @@ export const MENU_SECTIONS = [
   },
   {
     id: 3,
-    title: 'Shop',
-    url: '/shop',
-    icon: 'shopping-basket'
-  },
-  {
-    id: 4,
     title: 'About',
     url: '/about',
     icon: 'info'

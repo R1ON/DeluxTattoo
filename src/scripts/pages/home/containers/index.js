@@ -6,26 +6,25 @@ import scrollToComponent from 'react-scroll-to-component';
 import { isOpenModal } from '../../../actions/modalActions';
 import { isOpenSlider } from '../actions/sliderActions';
 
-import HeaderWrapper from './headerWrapper';
-
+import HeaderComponent from '../components/Header';
 import MainComponent from '../components/Main';
 import FooterComponent from '../components/Footer';
 
 import '../../../../styles/pages/home/index.sass';
 
-// import { Icon } from 'react-fa';
+import { Icon } from 'react-fa';
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   display: ''
-    // };
-    //
-    // window.onload = () => {
-    //   this.setState({ display: 'none' });
-    // };
+    this.state = {
+      display: ''
+    };
+
+    window.onload = () => {
+      this.setState({ display: 'none' });
+    };
 
     if (document.body.clientWidth < 480) {
       this.onSliderOpening = () => {};
@@ -65,12 +64,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {/* <div style={{ display: this.state.display}} className="preloader"> */}
-        {/* <Icon size="5x" spin name="spinner" /> */}
-        {/* </div> */}
+         <div style={{ display: this.state.display}} className="preloader">
+           <Icon size="5x" spin name="spinner" />
+         </div>
 
         <div className="home-container">
-          <HeaderWrapper
+          <HeaderComponent
             scrollBottom={this.bottomScrolling}
             openModal={this.onSignInModalOpening}
           />

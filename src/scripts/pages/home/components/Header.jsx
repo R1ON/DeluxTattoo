@@ -9,15 +9,13 @@ import { MENU_SECTIONS } from '../../../constants/menu';
 class HeaderComponent extends Component {
   render() {
     const {
-      styles,
-      mouseMove,
       scrollBottom,
       openModal
     } = this.props;
 
     return (
       <div>
-        <Row className="home-header" style={styles} onMouseMove={mouseMove}>
+        <Row className="home-header">
           <Col md={4}>
             <div className="home-header-logo">
               DELUX TATTOO
@@ -67,8 +65,6 @@ class HeaderComponent extends Component {
 }
 
 HeaderComponent.propTypes = {
-  styles: PropTypes.object.isRequired,
-  mouseMove: PropTypes.func.isRequired,
   scrollBottom: PropTypes.func.isRequired,
   openModal: PropTypes.func.isRequired
 };
