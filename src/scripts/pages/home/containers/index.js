@@ -12,19 +12,19 @@ import FooterComponent from '../components/Footer';
 
 import '../../../../styles/pages/home/index.sass';
 
-import { Icon } from 'react-fa';
+// import { Icon } from 'react-fa';
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      display: ''
-    };
-
-    window.onload = () => {
-      this.setState({ display: 'none' });
-    };
+    // this.state = {
+    //   display: ''
+    // };
+    //
+    // window.onload = () => {
+    //   this.setState({ display: 'none' });
+    // };
 
     if (document.body.clientWidth < 480) {
       this.onSliderOpening = () => {};
@@ -60,13 +60,12 @@ class Home extends Component {
   bottomScrolling(mainTitle) {
     scrollToComponent(mainTitle, { offset: 10, align: 'top', duration: 1000 });
   }
-
   render() {
     return (
       <div>
-         <div style={{ display: this.state.display}} className="preloader">
-           <Icon size="5x" spin name="spinner" />
-         </div>
+        {/*<div style={{ display: this.state.display}} className="preloader"> */}
+          {/*<Icon size="5x" spin name="spinner" /> */}
+        {/*</div> */}
 
         <div className="home-container">
           <HeaderComponent

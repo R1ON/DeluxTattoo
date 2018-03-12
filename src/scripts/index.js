@@ -8,6 +8,7 @@ import { store } from './store';
 
 import Home from './pages/home';
 import Portfolio from './pages/portfolio';
+import About from './pages/about';
 
 import icoFavicon from '../images/fav.ico';
 import '../styles/main/index.sass';
@@ -20,6 +21,7 @@ const renderApp = () => {
         <Router history={hashHistory}>
           <Route path="/" component={Home} />
           <Route path="/portfolio" component={Portfolio} />
+          <Route path="/about" component={About} />
         </Router>
       </Provider>
     </div>,
