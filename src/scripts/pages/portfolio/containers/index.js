@@ -9,8 +9,8 @@ import scrollToComponent from 'react-scroll-to-component';
 import MainWrapper from './mainWrapper';
 
 import { selectMasterAction } from '../actions/selectMasterActions';
-import { isOpenSlider } from '../actions/sliderActions';
 import { setAmountData } from '../actions/viewMoreActions';
+import { isOpenSlider, switchImageLeft, switchImageRight } from '../actions/sliderActions';
 
 import HeaderComponent from '../components/Header';
 import FooterComponent from '../components/Footer';
@@ -55,6 +55,14 @@ class PortfolioContainer extends Component {
     imageSrc = parseInt(imageSrc.replace(/[^0-9]/g, ''), 10);
 
     this.props.isOpenSlider(!isOpen, imageSrc, imageCount);
+
+    window.onkeydown = (e) => {
+      if (e.keyCode === 37) {
+        this.props.switchImageLeft();
+      } else if (e.keyCode === 39) {
+        this.props.switchImageRight();
+      }
+    };
   }
 
   onViewMoreClicked() {
@@ -118,7 +126,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
   selectMasterAction: master => dispatch(selectMasterAction(master)),
   isOpenSlider: (isOpen, imageSrc, imageCount) => dispatch(isOpenSlider(isOpen, imageSrc, imageCount)),
-  setAmountData: (countPhoto, residue) => dispatch(setAmountData(countPhoto, residue))
+  setAmountData: (countPhoto, residue) => dispatch(setAmountData(countPhoto, residue)),
+  switchImageLeft: () => dispatch(switchImageLeft()),
+  switchImageRight: () => dispatch(switchImageRight())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PortfolioContainer);

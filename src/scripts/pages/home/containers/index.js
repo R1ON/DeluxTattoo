@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import scrollToComponent from 'react-scroll-to-component';
 
 import { isOpenModal } from '../../../actions/modalActions';
-import { isOpenSlider } from '../actions/sliderActions';
+import { isOpenSlider, switchImageLeft, switchImageRight } from '../actions/sliderActions';
 
 import HeaderComponent from '../components/Header';
 import MainComponent from '../components/Main';
@@ -55,11 +55,20 @@ class Home extends Component {
     imageSrc = parseInt(imageSrc.replace(/[^0-9]/g, ''), 10);
 
     this.props.isOpenSlider(!isOpen, imageSrc);
+
+    window.onkeydown = (e) => {
+      if (e.keyCode === 37) {
+        this.props.switchImageLeft(this.props.imageSrc);
+      } else if (e.keyCode === 39) {
+        this.props.switchImageRight(this.props.imageSrc);
+      }
+    };
   }
 
   bottomScrolling(mainTitle) {
     scrollToComponent(mainTitle, { offset: 10, align: 'top', duration: 1000 });
   }
+
   render() {
     return (
       <div>
@@ -93,14 +102,16 @@ Home.propTypes = {
 
 const mapStateToProps = (state) => {
   const { isOpenRegistration, isOpenSignIn } = state.modalReducers.isOpenModalReducer;
-  const { isOpen } = state.homeReducers.isOpenSliderReducer;
+  const { isOpen, imageSrc } = state.homeReducers.isOpenSliderReducer;
 
-  return { isOpenRegistration, isOpenSignIn, isOpen };
+  return { isOpenRegistration, isOpenSignIn, isOpen, imageSrc };
 };
 
 const mapDispatchToProps = dispatch => ({
   isOpenModal: (isOpenRegistration, isOpenSignIn) => dispatch(isOpenModal(isOpenRegistration, isOpenSignIn)),
-  isOpenSlider: (isOpen, imageSrc) => dispatch(isOpenSlider(isOpen, imageSrc))
+  isOpenSlider: (isOpen, imageSrc) => dispatch(isOpenSlider(isOpen, imageSrc)),
+  switchImageLeft: imageSrc => dispatch(switchImageLeft(imageSrc)),
+  switchImageRight: imageSrc => dispatch(switchImageRight(imageSrc))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
