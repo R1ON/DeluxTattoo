@@ -1,3 +1,4 @@
+import delay from 'lodash.delay';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -12,19 +13,19 @@ import FooterComponent from '../components/Footer';
 
 import '../../../../styles/pages/home/index.sass';
 
-// import { Icon } from 'react-fa';
+import { Icon } from 'react-fa';
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   display: ''
-    // };
-    //
-    // window.onload = () => {
-    //   this.setState({ display: 'none' });
-    // };
+    this.state = {
+      display: ''
+    };
+
+    window.onload = () => {
+      this.setState({ display: 'none' });
+    };
 
     if (document.body.clientWidth < 480) {
       this.onSliderOpening = () => {};
@@ -46,6 +47,12 @@ class Home extends Component {
     const { isOpenSignIn } = this.props;
 
     this.props.isOpenModal(false, !isOpenSignIn);
+  }
+
+  componentDidMount() {
+    delay(() => {
+      window.onload = null;
+    }, 10000);
   }
 
   onSliderOpening(event) {
@@ -72,9 +79,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {/*<div style={{ display: this.state.display}} className="preloader"> */}
-          {/*<Icon size="5x" spin name="spinner" /> */}
-        {/*</div> */}
+        <div style={{ display: this.state.display}} className="preloader">
+          <Icon size="5x" spin name="spinner" />
+        </div>
 
         <div className="home-container">
           <HeaderComponent

@@ -37,6 +37,8 @@ class Slider extends Component {
     if (tagName !== 'IMG') {
       this.props.isOpenSlider(!isOpen, 0, 0);
     }
+
+    window.onkeydown = null;
   }
 
   switchImageLeft() {
