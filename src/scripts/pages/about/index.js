@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import aboutReducers from './reducers';
 
+import AboutContainer from './containers';
+
 class About extends Component {
   componentWillReceiveProps() {
     window.scrollTo(0, 0);
@@ -10,7 +12,7 @@ class About extends Component {
   render() {
     return (
       <div>
-        test
+        <AboutContainer />
       </div>
     );
   }
