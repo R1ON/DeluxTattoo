@@ -1,0 +1,40 @@
+@import "../../main/vars"
+
+.page
+  position: relative
+  top: 50%
+  left: 50%
+  width: 98vw
+  margin-left: -49vw
+  margin-right: -50vw
+
+.header
+  display: flex
+  align-items: center
+  height: 10vh
+  background: $main-color
+  color: $accent-color
+  &__logo
+    margin-left: 4vw
+    font-size: 2.875rem
+    font-family: 'Indie Flower', 'sans-serif'
+  &__links
+    display: flex
+    justify-content: flex-end
+    margin-right: 4vw
+
+.link
+  font-size: 2.2rem
+  font-family: 'ComfortaaL', 'sans-serif'
+  &__item
+    margin-left: 2vw
+    height: 5vh
+    color: $accent-color !important
+    text-decoration: none !important
+    border: 0 $accent-color solid
+    transition: .1s ease
+    &:hover
+      border-bottom: 3px $accent-color solid
+      transition: .2s ease
+
+@import "../../main/media"

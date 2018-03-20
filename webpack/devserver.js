@@ -1,7 +1,7 @@
 module.exports = function () {
   return {
     devServer: {
-      port: 9001,
+      port: 9002,
       hot: true
     }
   };

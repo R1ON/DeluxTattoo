@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 
 import HeaderComponent from '../components/Header';
 
-// import '../../../../styles/pages/home/index.sass';
+import BurgerMenu from '../../../components/burgerMenu/Menu';
+
+import '../../../../styles/pages/about/index.sass';
 
 class About extends Component {
   constructor(props) {
@@ -15,6 +17,7 @@ class About extends Component {
   render() {
     return (
       <div className="page">
+        <BurgerMenu />
         <HeaderComponent />
       </div>
     );

@@ -2,6 +2,15 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
+  .header
+    display: block
+    &__logo
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 10vh
+
+
   .home-footer
     &-navigate
       a
@@ -27,8 +36,6 @@
           color: $accent-color
         &:active
           color: $accent-color
-
-
 
   .home-footer
     &-carousel
