@@ -12,7 +12,7 @@
   display: flex
   align-items: center
   height: 10vh
-  background: $main-color
+  background: $second-color
   color: $accent-color
   &__logo
     margin-left: 4vw
@@ -22,6 +22,9 @@
     display: flex
     justify-content: flex-end
     margin-right: 4vw
+  &__contacts
+    background: lighten($accent-color, 5%)
+    height: 90vh
 
 .link
   font-size: 2.2rem
@@ -36,5 +39,32 @@
     &:hover
       border-bottom: 3px $accent-color solid
       transition: .2s ease
+
+.info
+  font-family: 'ComfortaaL', 'sans-serif'
+  &__title
+    font-size: 3.5rem
+    margin-top: 5vh
+    margin-left: 7vw
+    display: flex
+    justify-content: center
+  &__admin, &__assistant
+    margin-top: 3vh
+    margin-left: 5vw
+
+.admin, .assistant
+  font-size: 2.5rem
+  border: 1px solid $second-color
+  background: lighten($accent-color, 5%)
+  color: $main-color
+  width: 30vw
+  height: auto
+  padding-left: 3vw
+  padding-top: 1vh
+  padding-bottom: 1vh
+  border-radius: 10px
+  &__name
+    margin-right: 1vw
+
 
 @import "../../main/media"

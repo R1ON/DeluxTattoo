@@ -28,24 +28,24 @@ class HeaderComponent extends Component {
 
         <Row className="header__contacts contacts">
           <Col md={6} className="contacts__info info">
-            <div className="info__title title">
+            <div className="info__title">
               CONTACTS
             </div>
             <div className="info__admin admin">
-              <div className="admin__name">Valeriy</div>
-              <div className="admin__family">Leontiv</div>
-              <div className="admin__number">88005553535</div>
-              <div className="admin__email">proshe-pozvonit@chemykogono.zanimat</div>
+              <span className="admin__name">Maximov</span>
+              <span className="admin__family">Roman</span>
+              <div className="admin__number">8 (930) 849-65-18</div>
+              <div className="admin__email">r.maximov@yandex.ru</div>
             </div>
             <div className="info__assistant assistant">
-              <div className="assistant__name">Mamka</div>
-              <div className="assistant__family">Tvoya</div>
-              <div className="assistant__number">666(666)666-66-66</div>
-              <div className="assistant__email">r.zalupa@da.kek</div>
+              <span className="assistant__name">Alexander</span>
+              <span className="assistant__family">Dmitriev</span>
+              <div className="assistant__number">8 (800) 555-35-35</div>
+              <div className="assistant__email">test@yandex.ru</div>
             </div>
           </Col>
           <Col md={6} className="contacts__map map">
-            MAP
+            s
           </Col>
         </Row>
       </header>

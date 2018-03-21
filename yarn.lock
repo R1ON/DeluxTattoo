@@ -2814,6 +2814,13 @@ globule@^1.0.0:
     lodash "~4.17.4"
     minimatch "~3.0.2"
 
+google-maps-react@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/google-maps-react/-/google-maps-react-1.1.4.tgz#2aa0422afec1cd9f7f911c4865ec713a6a607762"
+  dependencies:
+    history "^3.0.0"
+    invariant "^2.2.1"
+
 graceful-fs@^4.1.2:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
