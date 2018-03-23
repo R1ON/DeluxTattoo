@@ -29,6 +29,25 @@ class HeaderComponent extends Component {
         </Row>
 
         <Row className="header__contacts contacts">
+          <Col md={7} className="contacts__map map">
+            <div className="map__title">OUR OFFICE</div>
+            <YMaps>
+              <Map
+                width="50vw"
+                height="40vh"
+                state={{ center: [YMAPS_INFO.mapLatitude, YMAPS_INFO.mapLongitude], zoom: 17 }}
+              >
+                <Placemark
+                  geometry={{
+                    coordinates: [YMAPS_INFO.mapLatitude, YMAPS_INFO.mapLongitude]
+                  }}
+                  properties={{
+                    hintContent: 'Delux tattoo studio'
+                  }}
+                />
+              </Map>
+            </YMaps>
+          </Col>
           <Col md={5} className="contacts__info info">
             <div className="info__title">
               CONTACTS
@@ -45,21 +64,6 @@ class HeaderComponent extends Component {
               <div className="assistant__number">8 (800) 555-35-35</div>
               <div className="assistant__email">test@yandex.ru</div>
             </div>
-          </Col>
-          <Col md={7} className="contacts__map map">
-            <div className="map__title">OUR OFFICE</div>
-            <YMaps>
-              <Map width={'52vw'} height={'38.5vh'} state={{ center: [YMAPS_INFO.mapLatitude, YMAPS_INFO.mapLongitude], zoom: 17 }}>
-                <Placemark
-                  geometry={{
-                    coordinates: [YMAPS_INFO.mapLatitude, YMAPS_INFO.mapLongitude]
-                  }}
-                  properties={{
-                    hintContent: 'Delux tattoo studio'
-                  }}
-                />
-              </Map>
-            </YMaps>
           </Col>
         </Row>
       </header>
