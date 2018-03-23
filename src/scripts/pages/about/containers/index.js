@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+
 import HeaderComponent from '../components/Header';
 
 import BurgerMenu from '../../../components/burgerMenu/Menu';

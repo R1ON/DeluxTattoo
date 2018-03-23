@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { Row, Col } from 'reactstrap';
+import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
+import { YMAPS_INFO } from '../constants/about';
 import { MENU_SECTIONS } from '../../../constants/menu';
 
 class HeaderComponent extends Component {
@@ -27,7 +29,7 @@ class HeaderComponent extends Component {
         </Row>
 
         <Row className="header__contacts contacts">
-          <Col md={6} className="contacts__info info">
+          <Col md={5} className="contacts__info info">
             <div className="info__title">
               CONTACTS
             </div>
@@ -44,8 +46,20 @@ class HeaderComponent extends Component {
               <div className="assistant__email">test@yandex.ru</div>
             </div>
           </Col>
-          <Col md={6} className="contacts__map map">
-            s
+          <Col md={7} className="contacts__map map">
+            <div className="map__title">OUR OFFICE</div>
+            <YMaps>
+              <Map width={'52vw'} height={'38.5vh'} state={{ center: [YMAPS_INFO.mapLatitude, YMAPS_INFO.mapLongitude], zoom: 17 }}>
+                <Placemark
+                  geometry={{
+                    coordinates: [YMAPS_INFO.mapLatitude, YMAPS_INFO.mapLongitude]
+                  }}
+                  properties={{
+                    hintContent: 'Delux tattoo studio'
+                  }}
+                />
+              </Map>
+            </YMaps>
           </Col>
         </Row>
       </header>

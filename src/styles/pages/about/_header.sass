@@ -24,7 +24,7 @@
     margin-right: 4vw
   &__contacts
     background: lighten($accent-color, 5%)
-    height: 90vh
+    height: 60vh
 
 .link
   font-size: 2.2rem
@@ -40,12 +40,16 @@
       border-bottom: 3px $accent-color solid
       transition: .2s ease
 
+.contacts
+  &__map
+    margin-top: 5vh
+
 .info
   font-family: 'ComfortaaL', 'sans-serif'
   &__title
     font-size: 3.5rem
     margin-top: 5vh
-    margin-left: 7vw
+    margin-left: 15vw
     display: flex
     justify-content: center
   &__admin, &__assistant
@@ -66,5 +70,12 @@
   &__name
     margin-right: 1vw
 
+.map
+  &__title
+    font-family: 'ComfortaaL', 'sans-serif'
+    font-size: 3.5rem
+    display: flex
+    justify-content: flex-start
+    margin-bottom: 3vh
 
 @import "../../main/media"
