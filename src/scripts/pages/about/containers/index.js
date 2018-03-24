@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 
 import HeaderComponent from '../components/Header';
+import MainComponent from '../components/Main';
 
 import BurgerMenu from '../../../components/burgerMenu/Menu';
 
@@ -20,6 +21,7 @@ class About extends Component {
       <div className="page">
         <BurgerMenu />
         <HeaderComponent />
+        <MainComponent />
       </div>
     );
   }
