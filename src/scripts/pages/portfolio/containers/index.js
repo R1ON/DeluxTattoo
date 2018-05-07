@@ -1,6 +1,6 @@
-import delay from 'lodash.delay';
-import first from 'lodash.first';
-import last from 'lodash.last';
+import first from 'lodash/first';
+import last from 'lodash/last';
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -15,7 +15,8 @@ import { isOpenSlider, switchImageLeft, switchImageRight } from '../actions/slid
 import HeaderComponent from '../components/Header';
 import FooterComponent from '../components/Footer';
 
-import { MASTER_INFO, MASTER_OPTION } from '../constants/portfolio';
+import { MASTER_OPTION } from '../constants/portfolio';
+import { MASTER_INFO } from '../../../constants/masters';
 
 import '../../../../styles/pages/portfolio/index.sass';
 
@@ -80,7 +81,7 @@ class PortfolioContainer extends Component {
     const master = Number(event.target.src.match(/(?!\/)(\d+)(?=\.\w+)/g));
 
     this.props.selectMasterAction(master);
-    delay(() => (
+    setTimeout(() => (
       scrollToComponent(mainTitle, { offset: 10, align: 'top', duration: 1000 })
     ), 50);
   }

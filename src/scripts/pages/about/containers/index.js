@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { formatMastersToChart } from '../utils/about';
 
 import HeaderComponent from '../components/Header';
 import MainComponent from '../components/Main';
 
 import BurgerMenu from '../../../components/burgerMenu/Menu';
+
+import { MASTER_INFO } from '../../../constants/masters';
 
 import '../../../../styles/pages/about/index.sass';
 
@@ -21,7 +24,7 @@ class About extends Component {
       <div className="page">
         <BurgerMenu />
         <HeaderComponent />
-        <MainComponent />
+        <MainComponent masters={formatMastersToChart(MASTER_INFO)} />
       </div>
     );
   }

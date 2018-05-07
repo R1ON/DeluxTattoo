@@ -1,4 +1,3 @@
-import delay from 'lodash.delay';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -38,7 +37,7 @@ class Home extends Component {
   }
 
   // componentDidMount() {
-  //   delay(() => {
+  //   setTimeout(() => {
   //     window.onload = null;
   //   }, 10000);
   // }

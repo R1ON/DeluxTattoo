@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
 
-import { MASTER_OPTION, MASTER_INFO } from '../constants/portfolio';
+import { MASTER_OPTION } from '../constants/portfolio';
+import { MASTER_INFO } from '../../../constants/masters';
 
 const FooterComponent = ({ master, openSlider, countPhoto, residue, viewMore }) => (
   <div className="portfolio-footer">

@@ -1,37 +1,46 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'reactstrap';
 import { PieChart, Pie, Tooltip, Cell } from 'recharts';
 
 import TooltipContent from './TooltipContent';
 
-const data = [{name: 'Group A', value: 400}, {name: 'Group B', value: 300},
-  {name: 'Group C', value: 300}, {name: 'Group D', value: 200}];
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+import { PIE_COLORS, PIE_INFO } from '../constants/about';
 
 class MainComponent extends Component {
   render() {
+    const { masters } = this.props;
+
+    const allWorks = masters.reduce((acc, current) => acc += current.value, 0);
+
     return (
       <section>
-        <PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
+        <PieChart className="pie-chart" width={PIE_INFO.pieWidth} height={PIE_INFO.pieHeight} onMouseEnter={this.onPieEnter}>
           <Pie
             dataKey="value"
-            data={data}
-            outerRadius={80}
-            fill="#8884d8"
+            data={masters}
+            outerRadius={PIE_INFO.pieRadius}
           >
-            {
-              data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)
-            }
+            {masters.map((entry, index) => <Cell key={index} fill={PIE_COLORS[index % PIE_COLORS.length]} />)}
           </Pie>
           <Tooltip content={<TooltipContent />} />
         </PieChart>
+
+        <div className="about-masters-info">
+          {masters.map(master => (
+            <div key={master.id}>
+              <div>{master.name}</div>
+              <div>Всего работ: {((master.value * 100) / allWorks).toFixed(0)} %</div>
+            </div>
+          ))}
+        </div>
       </section>
     );
   }
 }
 
-// HeaderComponent.propTypes = {
-// };
+MainComponent.propTypes = {
+  masters: PropTypes.array.isRequired
+};
 
 export default MainComponent;
+

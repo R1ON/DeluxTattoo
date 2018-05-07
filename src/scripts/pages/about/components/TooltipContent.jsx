@@ -1,19 +1,17 @@
-import React  from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+
+import '../../../../styles/common/recharts.sass';
 
 const TooltipContent = ({ payload }) => (
-  <div>
-    {payload.map((entry, index) => (
-      <li className="recharts-tooltip-item" key={`tooltip-item-${index}`} >
-        <span className="recharts-tooltip-item-name">{entry.name}</span>
-        <span className="recharts-tooltip-item-value">{entry.value}</span>
+  <div className="recharts-tooltip">
+    {payload.map(entry => (
+      <li className="recharts-tooltip-item" key={`tooltip-item-${entry.payload.id}`} >
+        <div className={`recharts-tooltip-item-name recharts-tooltip-item-name-${entry.payload.id}`}>{entry.name}</div>
+        <div className="recharts-tooltip-item-value">Всего работ: {entry.value}</div>
+        <div className="recharts-tooltip-item-value">Всего стилей: {entry.payload.stylesCount}</div>
       </li>
     ))}
   </div>
 );
-
-TooltipContent.propTypes = {
-  payload: PropTypes.array
-}
 
 export default TooltipContent;
