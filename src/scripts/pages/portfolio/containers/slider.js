@@ -10,7 +10,7 @@ import {
   switchImageRight
 } from '../actions/sliderActions';
 
-import { MASTER_INFO } from '../constants/portfolio';
+import { MASTER_INFO } from '../../../constants/masters';
 
 import '../../../../styles/common/modals.sass';
 
