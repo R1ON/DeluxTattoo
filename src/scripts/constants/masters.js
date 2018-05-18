@@ -4,64 +4,56 @@ export const MASTER_INFO = [
     name: 'Dan',
     experience: 5,
     images: [
-      { id: 1, price: 25000, time: 5, style: 'trash polka' },
-      { id: 2, price: 15000, time: 15, style: 'trash' },
-      { id: 3, price: 7000, time: 10, style: 'polka' },
-      { id: 4, price: 5000, time: 7, style: 'sergei' },
-      { id: 5, price: 2000, time: 1, style: 'test' },
-      { id: 6, price: 6000, time: 6, style: 'mamkeprivet' },
-      { id: 7, price: 6000, time: 6, style: 'mamkeprivet' },
-      { id: 8, price: 6000, time: 6, style: 'mamkeprivet' },
-      { id: 9, price: 6000, time: 6, style: 'mamkeprivet' },
-      { id: 10, price: 6000, time: 6, style: 'mamkeprivet' },
-      { id: 11, price: 6000, time: 6, style: 'mamkeprivet' },
-      { id: 12, price: 6000, time: 6, style: 'mamkeprivet' }
+      { id: 1, price: 6000, time: 5, style: 'Classical' },
+      { id: 2, price: 7000, time: 7, style: 'Biomechanics' },
+      { id: 3, price: 7000, time: 10, style: 'Realism' },
+      { id: 4, price: 5000, time: 7, style: 'Realism' },
+      { id: 5, price: 4000, time: 4, style: 'Watercolor' }
     ],
     styles: {
-      trashPolka: 1,
-      trash: 1,
-      polka: 1,
-      sergei: 1,
-      test: 1,
-      mamkeprivet: 7
+      classical: 1,
+      biomechanics: 1,
+      realism: 2,
+      watercolor: 1,
+      newSchool: 0,
+      horror: 0
     }
   }, {
     id: 2,
     name: 'Helga',
     experience: 7,
     images: [
-      { id: 1, price: 25000, time: 5, style: 'trash polka' },
-      { id: 2, price: 15000, time: 15, style: 'trash' },
-      { id: 3, price: 7000, time: 10, style: 'polka' },
-      { id: 4, price: 5000, time: 7, style: 'sergei' }
+      { id: 1, price: 4000, time: 3, style: 'New school' },
+      { id: 2, price: 7000, time: 4, style: 'Realism' },
+      { id: 3, price: 5000, time: 6, style: 'Horror' },
+      { id: 4, price: 3000, time: 2, style: 'Classical' },
+      { id: 5, price: 8000, time: 4, style: 'Realism' }
     ],
     styles: {
-      trashPolka: 1,
-      trash: 1,
-      polka: 1,
-      sergei: 1,
-      test: 0,
-      mamkeprivet: 0
+      classical: 1,
+      biomechanics: 0,
+      realism: 2,
+      watercolor: 0,
+      newSchool: 1,
+      horror: 1
     }
   }, {
     id: 3,
     name: 'Mike',
     experience: 4,
     images: [
-      { id: 1, price: 25000, time: 5, style: 'trash polka' },
-      { id: 2, price: 15000, time: 15, style: 'trash' },
-      { id: 3, price: 7000, time: 10, style: 'polka' },
-      { id: 4, price: 5000, time: 7, style: 'sergei' },
-      { id: 5, price: 2000, time: 1, style: 'test' },
-      { id: 6, price: 6000, time: 6, style: 'mamkeprivet' }
+      { id: 1, price: 7000, time: 3, style: 'New school' },
+      { id: 2, price: 4000, time: 4, style: 'Realism' },
+      { id: 3, price: 5000, time: 2, style: 'New school' },
+      { id: 4, price: 7000, time: 3, style: 'New school' }
     ],
     styles: {
-      trashPolka: 1,
-      trash: 1,
-      polka: 1,
-      sergei: 1,
-      test: 1,
-      mamkeprivet: 1
+      classical: 0,
+      biomechanics: 0,
+      realism: 1,
+      watercolor: 0,
+      newSchool: 3,
+      horror: 0
     }
   }
 ];

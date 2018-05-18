@@ -1,7 +1,7 @@
 import findIndex from 'lodash/findIndex';
 import uniq from 'lodash/uniq';
 
-const allStyles = ['test', 'mamkeprivet', 'trash polka', 'polka', 'trash', 'sergei'];
+const allStyles = ['classical', 'biomechanics', 'realism', 'watercolor', 'newSchool', 'horror'];
 // const stylesObject = allStyles.reduce((acc, element) => ({ ...acc, [element]: '' }), {});
 
 function formatMastersToChart(masterInfo) {
